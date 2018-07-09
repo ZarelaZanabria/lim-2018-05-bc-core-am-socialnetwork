@@ -1,6 +1,10 @@
 .btnLogOut{
     display: none;
 }
+#section-register-user{
+    display: none;
+}
+
 *{
     margin: 0px;
 }

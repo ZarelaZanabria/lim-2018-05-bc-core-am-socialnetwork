@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Red Social</title>
     <link rel="stylesheet" href="css/style.css" />
-    <!--<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
@@ -14,52 +14,72 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
     <!--Ingresando codigo de Zarela  -->
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
 </head>
 
 <body>
-    <form>
-        <h3>Login</h3>
-        <input type="text" placeholder="Email" id="txtEmail">
-        <br>
-        <input type="text" placeholder="Password" id="txtPassword">
-        <br>
-        <button id="btnLogin">Iniciar Sesion</button>
-        <button id="btnSignUp">Registrarme</button>
-        <button id="btnLogOut" class="btnLogOut"> Salir</button>
-        <P>
-            Holo grupo ..!! primer cambio
-        </P>
-    </form>
-    <pre id="Object"></pre>
+    <header>
 
-    <!-- Codigo Zarela  -->
-    <div class="col-sm-4">
-        <form id="form-users">
-            <div class="form-group">
-                <label for="users-mame">Nombre  </label>
-                <input type="text" name="usersName" value="" class="form-control" id="users-mame">
-            </div>
-            <div class="form-group">
-                <label for="users-last-name">Apellido  </label>
-                <input type="text" name="usersLastName" value="" class="form-control" id="users-last-name">
-            </div>
-            <div class="form-group">
-                <label for="users-email">Correo electronico  </label>
-                <input type="text" name="usersEmail" value="" class="form-control" id="users-email">
-            </div>
-            <div class="form-group">
-                <label for="users-password">Constraseña  </label>
-                <input type="password" name="usersPassword" value="" class="form-control" id="users-password">
-            </div>
-            <input type="submit" name="" value="Registrarse">
-        </form>
-    </div>
-    <script src ="js/conexionUsers.js"></script>
-    <script src="js/usuario.js"></script>    
+    </header>
+    <section>
+        <div id="section-login">
+            <form>
+                <h3>Login</h3>
+                <div class="form-login">
+                    <div>
+                        <span class="icon-lock"></span>
+                        <span class="icon-unlocked"></span>
+                    </div>
+                    <div class="section-Text">
+                        <input type="text" placeholder="Email" id="txtEmail">
+                        <br>
+                        <input type="text" placeholder="Password" id="txtPassword">
+                        <br>
+                    </div>
+                    <div class="section-Button">
+                        <input type="button" id="btnLogin" value="Iniciar Sesion">
+                        <input type="button" id="btnSignUp" value="Registrarme">
+                        <input type="button" id="btnLogOut" value="Salir">
+                    </div>
+                </div>
+                <div class="loginAditional">
+                    <input type="button" id="btnLoginFacebook" class="icon-facebook" value="Facebook">
+                    <input type="button" id="btnLoginGoogle" class="icon-google" value="Google">
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Codigo Zarela  -->
+        <div id="section-register-user" class="col-sm-4">
+            <form id="form-users">
+                <div class="form-group">
+                    <label for="users-mame">Nombre </label>
+                    <input type="text" name="usersName" value="" class="form-control" id="users-name">
+                </div>
+                <div class="form-group">
+                    <label for="users-last-name">Apellido </label>
+                    <input type="text" name="usersLastName" value="" class="form-control" id="users-last-name">
+                </div>
+                <div class="form-group">
+                    <label for="users-email">Correo electronico </label>
+                    <input type="text" name="usersEmail" value="" class="form-control" id="users-email">
+                </div>
+                <div class="form-group">
+                    <label for="users-password">Constraseña </label>
+                    <input type="password" name="usersPassword" value="" class="form-control" id="users-password">
+                </div>
+                <input type="button" name="" id="register"value="Registrarse">
+            </form>
+        </div>
+
+
+    </section>
+    <footer></footer>
+    <script src="js/conexionUsers.js"></script>
+    <script src="js/usuario.js"></script>
     <script src="js/app.js"></script>
-
 </body>
-<footer></footer>
+
 
 </html>
