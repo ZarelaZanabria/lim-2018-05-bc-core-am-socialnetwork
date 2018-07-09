@@ -1,3 +1,53 @@
 .btnLogOut{
     display: none;
 }
+*{
+    margin: 0px;
+}
+form{
+    width: 60%;
+    margin: 10% 20%;
+    border-radius: .4em;
+    box-shadow: 1px 1px 2px 0px #ccc;
+}
+form h3{
+    text-align: center;
+    padding: 2em 1em;
+    background: #4ab1ef;
+    color: #fff;
+}
+.form-login{
+    padding: 1em 1em;
+    text-align: center;
+    text-align: 10px;
+}
+.section-text{
+    margin: 5px 0px;
+    padding: 1em 1em;
+}
+.section-text input{
+    padding: 1em 2em;
+    border: none;
+    border-bottom: .5px solid #4ab1ef;
+    outline: none;
+}
+.section-button button{
+    border: none;
+    border-radius: .4em;
+    padding: 1em 1em;
+    margin: 5px 0px;
+    background: #4ab1ef;
+    cursor: pointer;
+}
+.loginAditional{
+    text-align: center;
+    padding: 1em 1em;
+}
+.icon-facebook, .icon-google{
+cursor: pointer;
+}
+.icon-lock{
+    font-size: 16px;
+    color: #ccc;
+    border-radius: 100%;
+}
