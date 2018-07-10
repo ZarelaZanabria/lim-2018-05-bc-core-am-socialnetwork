@@ -4,54 +4,119 @@
 #section-register-user{
     display: none;
 }
-
 *{
-    margin: 0px;
+    margin: 0%;
+    font-family: "freight-sans-pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-form{
-    width: 60%;
-    margin: 10% 20%;
-    border-radius: .4em;
-    box-shadow: 1px 1px 2px 0px #ccc;
+.wapper-content{
+    width: 100%;
+    height: 100%;
+   background: #3F51B5;
 }
-form h3{
+
+.content-login{
+    width: 40%;
+    margin: 10% 30%;
+    align-content: center;
+   /*  padding: 1em 1em; */
+}
+.content-login form{
     text-align: center;
-    padding: 2em 1em;
-    background: #4ab1ef;
-    color: #fff;
+    padding: 1em 1em;   
+    
+}
+
+.logo{
+    margin-top: 20px;
+}
+.logo img{
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 100%;
 }
 .form-login{
     padding: 1em 1em;
-    text-align: center;
-    text-align: 10px;
+    margin: 20px 0px;
+}
+.form-login h3{
+    color: #fff;
+    font-size: 1.5em;
 }
 .section-text{
-    margin: 5px 0px;
-    padding: 1em 1em;
+    margin: 20px 0px;
 }
-.section-text input{
-    padding: 1em 2em;
+.section-value{
+    width: 100%;
     border: none;
-    border-bottom: .5px solid #4ab1ef;
+    background: #3F51B5;
+    border-bottom: .5px solid #fff;
+    margin: 20px 0px;
+
+    padding: .2em 0px;
+   
+}
+.section-value input{
+    width: 90%;
+    background: #3F51B5;
+    border: none;
+    color: #fff;
+    font-size: 16px;
     outline: none;
+    padding: .5em 0em .0em 0em;
+    
 }
-.section-button button{
+#btnLogOut{
+    padding: 1em 0em;
+    color: #fff
+}
+.section-button input{
+    width: 100%;
     border: none;
-    border-radius: .4em;
-    padding: 1em 1em;
-    margin: 5px 0px;
-    background: #4ab1ef;
+    outline: none;
+    padding: 1em 0em;
+    margin: 10px 0px;;
+    margin-bottom: 25px;
+    color: #fff;
+    text-transform: uppercase;  
+    background: #ff4081;
     cursor: pointer;
 }
 .loginAditional{
-    text-align: center;
-    padding: 1em 1em;
+    align-content: center;
 }
-.icon-facebook, .icon-google{
-cursor: pointer;
-}
-.icon-lock{
-    font-size: 16px;
-    color: #ccc;
+.icon-facebook, .icon-google, .icon-mail2{
+    color: #fff;
+    font-size: 1.2em;
     border-radius: 100%;
+    padding: .8em .8em;
+    margin: 0% 1%;
+    background: rgba(178,178,178, 0.4);
+    box-shadow: 0px 0px 4px 1px #ccc;
+    
+}
+.icon-checkmark{
+    color: #fff;
+}
+.icon-cross{
+    color: #ff4081;
+}
+.icon-circle-left{
+    color: #ff4081;
+    font-size: 1.5em;
+    float: left;
+}
+@media (max-width: 480px){
+    .content-login{
+        width: 100%;
+        margin: 2% 3%;
+        margin: 0%;
+    }
+    .wapper-content{
+        min-height: 450px;
+    }
+    .wapper-portada{
+        min-height: 450px;
+    }
+
 }
