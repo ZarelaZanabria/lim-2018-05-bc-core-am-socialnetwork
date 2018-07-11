@@ -133,6 +133,7 @@ window.onload = function () {
             const token = result.credential.accessToken;
             const user = result.user;//info 
             userLogin = user.displayName;
+            writeUsersData(user.uid, user.displayName,user.email,null);
             console.log('informacion del usuario logueado: ' + user.displayName);
         }).catch(error => {
             var errorCode = error.code;
@@ -156,6 +157,7 @@ window.onload = function () {
         firebase.auth().signInWithPopup(provider).then(function (result) {
             var token = result.credential.accessToken;
             var user = result.user;// La información del usuario que inició sesión.
+            writeUsersData(user.uid, user.displayName,user.email,null);
             Console.log(user);
             //console.log('Informacion del usuario logueado con facebok'+user);
         }).catch(error => {
@@ -172,11 +174,13 @@ window.onload = function () {
     //evento Registrar
     buttonR.addEventListener('click', event => {
         if (passwordValidate === 'passwordValido') {
-
             //Insertar utentificacion
             const auth = firebase.auth();
             const promise = auth.createUserWithEmailAndPassword(emailUsers.value, passwordUsers.value).then(function (user) {
-                return user.updateProfile({ 'displayName': nameUser.value });
+                console.log(user.uid);
+                const nameUsers =  nameUser.value+lastNameUser.value;
+                writeUsersData(user.uid, nameUsers,emailUsers.value,passwordUsers.value);
+                return user.updateProfile({ 'displayName': nameUser.value});
             }).catch(function (error) {
                 console.log(error);
                 const errorEmail = error.message;
@@ -186,24 +190,28 @@ window.onload = function () {
                 if (errorEmail === 'The email address is badly formatted.') {
                     document.getElementById('mensaggeRegisterValide').innerHTML = 'Ingrese un correo valido';
                 }
+                if (errorEmail === 'The email address is already in use by another account.') {
+                    document.getElementById('mensaggeRegisterValide').innerHTML = 'Este correo ya estas registrado';
+                }
+                
             });
             promise.catch(e => console.log(e.message));
-            //Insertar a la base de datos
-            refUsers.push({
-                usersEmail: emailUsers.value,
-                usersLastName: lastNameUser.value,
-                usersName: nameUser.value,
-                usersPassword: passwordUsers.value,
-            });
-            //formUsers.reset();
+            
             refUsers.on('value', function (snap) {
                 let dataUsers = snap.val();
-                console.log(dataUsers);
             });
         } else {
             document.getElementById('mensaggeRegisterValide').innerHTML = 'Las contraseñas deben ser iguales';
         }
     });
+
+    const writeUsersData=(userId,name,email,password)=>{
+        firebase.database().ref(userId).set({
+            usersEmail: email,
+            usersName: name,
+            usersPassword: password,
+        });
+    }
 
 
 
