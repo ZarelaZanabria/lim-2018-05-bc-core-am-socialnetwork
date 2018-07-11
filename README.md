@@ -16,7 +16,7 @@ He aqui una muestra del prototipo de alta fidelidad ya con todas las pautas que 
 
 ## BENCHMARK
 Para este proyecto usamos como referencia tres paginas, los cuales usamos como referencia y/o guia.
-![Sin titulo](img/benchmark.png)
+![Sin titulo](img/benchmark.PNG)
 
 
 ## Objetivos
