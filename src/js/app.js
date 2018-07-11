@@ -29,7 +29,6 @@ window.onload = function () {
   let lastNameUser = document.getElementById('users-last-name');
   let nameUser = document.getElementById('users-name');
   let userLogin;
-  let emailValidate;
   let passwordValidate;
   //....................................................................... VALIDACION DE CORREO ELECTRONICO
   txtEmail.addEventListener('input', function () {
@@ -49,10 +48,8 @@ window.onload = function () {
     emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     //Se muestra un texto a modo de ejemplo, luego va a ser un icono
     if (emailRegex.test(val)) {
-      emailValidate = 'emailValido';
       document.getElementById('icon-validate').setAttribute('class', 'icon-checkmark');
     } else {
-      emailValidate = 'emailInvalido';
       document.getElementById('icon-validate').setAttribute('class', 'icon-cross');
     }
   });
@@ -69,11 +66,15 @@ window.onload = function () {
       document.getElementById('icon-validate-password').setAttribute('class', 'icon-cross');
     }
   });
-  //....................................................................... AUNTENTIFICACION CON CORREO Y CONTRASENIA
+ //.........................................................................EVENTOS DISPLAY
   btnSignUp.addEventListener('click', e => {
     document.getElementById('section-register-user').style.display = 'block';
     document.getElementById('section-login').style.display = 'none';
 
+  });
+  document.getElementById('back-login').addEventListener('click', e => {
+    document.getElementById('section-register-user').style.display = 'none';
+    document.getElementById('section-login').style.display = 'block';    
   });
   // add a realtime listener
   /*Esto me ayuda saber cada vez que cambie el estado de autentificacion
@@ -86,6 +87,7 @@ window.onload = function () {
       console.log('informacion del usuario logueado: ' + firebaseUser.displayName);// UTILIZO PARA LA BIENBENIDA
       document.getElementById('messageValide').innerHTML = '';//  limpio el elemento que notofica si es email y passwor correcto
       btnLogOut.style.display = 'block';
+
     } else {// si no mostramos un mensaje de no regstrado 
       console.log('No registrado');
       btnLogOut.style.display = 'none';
@@ -97,7 +99,14 @@ window.onload = function () {
     const promise = auth.signInWithEmailAndPassword(txtEmail.value, txtPassword.value);// devuelve una promesa que permita identificar al usuario o para detectar cualquien error y registrarlos en firebase
     promise.catch(e => {
       console.log(e.message);
-      return document.getElementById('messageValide').innerHTML = 'Email o contraseña incorrecta'
+      const errorEmail = e.message;
+      if(errorEmail === 'There is no user record corresponding to this identifier. The user may have been deleted.'){
+          return document.getElementById('messageValide').innerHTML = 'El usuario no existe';
+      }
+      if(errorEmail === 'The password is invalid or the user does not have a password.'){
+        return document.getElementById('messageValide').innerHTML = 'Password Incorrecto';
+      }
+      
     });//Muestra un mensaje de email y pass invalido
     //DONE: validar si los datos son existentes 
 
@@ -123,7 +132,6 @@ window.onload = function () {
       var errorMessage = error.message;
       var email = error.email;
       var credential = error.credential;
-
       if (errorCode === 'auth/account-exists-with-different-credential') {
         alert('Es el mismo usuario');
       }
@@ -151,7 +159,7 @@ window.onload = function () {
     });
   });
   //...................................................................................REGISTRO DE USUARIO
-
+ //....................................................................... AUNTENTIFICACION CON CORREO Y CONTRASENIA
   /*Hace referente al hijo del modo raiz de la base de datos */
   refUsers = firebase.database().ref().child('Usuarios');
   //evento Registrar
@@ -164,9 +172,9 @@ window.onload = function () {
             return user.updateProfile({ 'displayName': nameUser.value });
           }).catch(function (error) {
             console.log(error);
-            var errorEmail=error.message;
+            const errorEmail=error.message;
             if(errorEmail === 'Password should be at least 6 characters'){
-               document.getElementById('mensaggeRegisterValide').innerHTML = 'La contraseña debe ser mayor a 6';
+               document.getElementById('mensaggeRegisterValide').innerHTML = 'Ingrese contraseña con min 6 caracteres';
             }
             if(errorEmail === 'The email address is badly formatted.'){
               document.getElementById('mensaggeRegisterValide').innerHTML = 'Ingrese un correo valido';
