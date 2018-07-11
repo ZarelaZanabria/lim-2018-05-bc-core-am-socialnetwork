@@ -20,10 +20,28 @@
 
 <body>
     <header>
+        <div id="headerProfile">
+             <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
+             <div id="componenteProfile"></div>
+        </div>
+       
     </header>
     <section>
-        <div class="wapper-content">
+        <div class="wapper-content" id="wapper-content">
             <div class="wapper-portada">
+                <div class="portada">
+                    <div class="onPortada">
+                        <div class="description-portada">
+                            <h2>MAMÁ POR PRIMERA VEZ EN</h2>
+                            <span class="description-portadaModo">MODO</span><span class="description-portadaMama">MAMA</span>
+                            <div class="description"><span class="icon-heart"></span><p>Recibe muchimos tips</p></div>
+                            <div class="description"><span class="icon-bubbles"></span><p>Orienta a tu comunidad</p></div>
+                            <div class="description"><span class="icon-gift"></span><p>Especialistas en tu bolsillo</p></div>
+                            <div class="description"><span class="icon-flag"></span><p>Haz que conoscan tu marca</p></div>
+                        </div>
+                        
+                    </div>
+                </div>
                 <div id="section-login" class="content-login">
                     <form>
                         <div class="logo">
@@ -44,7 +62,7 @@
                             <div class="section-Button">
                                 <input type="button" id="btnLogin" value="LOGIN">
                                 <p id="messageValide"></p>
-                                <span type="button" id="btnLogOut" value="Salir">--------------OR--------------</span>
+                                <span class="or">--------------or--------------</span>
                             </div>
                         </div>
                         <div class="loginAditional">
@@ -70,7 +88,7 @@
                     <form>
                         <div class="form-login">
                             <div>
-                                <span class="icon-circle-left"></span>
+                                <span class="icon-circle-left" id="back-login"></span>
                                 <h3>SIGN UP</h3>
                             </div>
                             
@@ -102,15 +120,16 @@
 
                     </form>
                 </div>
+                
             </div>
         </div>
-
-
     </section>
     <footer></footer>
     <script src="js/conexionUsers.js"></script>
     <script src="js/usuario.js"></script>
+    <script src="js/muro.js"></script>
     <script src="js/app.js"></script>
+    
 </body>
 
 
