@@ -9,6 +9,7 @@ window.onload = function () {
         messagingSenderId: "384943209525"
     };
     firebase.initializeApp(config);
+    firebase.auth().languageCode = 'es';
 
     // get elements
     const txtEmail = document.getElementById('txtEmail');
@@ -83,8 +84,8 @@ window.onload = function () {
             let componente = componenteMuro(userLogin);
             document.getElementById('componenteProfile').innerHTML = componente;// agrego los componentes a html
             btnLogOut.style.display = 'block'; // aparece mi boton salir
+            document.getElementById('headerProfile').style.display='block';
             document.getElementById('wapper-content').style.display='none';// oculto mi login
-
             console.log(firebaseUser);
            // document.getElementById('messageValide').innerHTML = '';//  limpio el elemento que notofica si es email y passwor correcto
                        
@@ -97,6 +98,7 @@ window.onload = function () {
     // Iniciar Sesion
     btnLogin.addEventListener('click', e => {
         const auth = firebase.auth();
+        firebase.auth().languageCode = 'es';
         const promise = auth.signInWithEmailAndPassword(txtEmail.value, txtPassword.value);// devuelve una promesa que permita identificar al usuario o para detectar cualquien error y registrarlos en firebase
         promise.catch(e => {
             console.log(e.message);
@@ -117,6 +119,7 @@ window.onload = function () {
     btnLogOut.addEventListener('click', e => {
         firebase.auth().signOut();
         document.getElementById('wapper-content').style.display='block';
+        document.getElementById('headerProfile').style.display='none';
         document.getElementById('componenteProfile').innerHTML='';
         
     });
@@ -197,12 +200,9 @@ window.onload = function () {
                 let dataUsers = snap.val();
                 console.log(dataUsers);
             });
-
         } else {
             document.getElementById('mensaggeRegisterValide').innerHTML = 'Las contraseñas deben ser iguales';
         }
-
-
     });
 
 
