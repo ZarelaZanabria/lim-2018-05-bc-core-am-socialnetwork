@@ -67,7 +67,9 @@
     padding: .5em 0em .0em 0em;
     
 }
-
+.input-user{
+    width: 100% !important;
+}
 #headerProfile{
     display: none;
     width: 100%;
@@ -137,6 +139,7 @@
 }
 .icon-cross{
     color: #ff4081;
+    padding: .1em .3em;
 }
 .icon-circle-left{
     color: #fff;
@@ -147,7 +150,6 @@
 }
 .icon-circle-left:hover{
     box-shadow: 0px 0px 4px 1px rgba(204, 204, 204, 0.486);
-
 }
 #messageValide{
     color: #fff;
