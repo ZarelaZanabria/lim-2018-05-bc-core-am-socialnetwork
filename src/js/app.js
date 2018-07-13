@@ -1,4 +1,7 @@
 // get elements
+window.onload = () =>{
+    $('#contentLoginRegister').append(loginElement());
+
 const txtPassword = $('#txtPassword');
 const passwordUsers = $('#users-password');
 let txtEmail = $('#txtEmail');
@@ -26,13 +29,15 @@ $('#users-passwordTwo').bind('input', () => {
 });
 //.........................................................................EVENTOS DISPLAY
 $('#btnSignUp').click(() => {
-    $('#section-register-user').show();
     $('#section-login').hide();
+   // $('#contentLoginRegister').append('');
+    $('#contentLoginRegister').append(registerElement());
+    
 
 });
 $('#back-login').click(() => {
     $('#section-register-user').hide();
-    $('#section-login').show();
+    $('#contentLoginRegister').show();
 });
 //...........................................................................INICIAR SESION
 $('#btnLogin').click(() => {
@@ -40,7 +45,7 @@ $('#btnLogin').click(() => {
     firebase.auth().languageCode = 'es';
     const promise = auth.signInWithEmailAndPassword(txtEmail.val(), txtPassword.val());// devuelve una promesa que permita identificar al usuario o para detectar cualquien error y registrarlos en firebase
     promise.catch(e => {
-        console.log(e.message);
+        console.log(e.message); 
         const errorEmail = e.message;
         if (errorEmail === 'There is no user record corresponding to this identifier. The user may have been deleted.') {
             return $('#messageValide').append('El usuario no existe');
@@ -76,7 +81,6 @@ $('#btnLoginGoogle').click(() => {
             }
         });
 });
-
 // .................................................................... ........AUTENTIFICACION CON FACEBOOK
 $('#btnLoginFacebook').click(() => {
     var provider = new firebase.auth.FacebookAuthProvider();
@@ -150,13 +154,14 @@ const validateEmail = (idSpan) => {
     }
 }
 // ..........................................................................estado de autentificacion en tiempo real
-firebase.auth().onAuthStateChanged(firebaseUser => {
+firebase.auth().onAuthStateChanged(firebaseUser => {debugger
     if (firebaseUser) {
         console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
-        let componente = componenteMuro(userLogin,photoUser);
-        $('#componenteProfile').append(componente);
+        let componente = headerElement(userLogin,photoUser);
+        $('#header-main').append(componente);
+        $('#section-main').append(sectionElement());
         $('#btnLogOut').show(); // aparece mi boton salir
         $('#headerProfile').show();
         $('#wapper-content').hide();// oculto mi login              
@@ -164,3 +169,4 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log('No Autentificado');
     }
 });
+}
