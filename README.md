@@ -1,30 +1,23 @@
-# Creando una Red Social
-
-## Preámbulo
-
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchxs no podemos
-vivir sin ellas.
-
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+﻿# Red Social de Salud
 
 ## Introducción
 
-Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle
-sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que
-podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas
-en los que le gustaría invertir:
+La llegada del primer bebé supone una gran felicidad para la pareja primeriza, pero también trae consigo una serie de miedos, que la madre vive especialmente. Cuando una mujer se convierte en madre, empieza una etapa llena de cambios y trabajo, mucho trabajo. En ocasiones, la responsabilidad puede llegar a abrumar y a hacerle sentir que no puede con todo.
 
-* Alimentación
-* Feminismo
-* Educación
-* Salud
-* Energías Renovables
+Debido a este problema nace la idea de crear una red social especialmente para mujeres que pasan por esta etapa, un espacio donde puedan compartir sus temores, dudas, consultas, etc con otras mujeres de la misma situaciòn.
+
+## User Experience Design
+Para desarrollar el proyecto comenzamos diseñando el prototipo de baja y alta fidelidad. Asimismo realizanos entrevistas a mujeres en esta condiciòn.
+
+He aqui una muestra del prototipo de alta fidelidad ya con todas las pautas que recibimos en las entrevistas.
+![Sin titulo](src/img/loginform.png)
+
+![Sin titulo](src/img/paginaprinciapal.png)
+
+## BENCHMARK
+Para este proyecto usamos como referencia tres paginas, los cuales usamos como referencia y/o guia.
+![Sin titulo](src/img/benchmark.PNG)
+
 
 ## Objetivos
 

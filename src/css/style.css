@@ -1,9 +1,7 @@
 .btnLogOut{
     display: none;
 }
-#section-register-user{
-    display: none;
-}
+
 *{
     margin: 0%;
     font-family: "freight-sans-pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -26,7 +24,7 @@
     padding: 3em 1em;   
     
 }
-
+none
 .logo{
     margin-top: 20px;
 }
@@ -67,20 +65,46 @@
     padding: .5em 0em .0em 0em;
     
 }
-header{
+.input-user{
+    width: 100% !important;
+}
+/* header */
+.header-main{
     width: 100%;
     height: 80px;
-    background: #3F51B5;
-    color: #fff;
+    box-shadow: 0px -1px 5px 0px #9E9E9E;
 }
-#componenteProfile{
+.header-main-content{
+    margin: 0px 5%;
+    padding: 0em 0em;
+    height: 100%;
+}
+.header-menu-profile{
+    align-content: right;
+}
+.header-section{
+    float: left;
+}
+.header-section nav{
+    padding: .4em .2em;
     text-align: right;
-    padding:2em 1em;
+}
+.menu-header-main, .logo-web, .search-content{
+padding: 2em 1em;
+}
+.header-section nav ul li{
+    list-style: none;
+    float: left;
+    padding: 0em 1em;
+    margin: 3px 3px;
+}
+.header-section nav ul li img{
+    border-radius: 100%;
+    float: left;
 }
 #btnLogOut{
     border: none;
     outline: none;
-    padding: 1em 1em;
     color: #fff;
     background: #ff4081;
     display:none;
@@ -88,6 +112,29 @@ header{
     cursor: pointer;
     margin: 20px 0px 0px 10px;
 }
+.icon-menu, .icon-user, .icon-home2, .icon-search, .icon-config, .icon-question{
+    font-size: 1.3em;
+    padding: .48em;
+}
+/*muro*/
+.devsite-banner-content{
+    width: 100%;
+    height: 400px;
+    order: 1px solid purple;
+}
+.devsite-newpost-content{
+    border: 1px solid #ff4081;
+}
+.devsite-section-nav{
+    border: 1px solid green;
+}
+.devsite-post{
+    border: 1px solid blue;
+}
+.devsite-page-nav{
+    border: 1px solid red;
+}
+/**/
 .section-button input{
     width: 100%;
     border: none;
@@ -135,6 +182,7 @@ header{
 }
 .icon-cross{
     color: #ff4081;
+    padding: .1em .3em;
 }
 .icon-circle-left{
     color: #fff;
@@ -145,7 +193,6 @@ header{
 }
 .icon-circle-left:hover{
     box-shadow: 0px 0px 4px 1px rgba(204, 204, 204, 0.486);
-
 }
 #messageValide{
     color: #fff;
@@ -169,14 +216,18 @@ header{
     position: absolute;
 
 }
-.description-portada h3{
+.description-portada h2{
     font-size: 1.5em;
     font-weight: 200;
     color: #fff;
 }
-.description-portada h4{
+.description-portadaModo{
+    color: #ff4081;
+    font-size: 1.5em
+}
+.description-portadaMama{
     color: #3F51B5;
-    font-weight: 600;
+    font-weight: 800;
     padding: 1em 0em;
     font-size: 1.8em
 }
