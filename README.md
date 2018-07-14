@@ -10,13 +10,13 @@ Debido a este problema nace la idea de crear una red social especialmente para m
 Para desarrollar el proyecto comenzamos diseñando el prototipo de baja y alta fidelidad. Asimismo realizanos entrevistas a mujeres en esta condiciòn.
 
 He aqui una muestra del prototipo de alta fidelidad ya con todas las pautas que recibimos en las entrevistas.
-![Sin titulo](img/loginform.png)
+![Sin titulo](src/img/loginform.png)
 
-![Sin titulo](img/paginaprinciapal.png)
+![Sin titulo](src/img/paginaprinciapal.png)
 
 ## BENCHMARK
 Para este proyecto usamos como referencia tres paginas, los cuales usamos como referencia y/o guia.
-![Sin titulo](img/benchmark.PNG)
+![Sin titulo](src/img/benchmark.PNG)
 
 
 ## Objetivos
