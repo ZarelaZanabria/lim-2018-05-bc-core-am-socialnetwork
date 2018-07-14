@@ -1,6 +1,5 @@
 // get elements
-window.onload = () =>{
-    $('#contentLoginRegister').append(loginElement());
+//import  headerElement from '../../src/js/componentes.js';
 
 const txtPassword = $('#txtPassword');
 const passwordUsers = $('#users-password');
@@ -14,6 +13,7 @@ $('#txtEmail').bind('input', () => {
 $('#users-email').bind('input', () => {
     validateEmail($('#icon-validate'));
 });
+
 //....................................................................... VALIDACION DE PASSWORD REPETIDO
 $('#users-passwordTwo').bind('input', () => {
     passwordTwo = event.target.value;
@@ -30,10 +30,15 @@ $('#users-passwordTwo').bind('input', () => {
 //.........................................................................EVENTOS DISPLAY
 $('#btnSignUp').click(() => {
     $('#section-login').hide();
-   // $('#contentLoginRegister').append('');
-    $('#contentLoginRegister').append(registerElement());
-    
-
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "componentesHTML/register.html", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            $('#contentLoginRegister').append('hola');
+        }
+    }
+    xmlhttp.send();
 });
 $('#back-login').click(() => {
     $('#section-register-user').hide();
@@ -61,9 +66,6 @@ $('#btnLogin').click(() => {
 //.............................................................................CERRAR SESION
 $('#btnLogOut').click(() => {
     firebase.auth().signOut();
-    $('#wapper-content').show();
-    $('#headerProfile').hide();
-    $('#componenteProfile').append('');
 });
 //...............................................................................AUTENTIFICACION CON GOOGLE
 $('#btnLoginGoogle').click(() => {
@@ -160,13 +162,18 @@ firebase.auth().onAuthStateChanged(firebaseUser => {debugger
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
         let componente = headerElement(userLogin,photoUser);
+        let section=sectionElement();
+        $('#header-main').show();
         $('#header-main').append(componente);
-        $('#section-main').append(sectionElement());
-        $('#btnLogOut').show(); // aparece mi boton salir
-        $('#headerProfile').show();
-        $('#wapper-content').hide();// oculto mi login              
+        $('#sectio-muro').append(section);
+        $('#portada').append('');
+        $('#contentLoginRegister').hide();
+        $('.onPortada').append();
+        $('#section-login').remove();
+        $('#section-register-user').remove();
+        $('#btnLogOut').show(); // aparece mi boton salir             
     } else {// si no mostramos un mensaje de no regstrado 
         console.log('No Autentificado');
+        
     }
 });
-}
