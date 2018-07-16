@@ -141,4 +141,5 @@ const guardarData = (user) => {
 
     }
     firebase.database().ref('Usuarios/' + user.uid).set(usuario);
+    //Falta Corregir !!
 }
