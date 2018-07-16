@@ -5,7 +5,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
         let componente = headerElement(userLogin,photoUser);
-         $('#header-main').show(); 
+         $('#header-main').show();  
          $('#header-main').append(componente);
          $('#post-main').show();
         $('#post-main').append(sectionElement());
@@ -22,8 +22,11 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         loginElement();
         $('#contentLoginRegister').show();
         $('#post-main').hide();
-        
-        registerElement();  
+        $('#portada').show();
+        registerElement();   
+        document.getElementById('post-main').innerHTML='';    
+        document.getElementById('header-main').innerHTML='';
+       
         console.log('No Autentificado');
         eventsLogin();// todos los eventos con login
     }

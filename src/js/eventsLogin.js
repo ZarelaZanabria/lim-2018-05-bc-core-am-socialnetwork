@@ -4,37 +4,59 @@ eventsLogin = () => {
     let txtEmail = $('#txtEmail');
     let refUsers;//referencia a la bd del usuario
     let passwordValidate;
+    //....................................................................... VALIDACION DE PASSWORD REPETIDO
+    $('#users-passwordTwo').bind('input', () => {
+        passwordTwo = event.target.value;
+        passwordOne = passwordUsers.val();
+        //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+        if (passwordTwo === passwordOne) {
+            passwordValidate = 'passwordValido';
+            $('#icon-validate-password').attr('class', 'icon-checkmark');
+        } else {
+            passwordValidate = 'passwordInvalido';
+            $('#icon-validate-password').attr('class', 'icon-cross');
+        }
+    });
     //....................................................................... AUNTENTIFICACION CON CORREO Y CONTRASENIA
     /*Hace referente al hijo del modo raiz de la base de datos */
     refUsers = firebase.database().ref().child('Usuarios');
     $('#register').click(() => {
-        if (passwordValidate === 'passwordValido') {
-            const promise = firebase.auth()
-                .createUserWithEmailAndPassword($('#users-email').val(), passwordUsers.val())
-                .then(function (user) {
-                    const nameUsers = $('#users-name').val() + ' ' + $('#users-last-name').val();
-                    guardarDataCorreo(user, nameUsers, passwordUsers.val(), 'null');
-                    return user.updateProfile({ 'displayName': nameUsers });
-                }).catch(function (error) {
-                    //console.log(error);
-                    const errorEmail = error.message;
-                    document.getElementById('mensaggeRegisterValide').innerHTML = '';
-                    if (errorEmail === 'Password should be at least 6 characters') {
-                        $('#mensaggeRegisterValide').append('Ingrese contraseña con min 6 caracteres');
-                    }
-                    if (errorEmail === 'The email address is badly formatted.') {
-                        $('#mensaggeRegisterValide').append('Ingrese un correo valido');
-                    }
-                    if (errorEmail === 'The email address is already in use by another account.') {
-                        $('#mensaggeRegisterValide').append('Este correo ya estas registrado');
-                    }
+        if($('#users-email').val()!='' && $('#users-password').val()!='' && $('#users-name').val()!='' && $('#user-last-name').val()!='' && $('#users-pasword').val()!=''&& $('#users-passwordTwo').val()!=''){
+      
+            if (passwordValidate === 'passwordValido' ) {
+                const promise = firebase.auth()
+                    .createUserWithEmailAndPassword($('#users-email').val(), $('#users-password').val())
+                    .then(function (user) {
+                        const nameUsers = $('#users-name').val() + ' ' + $('#users-last-name').val();
+                        guardarDataCorreo(user, nameUsers,$('#users-password').val(), 'null');
+                        return user.updateProfile({ 'displayName': nameUsers });
+                    }).catch(function (error) {
+                        console.log(error.message);
+                        const errorEmail = error.message;
+                        document.getElementById('mensaggeRegisterValide').innerHTML = '';
+                        if (errorEmail === 'Password should be at least 6 characters') {
+                            $('#mensaggeRegisterValide').append('Ingrese contraseña con min 6 caracteres');
+                        }
+                        if (errorEmail === 'The email address is badly formatted.') {
+                            $('#mensaggeRegisterValide').append('Ingrese un correo valido');
+                        }
+                        if (errorEmail === 'The email address is already in use by another account.') {
+                            $('#mensaggeRegisterValide').append('Este correo ya esta registrado');
+                        }
+                    });
+                refUsers.on('value', function (snap) {
+                    let dataUsers = snap.val();
                 });
-            refUsers.on('value', function (snap) {
-                let dataUsers = snap.val();
-            });
-        } else {
-            $('#mensaggeRegisterValide').append('Las contraseñas deben ser iguales');
+            } else {debugger
+                document.getElementById('mensaggeRegisterValide').innerHTML = '';
+                document.getElementById('users-passwordTwo').innerHTML='';
+                $('#mensaggeRegisterValide').append('Las contraseñas deben ser iguales');
+            } 
+        }else{
+            document.getElementById('mensaggeRegisterValide').innerHTML = '';
+            document.getElementById('mensaggeRegisterValide').innerHTML='Llenar campos';
         }
+        
     });
     //...............................................................................AUTENTIFICACION CON GOOGLE
     $('#btnLoginGoogle').click(() => {
@@ -67,7 +89,7 @@ eventsLogin = () => {
 
     //...........................................................................INICIAR SESION
     $('#btnLogin').click(() => {
-        debugger
+       
         const auth = firebase.auth();
         firebase.auth().languageCode = 'es';
         console.log(txtEmail.val(), txtPassword.val());
@@ -84,7 +106,7 @@ eventsLogin = () => {
                 return $('#messageValide').append('Password Incorrecto');
             }
             if (errorEmail === 'The email address is badly formatted.') {
-                return $('#messageValide').append('Ingrese usuario y pasword');
+                return $('#messageValide').append('Ingrese un correo valido');
             }
         });
     });
@@ -95,24 +117,12 @@ eventsLogin = () => {
     $('#users-email').bind('input', () => {
         validateEmail($('#icon-validate'));
     });
-    //....................................................................... VALIDACION DE PASSWORD REPETIDO
-    $('#users-passwordTwo').bind('input', () => {
-        passwordTwo = event.target.value;
-        passwordOne = passwordUsers.val();
-        //Se muestra un texto a modo de ejemplo, luego va a ser un icono
-        if (passwordTwo === passwordOne) {
-            passwordValidate = 'passwordValido';
-            $('#icon-validate-password').attr('class', 'icon-checkmark');
-        } else {
-            passwordValidate = 'passwordInvalido';
-            $('#icon-validate-password').attr('class', 'icon-cross');
-        }
-    });
+    
     //.........................................................................EVENTOS DISPLAY
     $('#btnSignUp').click(() => {
         $('#section-login').hide();
         $('#section-register-user').show();
-        events();
+        
     });
     $('#back-login').click(() => {
         $('#section-login').show();//.fadeOut( 1000 )

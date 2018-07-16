@@ -116,6 +116,9 @@ padding: 2em 1em;
     font-size: 1.3em;
     padding: .48em;
 }
+#mensaggeRegisterValide{
+    color: #fff;
+}
 /*muro*/
 .devsite-banner-content{
     width: 100%;

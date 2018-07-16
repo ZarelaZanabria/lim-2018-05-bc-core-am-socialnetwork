@@ -1,4 +1,4 @@
-headerElement = (userLogin,photo) =>{
+    headerElement = (userLogin,photo) =>{
     return $('#header-main').append(`
     <div class='header-main-content'>
         <div class='header-section'>
@@ -36,7 +36,7 @@ headerElement = (userLogin,photo) =>{
 }
 sectionElement = () => {
     return `
-    <div class = 'devsite-main-content'>
+    <div class = 'devsite-main-content' id='devsite-main-content'>
         <div class = 'devsite-banner-content'>
             <div class = 'devsite-section-nav'>
             </div>
