@@ -7,46 +7,134 @@
     <title>Red Social</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="icomoon/style.css" />
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
+</head>
+
+<body>
+    <header>
+        <div id="headerProfile">
+            <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
+            <div id="componenteProfile"></div>
+        </div>
+
+    </header>
+    <section>
+        <div class="wapper-content" id="wapper-content">
+            <div class="wapper-portada">
+                <div class="portada">
+                    <div class="onPortada">
+                        <div class="description-portada">
+                            <h2>MAMÁ POR PRIMERA VEZ EN</h2>
+                            <span class="description-portadaModo">MODO</span>
+                            <span class="description-portadaMama">MAMA</span>
+                            <div class="description">
+                                <span class="icon-heart"></span>
+                                <p>Recibe muchimos tips</p>
+                            </div>
+                            <div class="description">
+                                <span class="icon-bubbles"></span>
+                                <p>Orienta a tu comunidad</p>
+                            </div>
+                            <div class="description">
+                                <span class="icon-gift"></span>
+                                <p>Especialistas en tu bolsillo</p>
+                            </div>
+                            <div class="description">
+                                <span class="icon-flag"></span>
+                                <p>Haz que conoscan tu marca</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="section-login" class="content-login">
+                    <form>
+                        <div class="logo">
+                            <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">
+                        </div>
+                        <div class="form-login">
+
+                            <div class="section-Text">
+                                <div class="section-value">
+                                    <input type="text" placeholder="Email" id="txtEmail">
+                                    <span id="icon-check"></span>
+                                </div>
+                                <div class="section-value">
+                                    <input type="password" placeholder="Password" id="txtPassword">
+                                </div>
+
+                            </div>
+                            <div class="section-Button">
+                                <input type="button" id="btnLogin" value="LOGIN">
+                                <p id="messageValide"></p>
+                                <span class="or">--------------or--------------</span>
+                            </div>
+                        </div>
+                        <div class="loginAditional">
+                            <span>
+                                <a id="btnSignUp" class="icon-mail2"></a>
+                            </span>
+                            <span>
+                                <a id="btnLoginFacebook" class="icon-facebook"></a>
+                            </span>
+                            <span>
+                                <a id="btnLoginGoogle" class="icon-google"></a>
+                            </span>
+                        </div>
+
+                    </form>
+                </div>
+                <div id="section-register-user" class="content-login">
+                    <form>
+                        <div class="form-login">
+                            <div>
+                                <span class="icon-circle-left" id="back-login"></span>
+                                <h3>SIGN UP</h3>
+                            </div>
+
+                            <div class="section-Text">
+                                <div class="section-value">
+                                    <input type="text" placeholder="User Name" id="users-name">
+                                </div>
+                                <div class="section-value">
+                                    <input type="text" placeholder="Last Name" id="users-last-name">
+                                </div>
+                                <div class="section-value">
+                                    <input type="text" placeholder="Email" id="users-email">
+                                    <span id="icon-validate"></span>
+                                </div>
+                                <div class="section-value">
+                                    <input type="password" placeholder="Password" id="users-password">
+                                </div>
+                                <div class="section-value">
+                                    <input type="password" placeholder="Repeat Password" id="users-passwordTwo">
+                                    <span id="icon-validate-password"></span>
+                                </div>
+                            </div>
+                            <div class="section-Button">
+                                <input type="button" name="" id="register" value="Registrar">
+                                <p id="mensaggeRegisterValide"></p>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
-    <!--Ingresando codigo de Zarela  -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
-</head>
-
-<body>
-    <header class="header-main" id="header-main">
-            
-    </header>
-    <section class="section-main">
-        <div class="wapper-content" id="wapper-content">
-            <div class="wapper-portada" id="wapper-portada">
-                <div class="portada">
-                    <div class="onPortada">
-                        <div class="description-portada">
-                            <h2>MAMÁ POR PRIMERA VEZ EN</h2>
-                            <span class="description-portadaModo">MODO</span><span class="description-portadaMama">MAMA</span>
-                            <div class="description"><span class="icon-heart"></span><p>Recibe muchimos tips</p></div>
-                            <div class="description"><span class="icon-bubbles"></span><p>Orienta a tu comunidad</p></div>
-                            <div class="description"><span class="icon-gift"></span><p>Especialistas en tu bolsillo</p></div>
-                            <div class="description"><span class="icon-flag"></span><p>Haz que conoscan tu marca</p></div>
-                        </div>                        
-                    </div>
-                </div> 
-                <div id="contentLoginRegister"></div>
-            </div>
-        </div>
-    </section>
-    <footer></footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="crossorigin="anonymous"></script>
-    <script src="js/conexion.js"></script>    
-    <script src="js/componentes.js"></script>
+    <script src="js/conexionUsers.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/usuario.js"></script>
+
 </body>
 
 

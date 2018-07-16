@@ -1,12 +1,8 @@
-// get elements
-window.onload = () =>{
-    $('#contentLoginRegister').append(loginElement());
-
-const txtPassword = $('#txtPassword');
 const passwordUsers = $('#users-password');
-let txtEmail = $('#txtEmail');
-let refUsers;//referencia a la bd del usuario
-let passwordValidate;
+const btnLoginFacebook = document.getElementById('btnLoginFacebook');
+const btnLoginGoogle = document.getElementById('btnLoginGoogle');
+let buttonR = document.getElementById('register');
+
 //....................................................................... EVENTO VALIDACION DE CORREO ELECTRONICO
 $('#txtEmail').bind('input', () => {
     validateEmail($('#icon-check'));
@@ -14,10 +10,22 @@ $('#txtEmail').bind('input', () => {
 $('#users-email').bind('input', () => {
     validateEmail($('#icon-validate'));
 });
+//..................................................................FUNCION VALIDACION DE CORREO ELECTRONICO
+const validateEmail = (idSpan) => {
+    campo = event.target;
+    val = campo.value;
+    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    if (emailRegex.test(val)) {
+        idSpan.attr('class', 'icon-checkmark');
+    } else {
+        idSpan.attr('class', 'icon-cross');
+    }
+}
+
 //....................................................................... VALIDACION DE PASSWORD REPETIDO
 $('#users-passwordTwo').bind('input', () => {
     passwordTwo = event.target.value;
-    passwordOne = passwordUsers.val();
+    passwordOne = $('#users-password').val();
     //Se muestra un texto a modo de ejemplo, luego va a ser un icono
     if (passwordTwo === passwordOne) {
         passwordValidate = 'passwordValido';
@@ -27,43 +35,64 @@ $('#users-passwordTwo').bind('input', () => {
         $('#icon-validate-password').attr('class', 'icon-cross');
     }
 });
+
 //.........................................................................EVENTOS DISPLAY
 $('#btnSignUp').click(() => {
+    $('#section-register-user').show();
     $('#section-login').hide();
-   // $('#contentLoginRegister').append('');
-    $('#contentLoginRegister').append(registerElement());
-    
 
 });
+
 $('#back-login').click(() => {
     $('#section-register-user').hide();
-    $('#contentLoginRegister').show();
+    $('#section-login').show();
+
 });
-//...........................................................................INICIAR SESION
-$('#btnLogin').click(() => {
+
+//...................................................................EVENTO INICIAR SESION
+$('#btnLogin').click((event) => {
     const auth = firebase.auth();
-    firebase.auth().languageCode = 'es';
-    const promise = auth.signInWithEmailAndPassword(txtEmail.val(), txtPassword.val());// devuelve una promesa que permita identificar al usuario o para detectar cualquien error y registrarlos en firebase
+    const promise = auth.signInWithEmailAndPassword($('#txtEmail').val(), $('#txtPassword').val());// devuelve una promesa que permita identificar al usuario o para detectar cualquien error y registrarlos en firebase
     promise.catch(e => {
-        console.log(e.message); 
+        console.log(e.message);
         const errorEmail = e.message;
         if (errorEmail === 'There is no user record corresponding to this identifier. The user may have been deleted.') {
-            return $('#messageValide').append('El usuario no existe');
+            return document.getElementById('messageValide').innerHTML = 'El usuario no existe';
         }
         if (errorEmail === 'The password is invalid or the user does not have a password.') {
-            return $('#messageValide').append('Password Incorrecto');
+            return document.getElementById('messageValide').innerHTML = 'Password Incorrecto';
         }
         if (errorEmail === 'The email address is badly formatted.') {
-            return $('messageValide').append('Ingrese usuario y pasword');
+            return document.getElementById('messageValide').innerHTML = 'Ingrese el correo correcto';
         }
     });
+
 });
-//.............................................................................CERRAR SESION
+
+// add a realtime listener estado de autentificacion
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {// si existe el usuario lo insertamos a firebase console
+        userLogin = firebaseUser.displayName;
+        let componente = componenteMuro(userLogin);
+        document.getElementById('componenteProfile').innerHTML = componente;// agrego los componentes a html
+        btnLogOut.style.display = 'block'; // aparece mi boton salir
+        document.getElementById('headerProfile').style.display = 'block';
+        document.getElementById('wapper-content').style.display = 'none';// oculto mi login
+        console.log(firebaseUser);
+        // document.getElementById('messageValide').innerHTML = '';//  limpio el elemento que notofica si es email y passwor correcto
+
+
+    } else {// si no mostramos un mensaje de no regstrado 
+        console.log('No registrado');
+        btnLogOut.style.display = 'none';
+    }
+});
+
 $('#btnLogOut').click(() => {
-    firebase.auth().signOut();
     $('#wapper-content').show();
-    $('#headerProfile').hide();
-    $('#componenteProfile').append('');
+    $('#headerProfile').show();
+    document.getElementById('componenteProfile').innerHTML = '';
+
 });
 //...............................................................................AUTENTIFICACION CON GOOGLE
 $('#btnLoginGoogle').click(() => {
@@ -81,6 +110,7 @@ $('#btnLoginGoogle').click(() => {
             }
         });
 });
+
 // .................................................................... ........AUTENTIFICACION CON FACEBOOK
 $('#btnLoginFacebook').click(() => {
     var provider = new firebase.auth.FacebookAuthProvider();
@@ -93,37 +123,7 @@ $('#btnLoginFacebook').click(() => {
             console.log(error.code, error.message, error.email, error.credential);
         });
 });
-//....................................................................... AUNTENTIFICACION CON CORREO Y CONTRASENIA
-/*Hace referente al hijo del modo raiz de la base de datos */
-refUsers = firebase.database().ref().child('Usuarios');
-$('#register').click(() => {
-    if (passwordValidate === 'passwordValido') {
-        const promise = firebase.auth()
-            .createUserWithEmailAndPassword($('#users-email').val(), passwordUsers.val())
-            .then(function (user) {
-                const nameUsers = $('#users-name').val() + ' ' + $('#users-last-name').val();
-                guardarDataCorreo(user, nameUsers, passwordUsers.val(), 'null');
-                return user.updateProfile({ 'displayName': nameUsers });
-            }).catch(function (error) {
-                //console.log(error);
-                const errorEmail = error.message;
-                if (errorEmail === 'Password should be at least 6 characters') {
-                    $('#mensaggeRegisterValide').append('Ingrese contraseña con min 6 caracteres');
-                }
-                if (errorEmail === 'The email address is badly formatted.') {
-                    $('#mensaggeRegisterValide').append('Ingrese un correo valido');
-                }
-                if (errorEmail === 'The email address is already in use by another account.') {
-                    $('#mensaggeRegisterValide').append('Este correo ya estas registrado');
-                }
-            });
-        refUsers.on('value', function (snap) {
-            let dataUsers = snap.val();
-        });
-    } else {
-        $('#mensaggeRegisterValide').append('Las contraseñas deben ser iguales');
-    }
-});
+
 //........................................................................ REGISTRO A LA BASE DE DATOS
 const guardarDataCorreo = (user, name, password, photoURL) => {
     firebase.database().ref('Usuarios/' + user.uid).set({
@@ -141,32 +141,4 @@ const guardarData = (user) => {
 
     }
     firebase.database().ref('Usuarios/' + user.uid).set(usuario);
-}
-//.......................................................................VALIDACION DE CORREO ELECTRONICO
-const validateEmail = (idSpan) => {
-    campo = event.target;
-    val = campo.value;
-    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    if (emailRegex.test(val)) {
-        idSpan.attr('class', 'icon-checkmark');
-    } else {
-        idSpan.attr('class', 'icon-cross');
-    }
-}
-// ..........................................................................estado de autentificacion en tiempo real
-firebase.auth().onAuthStateChanged(firebaseUser => {debugger
-    if (firebaseUser) {
-        console.log(firebaseUser);
-        let userLogin = firebaseUser.displayName;
-        let photoUser = firebaseUser.photoURL;
-        let componente = headerElement(userLogin,photoUser);
-        $('#header-main').append(componente);
-        $('#section-main').append(sectionElement());
-        $('#btnLogOut').show(); // aparece mi boton salir
-        $('#headerProfile').show();
-        $('#wapper-content').hide();// oculto mi login              
-    } else {// si no mostramos un mensaje de no regstrado 
-        console.log('No Autentificado');
-    }
-});
 }
