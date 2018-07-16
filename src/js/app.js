@@ -1,7 +1,6 @@
 // get elements
 window.onload = () =>{
     $('#contentLoginRegister').append(loginElement());
-
 const txtPassword = $('#txtPassword');
 const passwordUsers = $('#users-password');
 let txtEmail = $('#txtEmail');
@@ -28,16 +27,16 @@ $('#users-passwordTwo').bind('input', () => {
     }
 });
 //.........................................................................EVENTOS DISPLAY
+
 $('#btnSignUp').click(() => {
     $('#section-login').hide();
    // $('#contentLoginRegister').append('');
     $('#contentLoginRegister').append(registerElement());
-    
-
 });
 $('#back-login').click(() => {
-    $('#section-register-user').hide();
-    $('#contentLoginRegister').show();
+    alert('hola');
+    $('#section-register-user').remove();
+    loginElement();    
 });
 //...........................................................................INICIAR SESION
 $('#btnLogin').click(() => {
@@ -159,12 +158,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {debugger
         console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
-        let componente = headerElement(userLogin,photoUser);
-        $('#header-main').append(componente);
+        headerElement(userLogin,photoUser);        
         $('#section-main').append(sectionElement());
-        $('#btnLogOut').show(); // aparece mi boton salir
         $('#headerProfile').show();
-        $('#wapper-content').hide();// oculto mi login              
+        $('#wapper-content').hide();// oculto mi login 
     } else {// si no mostramos un mensaje de no regstrado 
         console.log('No Autentificado');
     }

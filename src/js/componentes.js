@@ -1,5 +1,5 @@
 headerElement = (userLogin,photo) =>{
-    return `
+    return $('#header-main').append(`
     <div class='header-main-content'>
         <div class='header-section'>
             <div class='menu-header-main'>
@@ -33,7 +33,7 @@ headerElement = (userLogin,photo) =>{
                 </ul>
             </nav>
         </div>
-    </div>`
+    </div>`);
 }
 sectionElement = () => {
     return `
@@ -92,7 +92,7 @@ registerElement = () => {
     </div>`
 }
 loginElement = () => {
-    return `<div id="section-login" class="content-login">
+    return $('#contentLoginRegister').append( `<div id="section-login" class="content-login">
         <form>
             <div class="logo">
                 <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">
@@ -129,5 +129,5 @@ loginElement = () => {
             </div>
 
         </form>
-    </div>`
+    </div>`);
 }
