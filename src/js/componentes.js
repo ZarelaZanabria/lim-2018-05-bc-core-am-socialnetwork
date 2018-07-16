@@ -1,5 +1,5 @@
 headerElement = (userLogin,photo) =>{
-    return `
+    return $('#header-main').append(`
     <div class='header-main-content'>
         <div class='header-section'>
             <div class='menu-header-main'>
@@ -24,7 +24,6 @@ headerElement = (userLogin,photo) =>{
                         <img src='${photo}' alt='photo-profile'>
                         <div id="welcomeProfile"> ${userLogin}</div>                        
                     </li>
-                    <li class='icon-home2'>  Inicio </li>
                     <li class='icon-question'></li>
                     <li class='icon-config'>
                         <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
@@ -33,15 +32,77 @@ headerElement = (userLogin,photo) =>{
                 </ul>
             </nav>
         </div>
-    </div>`
+    </div>`);
 }
 sectionElement = () => {
     return `
     <div class = 'devsite-main-content'>
         <div class = 'devsite-banner-content'>
-            <div class = 'devsite-newpost-content'></div>
-            <div class = 'devsite-section-nav'></div>
-            <div class = 'devsite-post'></div>
+            <div class = 'devsite-section-nav'>
+            </div>
+            <div class = 'devsite-post'>
+                <div class='newPost'>
+                    <select>
+                        <option>Público</option>
+                        <option>Mis amigos</option>
+                        <option>Solo yo</option>
+                    </select>
+                    <p type='text' id='input-post' value='En quien estas pensando?'><br>
+                    <div id='button-post'>
+                        <input type='button' value='Publicar' id='send-post'>
+                        <input type='button' value='Cancelar'>
+                    </div>
+                </div >
+                <div class='content-post'>
+                    <div class='stream-item-header'>
+                        <a class='profile-user-post'>
+                            <img class='photo-profile-user-post' url='{http}'>
+                            <span class='full-ame-user'>
+                                <strong> Noely Flores{nameUser}</strong>
+                            </span>
+                        </a>
+                        <small class='time'>
+                            <span class='time-post-regresivo'>25{time}</span>
+                        </small>
+                        <div class='icon-circle-down'>
+                            <div class='action-content'>
+                                <span></span>
+                                <div class='menu-action-content-post'>
+                                    <ul>
+                                    <li>Editar</li>
+                                    <li>Eliminar</li>
+                                    <ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='post-text-container'>
+                        <p>{post-text} hoola mamitas tengo un ninio de 1 anio y aun no puede caminar</p>    
+                    </div>
+                    <div class='post-container'></div>
+                    <div class='stream-item-footer'>
+                        <div class='acciones-post'>
+                        <ul>
+                            <li>
+                                <span class='icon-heart'></span >
+                                <label class='count-like-post'>212</label>
+                            </li>
+                            <li>
+                                <span class='icon-share2'></span >
+                                <label class='count-like-post'>45</label>
+                            </li>
+                        </ul>
+                        <div class='content-coment-post'>
+                            <div class='comentar-post'>
+                                <input type='text' placeholder='Agregar un comentario'>
+                            </div>
+                        </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div></div>
+            </div>
             <div class = 'devsite-page-nav'></div>            
         </div>
     </div>
@@ -55,7 +116,7 @@ EditPostElement = (img,title) => {
     return `<div></div>`;
 }
 registerElement = () => {
-    return `<div id="section-register-user" class="content-login">
+    return $('#contentLoginRegister').append(`<div id="section-register-user" class="content-login">
         <form>
             <div class="form-login">
                 <div>
@@ -89,10 +150,10 @@ registerElement = () => {
             </div>
 
         </form>
-    </div>`
+    </div>`);
 }
 loginElement = () => {
-    return `<div id="section-login" class="content-login">
+    return $('#contentLoginRegister').append(`<div id="section-login" class="content-login">
         <form>
             <div class="logo">
                 <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">
@@ -129,5 +190,5 @@ loginElement = () => {
             </div>
 
         </form>
-    </div>`
+    </div>`);
 }

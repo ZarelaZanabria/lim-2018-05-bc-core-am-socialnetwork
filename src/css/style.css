@@ -244,6 +244,82 @@ padding: 2em 1em;
     float: left;
     margin-right: 20px;
 }
+#section-register-user{
+    display: none;
+}
+.menu-header-main{
+    display: none;
+}
+/*..................................................................................Post*/
+.menu-profile-user img{
+    width: 50px;
+    height: 50px;
+}
+.devsite-post{
+    width: 40%;
+    padding: 2em;
+    margin: 2% 30%;
+}
+.newpost{
+    border: 1px solid red;
+    padding: 1em 1em;
+    margin: 5px;
+}
+.newPost select {
+    padding: .5em 1em;
+    background: #3F51B5;
+    color: #fff;
+}
+.newPost p{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #3F51B5;
+}
+/* ..........................all post*/
+.content-post{
+    border: 1px solid orange;
+    padding: 1em 1em;
+    margin: 5px;
+}
+.stream-item-header{
+    border: 1px solid purple;
+}
+.profile-user-post{
+    float: left;
+}
+.time{
+    float: left;
+}
+.icon-circle-down{
+    margin-left: 90%;
+}
+.action-content{
+    border: 1px solid #3F51B5;
+}
+.post-text-container{
+    border: 1px solid black;
+}
+.stream-item-footer{
+    border: 1px solid yellow;
+}
+.acciones-post ul{
+    width: 100%;
+}
+.stream-item-footer li{
+    list-style: none;
+    float: left;
+    padding: .2em 1em;
+    margin: 5px 5px;
+}
+.content-coment-post{
+    border: 1px solid brown;
+    padding: .3em .3em;
+    margin: 5px;
+}
+.content-coment-post input{
+    padding: 1em 2em;
+
+}
 @media (max-width:950px){
     .content-login{
         width: 50%;

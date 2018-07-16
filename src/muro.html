@@ -1,20 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div id="welcomeProfile"></div>
-    </header>
-    <section></section>
-    <footer></footer>
-    <script src="js/conexionUsers.js"></script>
-    <script src="js/usuario.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+
+<div class='header-main-content'>
+        <div class='header-section'>
+            <div class='menu-header-main'>
+                <span class='icon-menu'> </span>
+            </div>
+        </div>
+        <div class='header-section'>
+            <div class='logo-web'>
+                <span class='icon-user'></span>
+            </div>            
+        </div>
+        <div class='header-section'>
+            <div class=search-content>
+                <input type='text' class='search-input'>
+                <span class='icon-search'></span>
+            </div>
+        </div>
+        <div class='header-section'>
+            <nav>
+                <ul>
+                    <li class='menu-profile-user'>
+                        <img src='${photo}' alt='photo-profile'>
+                        <div id="welcomeProfile"> ${userLogin}</div>                        
+                    </li>
+                    <li class='icon-home2'>  Inicio </li>
+                    <li class='icon-question'></li>
+                    <li class='icon-config'>
+                        <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
+                    </li>
+                    <span class="icon-switch"></span>
+                </ul>
+            </nav>
+        </div>
+    </div>
