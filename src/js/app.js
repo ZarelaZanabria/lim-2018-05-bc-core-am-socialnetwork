@@ -1,6 +1,11 @@
 // get elements
+<<<<<<< HEAD
 window.onload = () =>{
     $('#contentLoginRegister').append(loginElement());
+=======
+//import  headerElement from '../../src/js/componentes.js';
+
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
 const txtPassword = $('#txtPassword');
 const passwordUsers = $('#users-password');
 let txtEmail = $('#txtEmail');
@@ -13,6 +18,7 @@ $('#txtEmail').bind('input', () => {
 $('#users-email').bind('input', () => {
     validateEmail($('#icon-validate'));
 });
+
 //....................................................................... VALIDACION DE PASSWORD REPETIDO
 $('#users-passwordTwo').bind('input', () => {
     passwordTwo = event.target.value;
@@ -30,6 +36,7 @@ $('#users-passwordTwo').bind('input', () => {
 
 $('#btnSignUp').click(() => {
     $('#section-login').hide();
+<<<<<<< HEAD
    // $('#contentLoginRegister').append('');
     $('#contentLoginRegister').append(registerElement());
 });
@@ -37,6 +44,21 @@ $('#back-login').click(() => {
     alert('hola');
     $('#section-register-user').remove();
     loginElement();    
+=======
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "componentesHTML/register.html", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            $('#contentLoginRegister').append('hola');
+        }
+    }
+    xmlhttp.send();
+});
+$('#back-login').click(() => {
+    $('#section-register-user').hide();
+    $('#contentLoginRegister').show();
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
 });
 //...........................................................................INICIAR SESION
 $('#btnLogin').click(() => {
@@ -60,9 +82,6 @@ $('#btnLogin').click(() => {
 //.............................................................................CERRAR SESION
 $('#btnLogOut').click(() => {
     firebase.auth().signOut();
-    $('#wapper-content').show();
-    $('#headerProfile').hide();
-    $('#componenteProfile').append('');
 });
 //...............................................................................AUTENTIFICACION CON GOOGLE
 $('#btnLoginGoogle').click(() => {
@@ -158,12 +177,27 @@ firebase.auth().onAuthStateChanged(firebaseUser => {debugger
         console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
+<<<<<<< HEAD
         headerElement(userLogin,photoUser);        
         $('#section-main').append(sectionElement());
         $('#headerProfile').show();
         $('#wapper-content').hide();// oculto mi login 
+=======
+        let componente = headerElement(userLogin,photoUser);
+        let section=sectionElement();
+        $('#header-main').show();
+        $('#header-main').append(componente);
+        $('#sectio-muro').append(section);
+        $('#portada').append('');
+        $('#contentLoginRegister').hide();
+        $('.onPortada').append();
+        $('#section-login').remove();
+        $('#section-register-user').remove();
+        $('#btnLogOut').show(); // aparece mi boton salir             
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
     } else {// si no mostramos un mensaje de no regstrado 
         console.log('No Autentificado');
+        
     }
 });
 }

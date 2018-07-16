@@ -120,8 +120,16 @@ padding: 2em 1em;
     width: 100%;
     height: 400px;
     order: 1px solid purple;
+<<<<<<< HEAD
 }
 .devsite-newpost-content{
+=======
+    background: blue;
+}
+.devsite-newpost-content{
+    width: 200px;
+    height: 400px;
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
     border: 1px solid #ff4081;
 }
 .devsite-section-nav{
@@ -133,6 +141,13 @@ padding: 2em 1em;
 .devsite-page-nav{
     border: 1px solid red;
 }
+<<<<<<< HEAD
+=======
+.menu-profile-user img{
+    width: 50px;
+    height: 50px;
+}
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
 /**/
 .section-button input{
     width: 100%;

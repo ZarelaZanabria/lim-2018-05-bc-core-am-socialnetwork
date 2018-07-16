@@ -1,5 +1,23 @@
+<<<<<<< HEAD
 headerElement = (userLogin,photo) =>{
     return $('#header-main').append(`
+=======
+portadaDescripcion = () => {
+    return `<div class="onPortada">
+    <div class="description-portada">
+        <h2>MAMÁ POR PRIMERA VEZ EN</h2>
+        <span class="description-portadaModo">MODO</span><span class="description-portadaMama">MAMA</span>
+        <div class="description"><span class="icon-heart"></span><p>Recibe muchimos tips</p></div>
+        <div class="description"><span class="icon-bubbles"></span><p>Orienta a tu comunidad</p></div>
+        <div class="description"><span class="icon-gift"></span><p>Especialistas en tu bolsillo</p></div>
+        <div class="description"><span class="icon-flag"></span><p>Haz que conoscan tu marca</p></div>
+    </div>                        
+</div>`
+        ;
+}
+headerElement = (userLogin, photo) => {
+    return `
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
     <div class='header-main-content'>
         <div class='header-section'>
             <div class='menu-header-main'>
@@ -33,7 +51,11 @@ headerElement = (userLogin,photo) =>{
                 </ul>
             </nav>
         </div>
+<<<<<<< HEAD
     </div>`);
+=======
+    </div>`
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
 }
 sectionElement = () => {
     return `
@@ -48,10 +70,14 @@ sectionElement = () => {
 `;
 }
 
+<<<<<<< HEAD
 deletePostElement = (img,title) => {
+=======
+deletePostElement = (img, title) => {
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
     return `<div></div>`;
 }
-EditPostElement = (img,title) => {
+EditPostElement = (img, title) => {
     return `<div></div>`;
 }
 registerElement = () => {
@@ -92,7 +118,11 @@ registerElement = () => {
     </div>`
 }
 loginElement = () => {
+<<<<<<< HEAD
     return $('#contentLoginRegister').append( `<div id="section-login" class="content-login">
+=======
+    return `<div id="section-login" class="content-login">
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
         <form>
             <div class="logo">
                 <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">
@@ -129,5 +159,10 @@ loginElement = () => {
             </div>
 
         </form>
+<<<<<<< HEAD
     </div>`);
 }
+=======
+    </div>`
+} 
+>>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
