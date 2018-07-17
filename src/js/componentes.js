@@ -1,34 +1,27 @@
     headerElement = (userLogin,photo) =>{
     return $('#header-main').append(`
     <div class='header-main-content'>
+
         <div class='header-section'>
-            <div class='menu-header-main'>
-                <span class='icon-menu'> </span>
-            </div>
-        </div>
-        <div class='header-section'>
-            <div class='logo-web'>
-                <span class='icon-user'></span>
-            </div>            
-        </div>
-        <div class='header-section'>
-            <div class=search-content>
+            <div class=search>
                 <input type='text' class='search-input'>
                 <span class='icon-search'></span>
             </div>
         </div>
-        <div class='header-section'>
+        <div class='header-section-user'>
             <nav>
                 <ul>
-                    <li class='menu-profile-user'>
-                        <img src='${photo}' alt='photo-profile'>
-                        <div id="welcomeProfile"> ${userLogin}</div>                        
-                    </li>
-                    <li class='icon-question'></li>
-                    <li class='icon-config'>
+                    <li>
                         <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
                     </li>
-                    <span class="icon-switch"></span>
+                    <li>
+                        <div id="welcomeProfile"> ${userLogin}</div>
+                    </li>
+                    
+                    <li >
+                        <img src='${photo}' alt='photo-profile'>                                                
+                    </li>
+                    
                 </ul>
             </nav>
         </div>
@@ -54,61 +47,67 @@ sectionElement = () => {
                     </div>
                 </div >
                 <div class='content-post'>
-                    <div class='stream-item-header'>
-                        <a class='profile-user-post'>
-                            <img class='photo-profile-user-post' url='{http}'>
-                            <span class='full-ame-user'>
-                                <strong> Noely Flores{nameUser}</strong>
-                            </span>
-                        </a>
-                        <small class='time'>
-                            <span class='time-post-regresivo'>25{time}</span>
-                        </small>
-                        <div class='icon-circle-down'>
-                            <div class='action-content'>
-                                <span></span>
-                                <div class='menu-action-content-post'>
-                                    <ul>
-                                    <li>Editar</li>
-                                    <li>Eliminar</li>
-                                    <ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='post-text-container'>
-                        <p>{post-text} hoola mamitas tengo un ninio de 1 anio y aun no puede caminar</p>    
-                    </div>
-                    <div class='post-container'></div>
-                    <div class='stream-item-footer'>
-                        <div class='acciones-post'>
-                        <ul>
-                            <li>
-                                <span class='icon-heart'></span >
-                                <label class='count-like-post'>212</label>
-                            </li>
-                            <li>
-                                <span class='icon-share2'></span >
-                                <label class='count-like-post'>45</label>
-                            </li>
-                        </ul>
-                        <div class='content-coment-post'>
-                            <div class='comentar-post'>
-                                <input type='text' placeholder='Agregar un comentario'>
-                            </div>
-                        </div>
-                        </div>
-                    
-                    </div>
+                    <ol class='items-post' id='items-post' ></ol>                    
                 </div>
-                <div></div>
             </div>
             <div class = 'devsite-page-nav'></div>            
         </div>
     </div>
 `;
 }
+sectionAllPost = (user,photo, coment, image,likes,time) =>{
+    return `
+    <li class='content-allPost'>
+        <div class='stream-item-header-allPost'>
+            <img class='photo-profile-user-post' src='${photo}' alt='photo'>    
+            <div class='profile-user-post'>               
+                <span class='full-name-user'>
+                    <strong> ${user}</strong>
+                </span>            
+                <small class='time'>
+                    <span class='time-post-regresivo'>${time}</span>
+                </small>
+                <div class='icon-circle-down'>
+                    <div class='action-content'>
+                        <span></span>
+                        <div class='menu-action-content-post'>
+                            <ul>
+                            <li>Editar</li>
+                            <li>Eliminar</li>
+                            <ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='post-text-container'>
+            <p>${coment}</p>    
+        </div>
+        <div class='post-container'>
+            <img src='${image}' alt='img'>
+        </div>
+        <div class='stream-item-footer'>
+            <div class='acciones-post'>
+            <div class='acction'>
+                <div class='icon-likes-post'>
+                    <span class='icon-heart'></span >
+                    <label class='count-like-post'>${likes}</label>
+                </div>
+                <div class='icon-likes-post'>
+                    <span class='icon-share2'></span >
+                    <label class='count-like-post'>${likes}</label>
+                </div>
+            </div>
+            <div class='content-coment-post'>
+                <div class='comentar-post'>
+                    <input type='text' placeholder='Agregar un comentario'>
+                </div>
+            </div>
+            </div>
 
+        </div>            
+    </li>`;
+}
 deletePostElement = (img,title) => {
     return `<div></div>`;
 }

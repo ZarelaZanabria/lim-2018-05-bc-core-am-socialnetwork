@@ -9,7 +9,8 @@
 .wapper-content{
     width: 100%;
     height: 100%;
-   background: #fff;
+    background: #e6ecf0;
+    background-size: cover;
 }
 .content-login{
     width: 30%;
@@ -72,52 +73,44 @@ none
 .header-main{
     width: 100%;
     height: 80px;
-    box-shadow: 0px -1px 5px 0px #9E9E9E;
-}
-.header-main-content{
-    margin: 0px 5%;
-    padding: 0em 0em;
-    height: 100%;
-}
-.header-menu-profile{
-    align-content: right;
 }
 .header-section{
     float: left;
+    width: 30%;
+    margin: 0% 3% 0% 25%;
 }
-.header-section nav{
-    padding: .4em .2em;
-    text-align: right;
+.heder-main-content{
+    align-content: space-around;
 }
-.menu-header-main, .logo-web, .search-content{
-padding: 2em 1em;
+.search{
+    width: 100%;
+     padding: .8em 0em;
+    border:1px solid #ccc;
+    border-radius: .8em;
+    float: left;
 }
-.header-section nav ul li{
+.search input{
+    width: 80%;
+    border: none;
+}
+.header-section-user{
+    float: right;
+}
+.header-section-user{
+    align-content: flex-start;
+}
+
+.header-section-user nav ul li{
     list-style: none;
     float: left;
-    padding: 0em 1em;
-    margin: 3px 3px;
+    margin: 0px 10px;
 }
-.header-section nav ul li img{
-    border-radius: 100%;
-    float: left;
-}
-#btnLogOut{
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #ff4081;
-    display:none;
-    float: left;
-    cursor: pointer;
-    margin: 20px 0px 0px 10px;
-}
-.icon-menu, .icon-user, .icon-home2, .icon-search, .icon-config, .icon-question{
-    font-size: 1.3em;
-    padding: .48em;
-}
-#mensaggeRegisterValide{
-    color: #fff;
+.header-section-user nav ul li img{
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+     border-radius: 100%;
+     float: left;
 }
 /*muro*/
 .devsite-banner-content{
@@ -133,6 +126,7 @@ padding: 2em 1em;
 }
 .devsite-post{
     border: 1px solid blue;
+    background: #fff;
 }
 .devsite-page-nav{
     border: 1px solid red;
@@ -242,7 +236,7 @@ padding: 2em 1em;
 .description p{
     font-weight: 100;
 }
-.icon-bubbles, .icon-gift, .icon-heart, .icon-flag{
+.icon-bubbles, .icon-gift, .icon-flag{
     font-size: 1.5em;
     float: left;
     margin-right: 20px;
@@ -254,6 +248,11 @@ padding: 2em 1em;
     display: none;
 }
 /*..................................................................................Post*/
+#post-main{
+    width: 100%;
+    height: auto;
+    background: #e6ecf0;
+}
 .menu-profile-user img{
     width: 50px;
     height: 50px;
@@ -284,44 +283,109 @@ padding: 2em 1em;
     padding: 1em 1em;
     margin: 5px;
 }
+.content-post ol{
+}
+.content-allPost{
+    width: 100%;
+    list-style: none;
+    padding: .5em .5em;
+    margin:10px 0px 5px -30px;
+    box-shadow:0px 0px 6px 0px #0000008a;
+}
 .stream-item-header{
     border: 1px solid purple;
 }
-.profile-user-post{
+.photo-profile-user-post{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
     float: left;
 }
-.time{
+.full-name-user{
+    padding: .5em .5em;
+    float: left;
+}
+
+.time-post-regresivo{
+    padding: .7em .5em;
+    color: #868d95;
     float: left;
 }
 .icon-circle-down{
+    
+    font-size: 1em;
     margin-left: 90%;
+    padding: .5em .5em;
 }
 .action-content{
-    border: 1px solid #3F51B5;
+    position: absolute;
+    background: #fff;
+    margin-left: -100;
+    
+    box-shadow: 0 0 5px 0px #00000070;
+}
+.action-content ul li{
+    list-style: none;
+    padding: .5em .5em;
+    margin-left: -40;
+    padding: .5em 3em;
+    border-bottom: .5px solid #ccc;
+    cursor: pointer;
+}
+.action-content ul li:hover{
+    background: #3F51B5;
+    color: #fff;
+
+}
+/*containe*/
+.post-container{
+    margin: 5px 0px;
+}
+.post-container img{
+    width: 100%;
+    border-radius: .2em;
 }
 .post-text-container{
-    border: 1px solid black;
+    border: 1px solid orange;
+    margin: 5px 0px;
+    padding: .5em .0em;
+    font-weight: 100;
+    color:#14171a;
 }
+/*footer post*/
 .stream-item-footer{
+    width: 100%;
     border: 1px solid yellow;
+    margin: 5px 0px;
 }
 .acciones-post ul{
     width: 100%;
 }
 .stream-item-footer li{
+    width: 50%;
     list-style: none;
     float: left;
-    padding: .2em 1em;
-    margin: 5px 5px;
+    
 }
-.content-coment-post{
-    border: 1px solid brown;
-    padding: .3em .3em;
-    margin: 5px;
+.icon-likes-post{
+    width: 50%;
+    height: 25px;
+    margin: 5px 0px;
+    float: left;
 }
-.content-coment-post input{
-    padding: 1em 2em;
+.icon-share2, .icon-heart{
+    margin-left: 50%;
+}
 
+.content-coment-post input{
+    width: 100%;
+    border: none;
+    padding: 1em 2em;
+    border-radius: .4em;
+    outline: none;
+}
+.icon-heart, .icon-share2{
+    padding-left: 0;
 }
 @media (max-width:950px){
     .content-login{
