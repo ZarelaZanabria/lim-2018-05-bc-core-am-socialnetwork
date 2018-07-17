@@ -15,7 +15,7 @@
                         <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
                     </li>
                     <li>
-                        <div id="welcomeProfile"> ${userLogin}</div>
+                        <div id="welcomeProfile">${userLogin}</div>
                     </li>
                     
                     <li >
@@ -35,16 +35,26 @@ sectionElement = () => {
             </div>
             <div class = 'devsite-post'>
                 <div class='newPost'>
-                    <select>
+                    <select id='typePost'>
                         <option>Público</option>
                         <option>Mis amigos</option>
                         <option>Solo yo</option>
                     </select>
-                    <p type='text' id='input-post' value='En quien estas pensando?'><br>
-                    <div id='button-post'>
-                        <input type='button' value='Publicar' id='send-post'>
-                        <input type='button' value='Cancelar'>
+                    <input type='textarea' id='input-post' class='input-post' placeholder='En quien estas pensando?'><br>
+                    <div id='file-preview-zone'></div>
+                    <div class='accion-public'>
+                    
+                        <div class='public-image'>
+                            <input type="file" name="file" id="file" class="inputfile" />
+                            <label for="file" class='icon-images'>  Foto/video</label>
+                        </div>
+                        
+                        <div id='button-post' >
+                            <input type='button' value='Publicar' id='send-post' class='publicar-cancelar'>
+                            <input type='button' value='Cancelar' class='publicar-cancelar' id='publicar-cancelar'>
+                        </div>
                     </div>
+                    
                 </div >
                 <div class='content-post'>
                     <ol class='items-post' id='items-post' ></ol>                    
@@ -64,12 +74,12 @@ sectionAllPost = (user,photo, coment, image,likes,time) =>{
                 <span class='full-name-user'>
                     <strong> ${user}</strong>
                 </span>            
-                <small class='time'>
+                <small class='time' id='time'>
                     <span class='time-post-regresivo'>${time}</span>
                 </small>
-                <div class='icon-circle-down'>
+                <input type='button' id='button-editar-elimivar'>
+                <span class='icon-circle-down'></span>
                     <div class='action-content'>
-                        <span></span>
                         <div class='menu-action-content-post'>
                             <ul>
                             <li>Editar</li>

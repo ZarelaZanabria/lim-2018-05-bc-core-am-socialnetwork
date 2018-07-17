@@ -6,6 +6,10 @@ newPost = firebase.database().ref().child('posts');
 newPostUser = firebase.database().ref().child('user-posts');
 
 writeNewPost = (uidUser, username, picture, post, privacy) => {
+    let fecha = new Date();
+    let dateNew = fecha.getDate()+ "/" + (fecha.getMonth () + 1) + "/" + fecha.getFullYear () +
+    "  " + fecha. getHours () + ": " + fecha.getMinutes ();
+
     post = {
         uidUser: uidUser,
         author: username,
@@ -13,7 +17,7 @@ writeNewPost = (uidUser, username, picture, post, privacy) => {
         image: picture,
         starCount: 0,
         privacy: privacy,
-        time: '19:20',
+        time: dateNew,
     }
     let newPostKey = newPost.push().key;
     firebase.database().ref('posts/' + newPostKey).set(post);
@@ -22,6 +26,7 @@ writeNewPost = (uidUser, username, picture, post, privacy) => {
 
 }
 insertNewPost = (picture, post, privacy) => {
+    console.log(picture, post, privacy);
     let userId = firebase.auth().currentUser;
     writeNewPost(userId.uid, userId.displayName, picture, post, privacy);
     viewPost();
@@ -48,9 +53,6 @@ const deletePost = (uid) => {
     let dataUserDelete = this.getAttribute("data-users");
     let refUsersDelete = postRef.child(dataUserDelete);
     refUsersDelete.remove();
-
-
-
 }
 const editPost = (post,privacy) => {
     function writeNewPost(uid, username, picture, title, body) {
@@ -72,6 +74,7 @@ const editPost = (post,privacy) => {
 
   return firebase.database().ref().update(updates);
 }
+}
 const likesCount = () => {
 
 }
@@ -87,4 +90,3 @@ const addCommnent = () => {
 const deleteComment = () => {
 
 }
-// actualizaciones
