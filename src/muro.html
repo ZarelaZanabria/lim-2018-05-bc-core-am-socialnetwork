@@ -1,20 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div id="welcomeProfile"></div>
-    </header>
-    <section></section>
-    <footer></footer>
-    <script src="js/conexionUsers.js"></script>
-    <script src="js/usuario.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+`
+                <li class='content-allPost'>
+                    <div class='stream-item-header-allPost'>
+                        <img class='photo-profile-user-post' src='${dataUser.photoURL}' alt='photo'>    
+                        <div class='profile-user-post'>               
+                            <span class='full-name-user'>
+                                <strong> ${dataUser.usersName}</strong>
+                            </span>            
+                            <small class='time' id='time'>
+                                <span class='time-post-regresivo'>${dataPosts[post].time}</span>
+                            </small>
+                            <div id='button-editar-eliminar' onclick='';)>
+                                <span class='icon-circle-down'></span>
+                                <div class='action-content'>
+                                    <div class='menu-action-content-post'>
+                                        <ul>
+                                        <li>Editar</li>
+                                        <li>Eliminar</li>
+                                        <ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='post-text-container'>
+                        <p>${dataPosts[post].content}</p>    
+                    </div>
+                    <div class='post-container'>
+                        <img src='${dataPosts[post].image}' alt='img'>
+                    </div>
+                    <div class='stream-item-footer'>
+                        <div class='acciones-post'>
+                        <div class='acction'>
+                            <div class='icon-likes-post'>
+                                <span class='icon-heart'></span >
+                                <label class='count-like-post'>${dataPosts[post].starCount}</label>
+                            </div>
+                            <div class='icon-likes-post'>
+                                <span class='icon-share2'></span >
+                                <label class='count-like-post'>${dataPosts[post].starCount}</label>
+                            </div>
+                        </div>
+                        <div class='content-coment-post'>
+                            <div class='comentar-post'>
+                                <input type='text' placeholder='Agregar un comentario'>
+                            </div>
+                        </div>
+                        </div>
+            
+                    </div>            
+                </li>`

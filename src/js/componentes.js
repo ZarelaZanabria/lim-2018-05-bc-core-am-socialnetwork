@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 portadaDescripcion = () => {
     return `<div class="onPortada">
     <div class="description-portada">
@@ -26,10 +27,19 @@ headerElement = (userLogin, photo) => {
         </div>
         <div class='header-section'>
             <div class=search-content>
+=======
+headerElement = (userLogin, photo) => {
+    return $('#header-main').append(`
+    <div class='header-main-content'>
+
+        <div class='header-section'>
+            <div class=search>
+>>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
                 <input type='text' class='search-input'>
                 <span class='icon-search'></span>
             </div>
         </div>
+<<<<<<< HEAD
         <div class='header-section'>
             <nav>
                 <ul>
@@ -61,6 +71,104 @@ sectionElement = () => {
 `;
 }
 
+=======
+        <div class='header-section-user'>
+            <nav>
+                <ul>
+                    <li>
+                        <div id="welcomeProfile">${userLogin}</div>
+                    </li>                    
+                    <li>
+                        <img src='${photo}' alt='photo-profile' id="btnLogOut">                                                
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>`);
+}
+sectionElement = () => {
+    return `<select id='typePost'>
+                <option>Público</option>
+                <option>Mis amigos</option>
+                <option>Solo yo</option>
+            </select>
+            <input type='textarea' id='input-post' class='input-post' placeholder='En quien estas pensando?'><br>
+            <div id='file-preview-zone'></div>
+            <div class='accion-public'>                    
+                <div class='public-image'>
+                    <input type="file" name="file" id="file" class="inputfile" />
+                    <label for="file" class='icon-images'>  Foto/video</label>
+                </div>                        
+                <div id='button-post' >
+                    <input type='button' value='Publicar' id='send-post' class='publicar-cancelar'>
+                    <input type='button' value='Cancelar' class='publicar-cancelar' id='publicar-cancelar'>
+                </div>
+            </div>  
+            <div class='edit-eliminar'id='edit-eliminar'>
+                <input type='textarea' id='input-post-edit' class='input-post'><br>
+                <div id='button-post' >
+                    <input type='button' value='Editar' id='edit-post' class='publicar-cancelar'>
+                    <input type='button' value='Eliminar' class='publicar-cancelar' id='eliminar'>
+                </div>
+            </div>    
+`;
+}
+const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
+    return `
+    <li class='content-allPost'>
+        <div class='stream-item-header-allPost'>
+            <img class='photo-profile-user-post' src='${photo}' alt='photo'>    
+            <div class='profile-user-post'>               
+                <span class='full-name-user'>
+                    <strong> ${user}</strong>
+                </span>            
+                <small class='time' id='time'>
+                    <span class='time-post-regresivo'>${time}</span>
+                </small>
+                <div id='button-editar-eliminar' '>
+                    <span class='icon-circle-down'   onclick='abrir(this)'></span>
+                    <div class='action-content'>
+                        <div class='menu-action-content-post'>
+                            <ul>
+                            <li id='${idpost}' onclick='editar(this.id)'>Editar</li>
+                            <li id='${idpost}' onclick='eliminar(this.id)'>Eliminar</li>
+                            <ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='post-text-container'>
+            <p>${coment}</p>    
+        </div>
+        <div class='post-container'>
+            <img src='${image}' alt='img'>
+        </div>
+        <div class='content-edit'></div>
+        <div class='stream-item-footer'>
+            <div class='acciones-post'>
+            <div class='acction'>
+                <div class='icon-likes-post'>
+                    <span class='icon-heart'></span >
+                    <label class='count-like-post'>${likes}</label>
+                </div>
+                <div class='icon-likes-post'>
+                    <span class='icon-share2'></span >
+                    <label class='count-like-post'>${likes}</label>
+                </div>
+            </div>
+            <div class='content-coment-post'>
+                <div class='comentar-post'>
+                    <input type='text' placeholder='Agregar un comentario'>
+                </div>
+            </div>
+            </div>
+
+        </div>            
+    </li>`;
+}
+>>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
 deletePostElement = (img, title) => {
     return `<div></div>`;
 }
@@ -68,7 +176,11 @@ EditPostElement = (img, title) => {
     return `<div></div>`;
 }
 registerElement = () => {
+<<<<<<< HEAD
     return `<div id="section-register-user" class="content-login">
+=======
+    return $('#contentLoginRegister').append(`<div id="section-register-user" class="content-login">
+>>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
         <form>
             <div class="form-login">
                 <div>
@@ -102,10 +214,17 @@ registerElement = () => {
             </div>
 
         </form>
+<<<<<<< HEAD
     </div>`
 }
 loginElement = () => {
     return `<div id="section-login" class="content-login">
+=======
+    </div>`);
+}
+loginElement = () => {
+    return $('#contentLoginRegister').append(`<div id="section-login" class="content-login">
+>>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
         <form>
             <div class="logo">
                 <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">
@@ -142,5 +261,10 @@ loginElement = () => {
             </div>
 
         </form>
+<<<<<<< HEAD
     </div>`
 } 
+=======
+    </div>`);
+}
+>>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
