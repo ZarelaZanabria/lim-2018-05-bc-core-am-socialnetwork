@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 headerElement = (userLogin, photo) => {
-=======
-headerElement = (userLogin,photo) =>{
->>>>>>> 7c628dfc28a26b71d4b4cbb9fc6fd0bf051637c7
     return $('#header-main').append(`
     <div class='header-main-content'>
 
@@ -105,14 +101,10 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
             </div>
             </div>
 
-<<<<<<< HEAD
         </div>            
     </li>`;
 }
 deletePostElement = (img, title) => {
-=======
-deletePostElement = (img,title) => {
->>>>>>> 7c628dfc28a26b71d4b4cbb9fc6fd0bf051637c7
     return `<div></div>`;
 }
 EditPostElement = (img, title) => {
@@ -156,11 +148,7 @@ registerElement = () => {
     </div>`);
 }
 loginElement = () => {
-<<<<<<< HEAD
     return $('#contentLoginRegister').append(`<div id="section-login" class="content-login">
-=======
-    return $('#contentLoginRegister').append( `<div id="section-login" class="content-login">
->>>>>>> 7c628dfc28a26b71d4b4cbb9fc6fd0bf051637c7
         <form>
             <div class="logo">
                 <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">

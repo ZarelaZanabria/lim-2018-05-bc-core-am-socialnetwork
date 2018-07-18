@@ -91,7 +91,6 @@ none
     width: 90%;
     border: none;
     outline: none;
-<<<<<<< HEAD
 }
 .header-section-user{
     float: right;
@@ -102,10 +101,6 @@ none
 
 .header-section-user nav ul li{
     list-style: none;
-=======
-    color: #fff;
-    background: #ff4081;
->>>>>>> 7c628dfc28a26b71d4b4cbb9fc6fd0bf051637c7
     float: left;
     margin: 0px 10px;
 }
@@ -126,42 +121,11 @@ none
     width: 100%;
     height: 400px;
     order: 1px solid purple;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-}
-.devsite-newpost-content{
-=======
-    background: blue;
-}
-.devsite-newpost-content{
-    width: 200px;
-    height: 400px;
->>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
-    border: 1px solid #ff4081;
-}
-.devsite-section-nav{
-    border: 1px solid green;
->>>>>>> 7c628dfc28a26b71d4b4cbb9fc6fd0bf051637c7
 }
 
 .devsite-post{
-<<<<<<< HEAD
     background: #fff;
-=======
-    border: 1px solid blue;
 }
-.devsite-page-nav{
-    border: 1px solid red;
-}
-<<<<<<< HEAD
-=======
-.menu-profile-user img{
-    width: 50px;
-    height: 50px;
->>>>>>> 7c628dfc28a26b71d4b4cbb9fc6fd0bf051637c7
-}
->>>>>>> 76ed721d8b88ddf485fb567bdd0cdcbb88779068
 /**/
 .section-button input{
     width: 100%;
@@ -533,7 +497,7 @@ none
     }
     .header-section {
         float: left;
-         width: 50%; 
+         width: 40%; 
         margin: 20px 3% 0% 10%; 
         
     }
@@ -552,6 +516,12 @@ none
     }
     .wapper-portada{
         min-height: 450px;
+    }
+    .header-section {
+        float: left;
+         width: 30%; 
+        margin: 20px 3% 0% 10%; 
+        
     }
   
 
