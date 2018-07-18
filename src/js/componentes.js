@@ -62,7 +62,7 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
                 <small class='time' id='time'>
                     <span class='time-post-regresivo'>${time}</span>
                 </small>
-                <div id='button-editar-eliminar' '>
+                <div id='button-editar-eliminar'>
                     <span class='icon-circle-down'   onclick='abrir(this)'></span>
                     <div class='action-content'>
                         <div class='menu-action-content-post'>
@@ -79,7 +79,6 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
             <p>${coment}</p>    
         </div>
         <div class='post-container'>
-            <img src='${image}' alt='img'>
         </div>
         <div class='content-edit'></div>
         <div class='stream-item-footer'>
@@ -102,7 +101,7 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
             </div>
 
         </div>            
-    </li>`;
+    </li>`;//<div class='post-container'> <img src='${image}' alt='img'></div>
 }
 deletePostElement = (img, title) => {
     return `<div></div>`;

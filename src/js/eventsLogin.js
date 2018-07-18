@@ -22,7 +22,6 @@ eventsLogin = () => {
     refUsers = firebase.database().ref().child('Usuarios');
     $('#register').click(() => {
         if($('#users-email').val()!='' && $('#users-password').val()!='' && $('#users-name').val()!='' && $('#user-last-name').val()!='' && $('#users-pasword').val()!=''&& $('#users-passwordTwo').val()!=''){
-      
             if (passwordValidate === 'passwordValido' ) {
                 const promise = firebase.auth()
                     .createUserWithEmailAndPassword($('#users-email').val(), $('#users-password').val())

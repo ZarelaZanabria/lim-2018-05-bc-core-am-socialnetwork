@@ -6,24 +6,31 @@ eventsPost = () => {
   });
   $('#send-post').click(() => {
     insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val());
+    location.reload();
     readFile();
   });
+  /* $('.icon-circle-down').click(() => {
+    $('.action-content').show();
+    alert('hola eliminar editar');
+  }) */
   abrir = () => {
     /* const listPost = document.querySelectorAll('.content-allPost');
     listPost.addEventListener('click',event=>{
       console.log(event.target);
     }); */
-    $('.action-content').show();
+    $('.action-content').show(); $('.menu-action-content-post').show();
   }
   eliminar = (uidPost) =>{
-    //console.log(uidPost+'hola');
     deletePost(uidPost);
-    location.reload();
+    $('.menu-action-content-post').hide();
   }
   editar=()=>{
-    $('.content-edit').show;
-    document.getElementById('send-post').setAttribute('value','Modificar');
+    $('.menu-action-content-post').hide();
+    $('.content-edit').show();
+    document.getElementsByClassName('content-edit').innerHTML='';
     $('.content-edit').append(sectionElement());
+    document.getElementById('send-post').setAttribute('value','Modificar');
+  
   }
   function readFile(input) {
     if (input.files && input.files[0]) {
