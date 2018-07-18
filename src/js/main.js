@@ -1,29 +1,4 @@
 //window.onload = inicializar;
-<<<<<<< HEAD
-const writeNewPost = (uid, username, picture, title, privacy,fecha) => {
-    var postData = {
-        author: username,
-        uid: uid,
-        title: title,
-        starCount: 0,
-        privacy: privacy,
-        image: picture,
-    };
-    var newPostKey = firebase.database().ref().child('posts').push().key;
-
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    var updates = {};
-    updates['/posts/' + newPostKey] = postData;
-    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-    return firebase.database().ref().update(updates);
-}
-const deletePost = (uid)=>{
-
-}
-const editPost = () => {
-
-=======
 let newPost;
 let newPostUser;
 
@@ -112,7 +87,6 @@ const editPost = (post, privacy) => {
 
         return firebase.database().ref().update(updates);
     }
->>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
 }
 const likesCount = () => {
 
@@ -128,9 +102,4 @@ const addCommnent = () => {
 }
 const deleteComment = () => {
 
-<<<<<<< HEAD
 }
-// actualizaciones
-=======
-}
->>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0

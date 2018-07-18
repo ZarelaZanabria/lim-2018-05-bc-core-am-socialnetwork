@@ -1,77 +1,13 @@
-<<<<<<< HEAD
-portadaDescripcion = () => {
-    return `<div class="onPortada">
-    <div class="description-portada">
-        <h2>MAMÁ POR PRIMERA VEZ EN</h2>
-        <span class="description-portadaModo">MODO</span><span class="description-portadaMama">MAMA</span>
-        <div class="description"><span class="icon-heart"></span><p>Recibe muchimos tips</p></div>
-        <div class="description"><span class="icon-bubbles"></span><p>Orienta a tu comunidad</p></div>
-        <div class="description"><span class="icon-gift"></span><p>Especialistas en tu bolsillo</p></div>
-        <div class="description"><span class="icon-flag"></span><p>Haz que conoscan tu marca</p></div>
-    </div>                        
-</div>`
-        ;
-}
-headerElement = (userLogin, photo) => {
-    return `
-    <div class='header-main-content'>
-        <div class='header-section'>
-            <div class='menu-header-main'>
-                <span class='icon-menu'> </span>
-            </div>
-        </div>
-        <div class='header-section'>
-            <div class='logo-web'>
-                <span class='icon-user'></span>
-            </div>            
-        </div>
-        <div class='header-section'>
-            <div class=search-content>
-=======
 headerElement = (userLogin, photo) => {
     return $('#header-main').append(`
     <div class='header-main-content'>
 
         <div class='header-section'>
             <div class=search>
->>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
                 <input type='text' class='search-input'>
                 <span class='icon-search'></span>
             </div>
         </div>
-<<<<<<< HEAD
-        <div class='header-section'>
-            <nav>
-                <ul>
-                    <li class='menu-profile-user'>
-                        <img src='${photo}' alt='photo-profile'>
-                        <div id="welcomeProfile"> ${userLogin}</div>                        
-                    </li>
-                    <li class='icon-home2'>  Inicio </li>
-                    <li class='icon-question'></li>
-                    <li class='icon-config'>
-                        <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
-                    </li>
-                    <span class="icon-switch"></span>
-                </ul>
-            </nav>
-        </div>
-    </div>`
-}
-sectionElement = () => {
-    return `
-    <div class = 'devsite-main-content'>
-        <div class = 'devsite-banner-content'>
-            <div class = 'devsite-newpost-content'></div>
-            <div class = 'devsite-section-nav'></div>
-            <div class = 'devsite-post'></div>
-            <div class = 'devsite-page-nav'></div>            
-        </div>
-    </div>
-`;
-}
-
-=======
         <div class='header-section-user'>
             <nav>
                 <ul>
@@ -168,7 +104,6 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
         </div>            
     </li>`;
 }
->>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
 deletePostElement = (img, title) => {
     return `<div></div>`;
 }
@@ -176,11 +111,7 @@ EditPostElement = (img, title) => {
     return `<div></div>`;
 }
 registerElement = () => {
-<<<<<<< HEAD
-    return `<div id="section-register-user" class="content-login">
-=======
     return $('#contentLoginRegister').append(`<div id="section-register-user" class="content-login">
->>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
         <form>
             <div class="form-login">
                 <div>
@@ -214,17 +145,10 @@ registerElement = () => {
             </div>
 
         </form>
-<<<<<<< HEAD
-    </div>`
-}
-loginElement = () => {
-    return `<div id="section-login" class="content-login">
-=======
     </div>`);
 }
 loginElement = () => {
     return $('#contentLoginRegister').append(`<div id="section-login" class="content-login">
->>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
         <form>
             <div class="logo">
                 <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">
@@ -261,10 +185,5 @@ loginElement = () => {
             </div>
 
         </form>
-<<<<<<< HEAD
-    </div>`
-} 
-=======
     </div>`);
 }
->>>>>>> 9116f5b27d74f4b195365ea8d0b91492e5a4e2f0
