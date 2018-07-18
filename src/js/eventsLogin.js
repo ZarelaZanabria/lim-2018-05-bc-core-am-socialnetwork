@@ -28,7 +28,7 @@ eventsLogin = () => {
                     .createUserWithEmailAndPassword($('#users-email').val(), $('#users-password').val())
                     .then(function (user) {
                         const nameUsers = $('#users-name').val() + ' ' + $('#users-last-name').val();
-                        guardarDataCorreo(user, nameUsers,$('#users-password').val(), 'null');
+                        guardarDataCorreo(user, nameUsers,$('#users-password').val(), 'http://svgur.com/i/65U.svg');
                         return user.updateProfile({ 'displayName': nameUsers });
                     }).catch(function (error) {
                         console.log(error.message);
@@ -122,6 +122,11 @@ eventsLogin = () => {
     $('#btnSignUp').click(() => {
         $('#section-login').hide();
         $('#section-register-user').show();
+        /* $("#test").on('click', function() {
+
+            $.fancybox.open('<div class="message"><h2>Hello!</h2><p>You are awesome!</p></div>');
+          
+          }); */
         
     });
     $('#back-login').click(() => {

@@ -1,4 +1,4 @@
-    headerElement = (userLogin,photo) =>{
+headerElement = (userLogin, photo) => {
     return $('#header-main').append(`
     <div class='header-main-content'>
 
@@ -12,14 +12,10 @@
             <nav>
                 <ul>
                     <li>
-                        <button type="button" id="btnLogOut" value="Salir">Cerrar Sesion</button>
-                    </li>
-                    <li>
                         <div id="welcomeProfile">${userLogin}</div>
-                    </li>
-                    
-                    <li >
-                        <img src='${photo}' alt='photo-profile'>                                                
+                    </li>                    
+                    <li>
+                        <img src='${photo}' alt='photo-profile' id="btnLogOut">                                                
                     </li>
                     
                 </ul>
@@ -28,44 +24,33 @@
     </div>`);
 }
 sectionElement = () => {
-    return `
-    <div class = 'devsite-main-content' id='devsite-main-content'>
-        <div class = 'devsite-banner-content'>
-            <div class = 'devsite-section-nav'>
-            </div>
-            <div class = 'devsite-post'>
-                <div class='newPost'>
-                    <select id='typePost'>
-                        <option>Público</option>
-                        <option>Mis amigos</option>
-                        <option>Solo yo</option>
-                    </select>
-                    <input type='textarea' id='input-post' class='input-post' placeholder='En quien estas pensando?'><br>
-                    <div id='file-preview-zone'></div>
-                    <div class='accion-public'>
-                    
-                        <div class='public-image'>
-                            <input type="file" name="file" id="file" class="inputfile" />
-                            <label for="file" class='icon-images'>  Foto/video</label>
-                        </div>
-                        
-                        <div id='button-post' >
-                            <input type='button' value='Publicar' id='send-post' class='publicar-cancelar'>
-                            <input type='button' value='Cancelar' class='publicar-cancelar' id='publicar-cancelar'>
-                        </div>
-                    </div>
-                    
-                </div >
-                <div class='content-post'>
-                    <ol class='items-post' id='items-post' ></ol>                    
+    return `<select id='typePost'>
+                <option>Público</option>
+                <option>Mis amigos</option>
+                <option>Solo yo</option>
+            </select>
+            <input type='textarea' id='input-post' class='input-post' placeholder='En quien estas pensando?'><br>
+            <div id='file-preview-zone'></div>
+            <div class='accion-public'>                    
+                <div class='public-image'>
+                    <input type="file" name="file" id="file" class="inputfile" />
+                    <label for="file" class='icon-images'>  Foto/video</label>
+                </div>                        
+                <div id='button-post' >
+                    <input type='button' value='Publicar' id='send-post' class='publicar-cancelar'>
+                    <input type='button' value='Cancelar' class='publicar-cancelar' id='publicar-cancelar'>
                 </div>
-            </div>
-            <div class = 'devsite-page-nav'></div>            
-        </div>
-    </div>
+            </div>  
+            <div class='edit-eliminar'id='edit-eliminar'>
+                <input type='textarea' id='input-post-edit' class='input-post'><br>
+                <div id='button-post' >
+                    <input type='button' value='Editar' id='edit-post' class='publicar-cancelar'>
+                    <input type='button' value='Eliminar' class='publicar-cancelar' id='eliminar'>
+                </div>
+            </div>    
 `;
 }
-sectionAllPost = (user,photo, coment, image,likes,time) =>{
+const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
     return `
     <li class='content-allPost'>
         <div class='stream-item-header-allPost'>
@@ -77,13 +62,13 @@ sectionAllPost = (user,photo, coment, image,likes,time) =>{
                 <small class='time' id='time'>
                     <span class='time-post-regresivo'>${time}</span>
                 </small>
-                <input type='button' id='button-editar-elimivar'>
-                <span class='icon-circle-down'></span>
+                <div id='button-editar-eliminar' '>
+                    <span class='icon-circle-down'   onclick='abrir(this)'></span>
                     <div class='action-content'>
                         <div class='menu-action-content-post'>
                             <ul>
-                            <li>Editar</li>
-                            <li>Eliminar</li>
+                            <li id='${idpost}' onclick='editar(this.id)'>Editar</li>
+                            <li id='${idpost}' onclick='eliminar(this.id)'>Eliminar</li>
                             <ul>
                         </div>
                     </div>
@@ -96,6 +81,7 @@ sectionAllPost = (user,photo, coment, image,likes,time) =>{
         <div class='post-container'>
             <img src='${image}' alt='img'>
         </div>
+        <div class='content-edit'></div>
         <div class='stream-item-footer'>
             <div class='acciones-post'>
             <div class='acction'>
@@ -118,10 +104,10 @@ sectionAllPost = (user,photo, coment, image,likes,time) =>{
         </div>            
     </li>`;
 }
-deletePostElement = (img,title) => {
+deletePostElement = (img, title) => {
     return `<div></div>`;
 }
-EditPostElement = (img,title) => {
+EditPostElement = (img, title) => {
     return `<div></div>`;
 }
 registerElement = () => {
