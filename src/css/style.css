@@ -345,6 +345,9 @@ none
 #send-post{
     background: #ff4081;
 }
+#edit-post{
+    display: none;
+}
 .edit-eliminar{
     display:none;
 }

@@ -37,6 +37,7 @@ sectionElement = () => {
                     <label for="file" class='icon-images'>  Foto/video</label>
                 </div>                        
                 <div id='button-post' >
+                    <input type='button' value='Modificar' id='edit-post' class='publicar-cancelar'>
                     <input type='button' value='Publicar' id='send-post' class='publicar-cancelar'>
                     <input type='button' value='Cancelar' class='publicar-cancelar' id='publicar-cancelar'>
                 </div>
@@ -44,7 +45,7 @@ sectionElement = () => {
               
 `;
 }
-const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
+const sectionAllPost = (user, photo, coment, image, like,time, idpost) => {
     return `
     <li class='content-allPost'>
         <div class='stream-item-header-allPost'>
@@ -74,12 +75,12 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
             <div class='acciones-post'>
             <div class='acction'>
                 <div class='icon-likes-post'>
-                    <span class='icon-heart'></span >
-                    <label class='count-like-post'>${likes}</label>
+                    <span class='icon-heart' data-posts='${idpost}'></span >
+                    <label class='count-like-post'>${like}</label>
                 </div>
                 <div class='icon-likes-post'>
                     <span class='icon-share2'></span >
-                    <label class='count-like-post'>${likes}</label>
+                    <label class='count-share-post'>0</label>
                 </div>
             </div>
             <div class='content-coment-post'>

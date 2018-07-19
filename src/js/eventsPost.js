@@ -1,18 +1,9 @@
-
+let uidPost;
+let elementoUpdate = document.getElementsByClassName('update');
+let elementoDelete = document.getElementsByClassName('delete');
+let elementoLike = document.getElementsByClassName('icon-heart');
 //.............................................................................CERRAR SESION
 eventsPost = () => {
-  $('#btnLogOut').click(() => {
-    firebase.auth().signOut();
-  });
-  $('#send-post').click(() => {
-    insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val(),null);
-    modo=CREATE;
-    readFile();
-  });
-
-
-  let elementoDelete = document.getElementsByClassName('delete');
-
   for (let index = 0; index < elementoDelete.length; index++) {
     elementoDelete[index].addEventListener('click', () => {
       let dataDeletePost = elementoDelete[index].getAttribute("data-posts");
@@ -21,37 +12,41 @@ eventsPost = () => {
     }, false);
   }
 
-  let elementoUpdate = document.getElementsByClassName('update');
-  console.log(elementoUpdate);
   for (let index = 0; index < elementoUpdate.length; index++) {
     elementoUpdate[index].addEventListener('click', () => {
-      
       let dataUserUpdate = elementoUpdate[index].getAttribute("data-posts");
-      refUsersUpdate = firebase.database().ref('posts/'+dataUserUpdate);//post
+      refUsersUpdate = firebase.database().ref('posts/' + dataUserUpdate);//post
       refUsersUpdate.once('value', function (snap) {
         var datos = snap.val();
-        document.getElementById('input-post').value = datos.content; 
-        insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val(),dataUserUpdate);    
+        uidPost = dataUserUpdate;
+        document.getElementById('input-post').value = datos.content;
+        $('#send-post').hide();
+        $('#edit-post').show();
+      });
     });
-    document.getElementById('send-post').value = UPDATE;
-    modo=UPDATE; 
-    },false);
-
+  }
+  for (let index = 0; index < elementoLike.length; index++) {
+    elementoLike[index].addEventListener('click', () => {
+      let dataLikePost = elementoLike[index].getAttribute("data-posts");    
+      Like(dataLikePost);
+    }, false);
+    
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  $('#btnLogOut').click(() => {
+    firebase.auth().signOut();
+  });
+  $('#send-post').click(() => {
+    insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val());
+    //document.location.reload();
+    readFile();
+  });
+  $('#edit-post').click(() => {
+    updateNewPost($('#input-post').val(), $('#typePost').val(), uidPost);
+    $('#send-post').show();
+    //document.location.reload();
+    readFile();
+  });
   function readFile(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
