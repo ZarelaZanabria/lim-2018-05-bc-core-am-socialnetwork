@@ -21,11 +21,9 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#portada').hide();
         $('#contentLoginRegister').hide();
         $('#section-register-user').remove();
-        $('#section-login').remove();
-        
- 
-         viewPost (); 
-        eventsPost();// llamo a todos los eventos con post
+        $('#section-login').remove();      
+        viewPost (); 
+        eventsPost();
 
     } else {// si no mostramos un mensaje de no regstrado 
         $('#header-main').hide();

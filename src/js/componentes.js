@@ -41,13 +41,7 @@ sectionElement = () => {
                     <input type='button' value='Cancelar' class='publicar-cancelar' id='publicar-cancelar'>
                 </div>
             </div>  
-            <div class='edit-eliminar'id='edit-eliminar'>
-                <input type='textarea' id='input-post-edit' class='input-post'><br>
-                <div id='button-post' >
-                    <input type='button' value='Editar' id='edit-post' class='publicar-cancelar'>
-                    <input type='button' value='Eliminar' class='publicar-cancelar' id='eliminar'>
-                </div>
-            </div>    
+              
 `;
 }
 const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
@@ -62,16 +56,10 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
                 <small class='time' id='time'>
                     <span class='time-post-regresivo'>${time}</span>
                 </small>
-                <div id='button-editar-eliminar'>
-                    <span class='icon-circle-down'   onclick='abrir(this)'></span>
-                    <div class='action-content'>
-                        <div class='menu-action-content-post'>
-                            <ul>
-                            <li id='${idpost}' onclick='editar(this.id)'>Editar</li>
-                            <li id='${idpost}' onclick='eliminar(this.id)'>Eliminar</li>
-                            <ul>
-                        </div>
-                    </div>
+                <div class='button-editar-eliminar' id=''>
+                    <span class='icon-pencil update' data-posts='${idpost}'></span>
+                    <span class='icon-cancel-circle delete' data-posts='${idpost}'></span>
+                   
                 </div>
             </div>
         </div>
@@ -79,6 +67,7 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
             <p>${coment}</p>    
         </div>
         <div class='post-container'>
+        
         </div>
         <div class='content-edit'></div>
         <div class='stream-item-footer'>
@@ -101,7 +90,7 @@ const sectionAllPost = (user, photo, coment, image, likes, time, idpost) => {
             </div>
 
         </div>            
-    </li>`;//<div class='post-container'> <img src='${image}' alt='img'></div>
+    </li>`;//<div class='post-container'> </div>
 }
 deletePostElement = (img, title) => {
     return `<div></div>`;

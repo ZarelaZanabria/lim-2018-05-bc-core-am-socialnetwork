@@ -413,8 +413,12 @@ none
     color: #fff;
 
 }
-#button-editar-eliminar{
-    margin-left: 90%;
+.button-editar-eliminar{
+    margin-left: 98%;
+}
+.icon-pencil{
+    color: #e6ecf0;
+    margin-bottom: 2px;
 }
 /*containe*/
 .post-container{

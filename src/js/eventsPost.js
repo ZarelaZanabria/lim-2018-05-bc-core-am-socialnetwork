@@ -5,33 +5,53 @@ eventsPost = () => {
     firebase.auth().signOut();
   });
   $('#send-post').click(() => {
-    insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val());
-    location.reload();
+    insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val(),null);
+    modo=CREATE;
     readFile();
   });
-  /* $('.icon-circle-down').click(() => {
-    $('.action-content').show();
-    alert('hola eliminar editar');
-  }) */
-  abrir = () => {
-    /* const listPost = document.querySelectorAll('.content-allPost');
-    listPost.addEventListener('click',event=>{
-      console.log(event.target);
-    }); */
-    $('.action-content').show(); $('.menu-action-content-post').show();
+
+
+  let elementoDelete = document.getElementsByClassName('delete');
+
+  for (let index = 0; index < elementoDelete.length; index++) {
+    elementoDelete[index].addEventListener('click', () => {
+      let dataDeletePost = elementoDelete[index].getAttribute("data-posts");
+      let refDelete = firebase.database().ref('posts/' + dataDeletePost);
+      refDelete.remove();
+    }, false);
   }
-  eliminar = (uidPost) =>{
-    deletePost(uidPost);
-    $('.menu-action-content-post').hide();
+
+  let elementoUpdate = document.getElementsByClassName('update');
+  console.log(elementoUpdate);
+  for (let index = 0; index < elementoUpdate.length; index++) {
+    elementoUpdate[index].addEventListener('click', () => {
+      
+      let dataUserUpdate = elementoUpdate[index].getAttribute("data-posts");
+      refUsersUpdate = firebase.database().ref('posts/'+dataUserUpdate);//post
+      refUsersUpdate.once('value', function (snap) {
+        var datos = snap.val();
+        document.getElementById('input-post').value = datos.content; 
+        insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val(),dataUserUpdate);    
+    });
+    document.getElementById('send-post').value = UPDATE;
+    modo=UPDATE; 
+    },false);
+
   }
-  editar=()=>{
-    $('.menu-action-content-post').hide();
-    $('.content-edit').show();
-    document.getElementsByClassName('content-edit').innerHTML='';
-    $('.content-edit').append(sectionElement());
-    document.getElementById('send-post').setAttribute('value','Modificar');
-  
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function readFile(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
