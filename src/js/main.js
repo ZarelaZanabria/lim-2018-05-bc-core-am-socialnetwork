@@ -31,6 +31,7 @@ const insertNewPost = (picture, posts, privacy) => {
     image: picture,
     privacy: privacy,
     time: dateNew,
+    photoUser:userId.photoURL,
   });
   let newPostUserKey = firebase.database().ref().child('user-posts').push().key;
   firebase.database().ref('user-posts/' + newPostUserKey).set({
@@ -64,16 +65,13 @@ const viewPost = () => {
   postRef.on('value', data => {
     document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();
+    
     for (const post in dataPosts) {
       const likePos = dataPosts[post].like;
-      console.log('like', likePos)
       const count = (Object.keys(likePos).length)-1;
-      const info = firebase.database().ref('/Usuarios/' + dataPosts[post].uidUser);
-      info.once('value', User => {
-        let dataUser = User.val();
-        document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, dataPosts[post].time, post);
+       document.getElementById('items-post').innerHTML += sectionAllPost(dataPosts[post].author, dataPosts[post].photoUser, dataPosts[post].content, dataPosts[post].image, count, dataPosts[post].time, post);
         eventsPost();
-      });
+      
     };
   });
 }
