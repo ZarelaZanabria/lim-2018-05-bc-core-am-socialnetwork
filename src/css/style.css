@@ -1,9 +1,3 @@
-.btnLogOut{
-    display: none;
-}
-#section-register-user{
-    display: none;
-}
 *{
     margin: 0%;
     font-family: "freight-sans-pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -11,7 +5,8 @@
 .wapper-content{
     width: 100%;
     height: 100%;
-   background: #fff;
+    background: #e6ecf0;
+    background-size: cover;
 }
 .content-login{
     width: 30%;
@@ -26,7 +21,7 @@
     padding: 3em 1em;   
     
 }
-
+none
 .logo{
     margin-top: 20px;
 }
@@ -67,29 +62,71 @@
     padding: .5em 0em .0em 0em;
     
 }
-
-#headerProfile{
-    display: none;
+.input-user{
+    width: 100% !important;
+}
+/* header */
+.header-main{
     width: 100%;
     height: 80px;
-    background: #3F51B5;
-    color: #fff;
+    box-shadow: 0px 2px 10px 0px #c5c5c5;
 }
-#componenteProfile{
-    text-align: right;
-    padding:2em 1em;
+.header-section{
+    float: left;
+    width: 30%;
+    margin: 0% 3% 0% 25%;
+    margin-top: 20px;
 }
-#btnLogOut{
+.heder-main-content{
+    align-content: space-around;
+}
+.search{
+    width: 100%;
+     padding: .5em 0em;
+    border:1px solid #ccc;
+    border-radius: .8em;
+    float: left;
+}
+.search input{
+    width: 90%;
     border: none;
     outline: none;
-    padding: 1em 1em;
-    color: #fff;
-    background: #ff4081;
-    display:none;
-    float: left;
-    cursor: pointer;
-    margin: 20px 0px 0px 10px;
 }
+.header-section-user{
+    float: right;
+}
+.header-section-user{
+    align-content: flex-start;
+}
+
+.header-section-user nav ul li{
+    list-style: none;
+    float: left;
+    margin: 0px 10px;
+}
+.header-section-user nav ul li img{
+    width: 50px;
+    height: 50px;
+    margin: 15px 10px;
+     border-radius: 100%;
+     float: left;
+     cursor: pointer;     
+}
+#welcomeProfile{
+    margin-top: 30px;
+    
+}
+/*muro*/
+.devsite-banner-content{
+    width: 100%;
+    height: 400px;
+    order: 1px solid purple;
+}
+
+.devsite-post{
+    background: #fff;
+}
+/**/
 .section-button input{
     width: 100%;
     border: none;
@@ -137,6 +174,7 @@
 }
 .icon-cross{
     color: #ff4081;
+    padding: .1em .3em;
 }
 .icon-circle-left{
     color: #fff;
@@ -147,7 +185,6 @@
 }
 .icon-circle-left:hover{
     box-shadow: 0px 0px 4px 1px rgba(204, 204, 204, 0.486);
-
 }
 #messageValide{
     color: #fff;
@@ -194,10 +231,248 @@
 .description p{
     font-weight: 100;
 }
-.icon-bubbles, .icon-gift, .icon-heart, .icon-flag{
+.icon-bubbles, .icon-gift, .icon-flag, .icon-magic-wand{
     font-size: 1.5em;
     float: left;
     margin-right: 20px;
+}
+#section-register-user{
+    display: none;
+}
+.menu-header-main{
+    display: none;
+}
+/*..................................................................................Post*/
+#post-main{
+    width: 100%;
+    height: auto;
+    background: #e6ecf0;
+}
+.menu-profile-user img{
+    width: 50px;
+    height: 50px;
+}
+.devsite-post{
+    width: 40%;
+    padding: 2em;
+    margin: 0% 30%;
+    padding-top: 1%;
+}
+.newpost, .content-edit{
+    box-shadow: 0px 0px 6px 0px #0000008a;
+    padding: 1em 1em .0em 1em;
+    margin: 5px;
+}
+.newPost select {
+    outline: none;
+    border-radius: .8em;
+    padding: .5em 1em;
+    background: #fff;
+    color: inherit;
+}
+.newPost select option{
+    padding: .5em .2em;
+}
+.input-post{
+    border: none;
+    width: 100%;
+    padding: 1em .5em;
+    margin: 10px 0px;
+    height: auto;
+    border: 1px solid #3F51B5;
+}
+.accion-public{
+    margin: 10px 0px;
+    padding: .4em 0em;
+    width: 100%;
+    height: 40px;
+    font-family: "freight-sans-pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+}
+.inputfile{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+    float: left;
+}
+.inputfile + label {
+    font-size: 1em;
+    font-weight: 100;
+    color: white;
+    display: inline-block;
+   
+}
+.inputfile + label {
+	cursor: pointer; 
+}
+
+.public-image:hover {
+    background-color: #3F51B5;
+}
+#file-preview-zone{
+    width: 100%;
+}
+#file-preview-zone img{
+    width: 100%;
+
+}
+.icon-images{
+    margin: 0px 5px;
+}
+.public-image{
+    padding: .5em .5em;
+    border-radius: 1em;
+    background: #868d95;
+    float: left;
+}
+#button-post{
+    float: right;
+}
+.publicar-cancelar{
+    border-radius: 1em;
+    background: #3F51B5;
+    color: #fff;
+    border: none;
+    padding: .8em 1em;
+    outline: none;
+}
+.publicar-cancelar:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 1px rgba(148, 137, 137, 0.486);
+}
+#send-post{
+    background: #ff4081;
+}
+#edit-post{
+    display: none;
+}
+.edit-eliminar{
+    display:none;
+}
+
+/* ..........................all post*/
+.content-post{
+    margin: 5px;
+}
+.content-edit{
+    display: none;
+}
+.content-allPost{
+    width: 100%;
+    list-style: none;
+    padding: .5em .5em;
+    padding: .5em 1.2em;
+    margin: 10px 0px 0px -38px;
+    box-shadow:0px 0px 6px 0px #0000008a;
+}
+.stream-item-header{
+    border: 1px solid purple;
+}
+.photo-profile-user-post{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    float: left;
+}
+.full-name-user{
+    padding: .5em .5em;
+    float: left;
+}
+
+.time-post-regresivo{
+    padding: .7em .5em;
+    color: #868d95;
+    float: left;
+}
+.icon-circle-down{    
+    font-size: 1.5em;
+    
+    padding: .3em .3;
+    cursor: pointer;
+}
+#eliminar-editar{
+    padding: .3em .3em;
+    border: 1px solid red;
+}
+.action-content{
+    position: absolute;
+    background: #fff;
+    margin-left: -100;
+    display: none;
+    box-shadow: 0 0 5px 0px #00000070;
+}
+.action-content ul li{
+    list-style: none;
+    padding: .5em .5em;
+    margin-left: -40;
+    padding: .5em 3em;
+    border-bottom: .5px solid #ccc;
+    cursor: pointer;
+}
+.action-content ul li:hover{
+    background: #3F51B5;
+    color: #fff;
+
+}
+.button-editar-eliminar{
+    margin-left: 98%;
+}
+.icon-pencil{
+    color: #e6ecf0;
+    margin-bottom: 2px;
+}
+/*containe*/
+.post-container{
+    margin: 5px 0px;
+}
+.post-container img{
+    width: 100%;
+    border-radius: .2em;
+}
+.post-text-container{
+    margin: 20px 0px 10px 0px;
+    padding: .5em .0em;
+    font-weight: 100;
+    color:#14171a;
+}
+/*footer post*/
+.stream-item-footer{
+    width: 100%;
+    margin: 5px 0px;
+}
+.acciones-post ul{
+    width: 100%;
+}
+.stream-item-footer li{
+    width: 50%;
+    list-style: none;
+    float: left;
+    
+}
+.icon-likes-post{
+    width: 50%;
+    height: 25px;
+    margin: 5px 0px;
+    float: left;
+}
+.icon-share2, .icon-heart{
+    margin-left: 50%;
+}
+
+.content-coment-post input{
+    border: .5px solid #868d95;
+    width: 100%;
+    padding: 1em 2em;
+    border-radius: .5em;
+    outline: none;
+    background: #f2f3f5;
+    text-align: center;
+}
+.icon-heart, .icon-share2{
+    padding-left: 0;
+    color: #3F51B5;
 }
 @media (max-width:950px){
     .content-login{
@@ -210,6 +485,10 @@
     .description-portada h3{
         font-size: 1.2em;
     }
+    .devsite-post{
+        width: 50%;
+        margin: 0% 25%;
+    }
 }
 @media (max-width:750px){
    .content-login{
@@ -219,8 +498,21 @@
     .portada{
         display: none;
     }
+    .devsite-post{
+        width: 70%;
+        margin: 0% 15%;
+    }
+    .header-section {
+        float: left;
+         width: 50%; 
+        margin: 20px 3% 0% 10%; 
+        
+    }
 }
 @media (max-width: 480px){
+    .devsite-post{
+        width: 100%;   
+    }
     .content-login{
         width: 100%;
         margin: 2% 3%;
