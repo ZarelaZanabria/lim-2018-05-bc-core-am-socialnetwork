@@ -57,10 +57,9 @@ const sectionAllPost = (user, photo, coment, image, like,time, idpost) => {
                 <small class='time' id='time'>
                     <span class='time-post-regresivo'>${time}</span>
                 </small>
-                <div class='button-editar-eliminar' id=''>
+                <div class='button-editar-eliminar' id='button-editar-eliminar' data-posts='${idpost}'>
                     <span class='icon-pencil update' data-posts='${idpost}'></span>
-                    <span class='icon-cancel-circle delete' data-posts='${idpost}'></span>
-                   
+                    <span class='icon-cancel-circle delete' data-posts='${idpost}'></span>                   
                 </div>
             </div>
         </div>

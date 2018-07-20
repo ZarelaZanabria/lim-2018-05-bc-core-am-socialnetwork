@@ -17,10 +17,14 @@ eventsLogin = () => {
             $('#icon-validate-password').attr('class', 'icon-cross');
         }
     });
+    const validarcong=(data)=>{
+        alert(data.lenght);
+    }
     //....................................................................... AUNTENTIFICACION CON CORREO Y CONTRASENIA
     /*Hace referente al hijo del modo raiz de la base de datos */
     refUsers = firebase.database().ref().child('Usuarios');
     $('#register').click(() => {
+        validarcong($('#users-email').val());
         if($('#users-email').val()!='' && $('#users-password').val()!='' && $('#users-name').val()!='' && $('#user-last-name').val()!='' && $('#users-pasword').val()!=''&& $('#users-passwordTwo').val()!=''){
             if (passwordValidate === 'passwordValido' ) {
                 const promise = firebase.auth()

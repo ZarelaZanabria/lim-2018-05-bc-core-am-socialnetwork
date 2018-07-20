@@ -4,11 +4,17 @@ let elementoDelete = document.getElementsByClassName('delete');
 let elementoLike = document.getElementsByClassName('icon-heart');
 //.............................................................................CERRAR SESION
 eventsPost = () => {
+  let userId = dataUserLogin();
   for (let index = 0; index < elementoDelete.length; index++) {
     elementoDelete[index].addEventListener('click', () => {
       let dataDeletePost = elementoDelete[index].getAttribute("data-posts");
       let refDelete = firebase.database().ref('posts/' + dataDeletePost);
-      refDelete.remove();
+      refDelete.once('value', data => {
+        let dataPost = data.val();
+        if (dataPost.uidUser == userId.uid) {
+          refDelete.remove();
+        }
+      })
     }, false);
   }
 
@@ -19,33 +25,50 @@ eventsPost = () => {
       refUsersUpdate.once('value', function (snap) {
         var datos = snap.val();
         uidPost = dataUserUpdate;
-        document.getElementById('input-post').value = datos.content;
-        $('#send-post').hide();
-        $('#edit-post').show();
+        if (datos.uidUser == userId.uid) {
+          document.getElementById('input-post').value = datos.content;
+          $('#send-post').hide();
+          $('#edit-post').show();
+        }
       });
     });
   }
   for (let index = 0; index < elementoLike.length; index++) {
     elementoLike[index].addEventListener('click', () => {
-      let dataLikePost = elementoLike[index].getAttribute("data-posts");    
+      let dataLikePost = elementoLike[index].getAttribute("data-posts");
       Like(dataLikePost);
     }, false);
-    
+
   }
 
+  /*   let dataUserAuthentication = dataUserLogin();
+    if(dataUserAuthentication.uid==//al uid de ese post){
+  
+    } */
   $('#btnLogOut').click(() => {
     firebase.auth().signOut();
   });
   $('#send-post').click(() => {
-    insertNewPost($('#file').val(), $('#input-post').val(), $('#typePost').val());
-    //document.location.reload();
-    readFile();
+    let post = $('#input-post').val();
+    if (post != '') {
+      insertNewPost($('#file').val(), post, $('#typePost').val());
+      document.getElementById('input-post').value = '';
+      readFile();
+    }
   });
   $('#edit-post').click(() => {
-    updateNewPost($('#input-post').val(), $('#typePost').val(), uidPost);
-    $('#send-post').show();
-    //document.location.reload();
-    readFile();
+    let post = $('#input-post').val();
+   console.log(post);
+      updateNewPost(post, $('#typePost').val(), uidPost);
+      document.getElementById('input-post').value = '';
+      $('#edit-post').hide();
+      $('#send-post').show();
+      readFile();
+    
+  });
+  $('#publicar-cancelar').click(() => {
+    document.getElementById('input-post').value = '';
+    document.getElementById('file-preview-zone').innerHTML = '';
   });
   function readFile(input) {
     if (input.files && input.files[0]) {
@@ -63,7 +86,6 @@ eventsPost = () => {
       reader.readAsDataURL(input.files[0]);
     }
   }
-
   var fileUpload = document.getElementById('file');
   fileUpload.onchange = function (e) {
     readFile(e.srcElement);
