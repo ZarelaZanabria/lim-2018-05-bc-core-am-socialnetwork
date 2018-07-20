@@ -1,5 +1,3 @@
-//window.onload = inicializar;
-
 let postRef = firebase.database().ref().child('posts');
 window.dataUserLogin = () => {
   let userId = firebase.auth().currentUser;
@@ -62,7 +60,7 @@ const Like = (idPost) => {
 }
 const viewPost = () => {
   let userId = dataUserLogin();
-  postRef.once('value', data => {
+  postRef.on('value', data => {
     document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();
     for (const post in dataPosts) {
@@ -79,69 +77,4 @@ const viewPost = () => {
     };
   });
 }
-/*
-  let userId = dataUserLogin();
-  let postLikes = firebase.database().ref().child('posts/' + idPost + '/like');
-  postLikes.on('value', data => {
-    let postLikes = data.val();
-    if (postLikes == null) {
-      let newPostKeyLike = postLikes.push().key;
-      var starCountRef = firebase.database().ref('posts/' + idPost + '/likes').push({
-        creationTime: firebase.database.ServerValue.TIMESTAMP,// para mostrar dar formato actual
-        create: userId.uid,
-      });
-    } else {
-      console.log(postLikes);
-      for (const like in postLikes) {
-        const uidLike = postLikes[like].uid;
-        if (postLikes[like].create != userId.uid) {
-          let newPostKeyLike = postLikes.push().key;
-          var starCountRef = firebase.database().ref('posts/' + idPost + '/likes').push({
-            creationTime: firebase.database.ServerValue.TIMESTAMP,// para mostrar dar formato actual
-            create: userId.uid,
-          });
-        } else {
-          alert('gpolswhd')
-          let refDelete = firebase.database().ref('posts/' + idPost + '/like' + uidLike);
-          refDelete.remove();
-        }
-      }
-    }
 
-  })
-const editPost = (post, privacy) => {
-  function writeNewPost(uid, username, picture, title, body) {
-    // A post entry.
-    var postData = {
-      author: username,
-      uid: uid,
-      body: body,
-      title: title,
-      starCount: 0,
-      authorPic: picture
-    };
-    var newPostKey = firebase.database().ref().child('posts').push().key;
-
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    var updates = {};
-    updates['/posts/' + newPostKey] = postData;
-    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-    return firebase.database().ref().update(updates);
-  }
-}
-const likesCount = () => {
-
-}
-const allPost = () => {
-
-}
-const listNewPost = () => {
-
-}
-const addCommnent = () => {
-
-}
-const deleteComment = () => {
-
-} */
