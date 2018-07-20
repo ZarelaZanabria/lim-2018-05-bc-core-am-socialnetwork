@@ -17,7 +17,13 @@ eventsPost = () => {
       })
     }, false);
   }
-
+/*   secction.addeventListener('click',(e)=>{
+    console.log(event.target.type);
+    if(element && element.nodeName==='  INPUT' ){
+        // si es el elememto especifico entonces ejecuta una accion
+    }
+}) */
+content-allPost
   for (let index = 0; index < elementoUpdate.length; index++) {
     elementoUpdate[index].addEventListener('click', () => {
       let dataUserUpdate = elementoUpdate[index].getAttribute("data-posts");

@@ -62,7 +62,7 @@ const Like = (idPost) => {
 }
 const viewPost = () => {
   let userId = dataUserLogin();
-  postRef.once('value', data => {
+  postRef.on('value', data => {
     document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();
     for (const post in dataPosts) {
