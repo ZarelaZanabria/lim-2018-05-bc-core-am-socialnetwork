@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         }else{
             componente = headerElement(userLogin,'http://svgur.com/i/65U.svg');
         }
-        
+        // ERROR CODIGO 
         $('#header-main').show();
         $('#header-main').append(componente);
         $('#post-main').show();
