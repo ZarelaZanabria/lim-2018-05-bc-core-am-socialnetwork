@@ -12,29 +12,35 @@ eventsPost = () => {
       refDelete.once('value', data => {
         let dataPost = data.val();
         if (dataPost.uidUser == userId.uid) {
-          refDelete.remove();
+          $('#div_delete_post').append(deletePostElement(dataPost.content, dataDeletePost));
+          $(".form_delete_post").show();
+          eventsDeletePost();
         }
       })
     }, false);
-  }
-/*   secction.addeventListener('click',(e)=>{
+  }  /*
+   secction.addeventListener('click',(e)=>{
     console.log(event.target.type);
     if(element && element.nodeName==='  INPUT' ){
         // si es el elememto especifico entonces ejecuta una accion
     }
-}) */
-content-allPost
+}) 
+elementoDelete.addEventListener('click',function(){
+   
+  },false);*/
   for (let index = 0; index < elementoUpdate.length; index++) {
     elementoUpdate[index].addEventListener('click', () => {
       let dataUserUpdate = elementoUpdate[index].getAttribute("data-posts");
       refUsersUpdate = firebase.database().ref('posts/' + dataUserUpdate);//post
       refUsersUpdate.once('value', function (snap) {
         var datos = snap.val();
-        uidPost = dataUserUpdate;
         if (datos.uidUser == userId.uid) {
+          $('#div_new_post').append(newInsertPost(dataUserUpdate,datos.content));
           document.getElementById('input-post').value = datos.content;
+          $("#input-post").disabled = true;
           $('#send-post').hide();
           $('#edit-post').show();
+          eventsUpdatePost();
         }
       });
     });
@@ -51,73 +57,19 @@ content-allPost
     if(dataUserAuthentication.uid==//al uid de ese post){
   
     } */
-  $('#btnLogOut').click(() => {
+  $('#btnLogOut').click(() => {//imagen profile
+    $('#hint_menu_account').show();
+  });
+  $('#li_logout').click(() => {
     firebase.auth().signOut();
   });
-  $('#send-post').click(() => {
-    let post = $('#input-post').val();
-    if (post != '') {
-      insertNewPost($('#file').val(), post, $('#typePost').val());
-      document.getElementById('input-post').value = '';
-      readFile();
-    }
+  $('#view-input-post').click(() => {
+    console.log(new Date());
+    document.getElementById('div_new_post').innerHTML='';
+    $('#div_new_post').append(newInsertPost(null,''));
+    $("#input-post").disabled = true;
+    eventsGetPost();
   });
-  $('#edit-post').click(() => {
-    let post = $('#input-post').val();
-   console.log(post);
-      updateNewPost(post, $('#typePost').val(), uidPost);
-      document.getElementById('input-post').value = '';
-      $('#edit-post').hide();
-      $('#send-post').show();
-      readFile();
-    
-  });
-  $('#publicar-cancelar').click(() => {
-    document.getElementById('input-post').value = '';
-    document.getElementById('file-preview-zone').innerHTML = '';
-  });
-  function readFile(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      console.log(input.files);
-      reader.onload = function (e) {
-        var filePreview = document.createElement('img');
-        filePreview.id = 'file-preview';
-        //e.target.result contents the base64 data from the image uploaded
-        filePreview.src = e.target.result;
-        var previewZone = document.getElementById('file-preview-zone');
-        previewZone.innerHTML = '';
-        previewZone.appendChild(filePreview);
-      }
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-  var fileUpload = document.getElementById('file');
-  fileUpload.onchange = function (e) {
-    readFile(e.srcElement);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
