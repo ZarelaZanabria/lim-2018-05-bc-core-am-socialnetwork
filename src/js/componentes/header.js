@@ -1,4 +1,4 @@
-headerElement = (userLogin, photo) => {
+headerElement = ( userLogin, photo) => {
     return $('#header-main').append(`
     <div class='header-main-content'>
 

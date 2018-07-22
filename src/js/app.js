@@ -1,4 +1,6 @@
+//Primer paso...ver si el usuario esta logeado o no logeado
 // ..........................................................................estado de autentificacion en tiempo real
+
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
@@ -12,20 +14,22 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             componente = headerElement(userLogin,'http://svgur.com/i/65U.svg');
         }
         
-        $('#header-main').show();
-        $('#header-main').append(componente);
+      /*   $('#header-main').show(); */
+        $('#header-main').append(componente).show();
         $('#post-main').show();
         $('#newPost').append(sectionElement());
         $('#btnLogOut').show(); // aparece mi boton salir
         // login y register oculto
-        $('#portada').hide();
+        $('#portada').remove();
         $('#contentLoginRegister').hide();
         $('#section-register-user').remove();
         $('#section-login').remove();      
-        viewPost (); 
-        eventsPost();
+        /* viewPost (); 
+        eventsPost(); */
+        
 
     } else {// si no mostramos un mensaje de no regstrado 
+        $('#portada').show();
         $('#header-main').hide();
         $('#header-main-content').remove();
         loginElement();
@@ -33,8 +37,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#contentLoginRegister').show();
         $('#post-main').hide();
         registerElement();
-        document.getElementById('post-main').innerHTML = '';
-        document.getElementById('header-main').innerHTML = '';
+        /* document.getElementById('post-main').innerHTML = '';
+        document.getElementById('header-main').innerHTML = ''; */
         console.log('No Autentificado');
         eventsLogin();// todos los eventos con login
     }
