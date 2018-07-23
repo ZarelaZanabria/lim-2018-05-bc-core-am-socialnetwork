@@ -1,87 +1,89 @@
-<html>
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Red Social</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="icomoon/style.css" />
-</head>
-<body>
-  <header class="header-main" id="header-main">
-  </header>
-  <section class="section-main">
-    <div class="wapper-content" id="wapper-content">
-      <div class="wapper-portada" id="wapper-portada">
-        <div class="portada" id="portada">
-          <div class="onPortada">
-            <div class="description-portada">
-              <h2>MAMÁ POR PRIMERA VEZ EN</h2>
-              <span class="description-portadaModo">MODO</span>
-              <span class="description-portadaMama">MAMA</span>
-              <div class="description">
-                <span class="icon-magic-wand"></span>
-                <p>Recibe muchimos tips</p>
-              </div>
-              <div class="description">
-                <span class="icon-bubbles"></span>
-                <p>Orienta a tu comunidad</p>
-              </div>
-              <div class="description">
-                <span class="icon-gift"></span>
-                <p>Especialistas en tu bolsillo</p>
-              </div>
-              <div class="description">
-                <span class="icon-flag"></span>
-                <p>Haz que conozcan tu marca</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="contentLoginRegister"></div>
-        <div id="post-main">
-          <div class='devsite-main-content' id='devsite-main-content'>
-            <div class='devsite-banner-content'>
-              <div class='devsite-section-nav'>
-              </div>
-              <div class='devsite-post'>
-                <div class='newPost' id="newPost">
-                </div>
-                <div class='content-post'>
-                  <ol class='items-post' id='items-post'></ol>
-                </div>
-              </div>
-              <div class='devsite-page-nav'></div>
-            </div>
-          </div>
-        </div>
+<html lang="es">
 
-      </div>
-    </div>
-  </section>
-  <footer></footer>
-  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-  <!--   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Red Social</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="icomoon/style.css" />
+
+</head>
+
+<body>
+    <header class="header-main" id="header-main">
+
+    </header>
+    <section class="section-main">
+        <div class="wapper-content" id="wapper-content">
+            <div class="wapper-portada" id="wapper-portada">
+                <div class="portada" id="portada">
+                    <div class="onPortada">
+                        <div class="description-portada">
+                            <h2>MAMÁ POR PRIMERA VEZ EN</h2>
+                            <span class="description-portadaModo">MODO</span>
+                            <span class="description-portadaMama">MAMA</span>
+                            <div class="description">
+                                <span class="icon-magic-wand"></span>
+                                <p>Recibe muchimos tips</p>
+                            </div>
+                            <div class="description">
+                                <span class="icon-bubbles"></span>
+                                <p>Orienta a tu comunidad</p>
+                            </div>
+                            <div class="description">
+                                <span class="icon-gift"></span>
+                                <p>Especialistas en tu bolsillo</p>
+                            </div>
+                            <div class="description">
+                                <span class="icon-flag"></span>
+                                <p>Haz que conozcan tu marca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contentLoginRegister"></div>
+                <div id="post-main">
+                    <div class='devsite-main-content' id='devsite-main-content'>
+                        <div class='devsite-banner-content'>
+                            <div class='devsite-section-nav'>
+                            </div>
+                            <div class='devsite-post'>
+                                <div class='newPost' id="newPost">
+                                </div>
+                                <div class='content-post'>
+                                    <ol class='items-post' id='items-post'></ol>
+                                </div>
+                            </div>
+                            <div class='devsite-page-nav'></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
-    Ingresando codigo de Zarela  -->
-  <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-    crossorigin="anonymous"></script>
-  <script src="js/conexion.js"></script>
-  <!-- <script src="js/componentes.js"></script> -->
-  <script src="js/componentes/header.js"></script>
-  <script src="js/componentes/loginElement.js"></script>
-  <script src="js/componentes/registerElement.js"></script>
-  <script src="js/componentes/sectionAllPost.js"></script>
-  <script src="js/componentes/sectionElement.js"></script>
-  <script src="js/main/mainPost.js"></script>
-  <script src="js/main/mainLogin.js"></script>
-  <script src="js/data/dataLogin.js"></script>
-  <script src="js/data/dataPost.js"></script>
-  <script src="js/app.js"></script>
+    <!--Ingresando codigo de Zarela  -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+        crossorigin="anonymous"></script>
+    <script src="conexion.js"></script>
+    <script src="js/componentes/componentes.js"></script>
+    <script src="model.js"></script>    
+    <script src="model.js"></script>
+    <script src="app.js"></script>
+    <script src="js/main/mainLogin.js"></script>
+
+
 </body>
+
+
 </html>
