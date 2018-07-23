@@ -49,11 +49,11 @@ He aqui una muestra del prototipo de alta fidelidad ya con todas las pautas que 
 A continuación se adjunta los links donde se pueden visualizar el prototipo de alta fidelidad (Login - pagina principal), hecho en Figma.
 
 #### Login
-[Con titulo](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A880 "View - Desktop")
-[Con titulo](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1258 "View - Tablet")
-[Con titulo](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1472 "View - Mobile")
+[View - Desktop](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A880 "View - Desktop")
+[View - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1258 "View - Tablet")
+[View - Mobile](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1472 "View - Mobile")
 
 #### Pagina Principal
-[Con titulo](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1030 "View - Desktop")
-[Con titulo](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1095 "View - Tablet")
-[Con titulo](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
+[View - Desktop](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1030 "View - Desktop")
+[View - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1095 "View - Tablet")
+[View - Mobile](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
