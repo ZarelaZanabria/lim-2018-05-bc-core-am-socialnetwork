@@ -1,5 +1,5 @@
 //window.onload = inicializar;
-
+const dataUser=firebase.database().ref('/Usuarios/');
 let postRef = firebase.database().ref().child('posts');
 window.dataUserLogin = () => {
   let userId = firebase.auth().currentUser;
@@ -63,26 +63,27 @@ const Like = (idPost) => {
 const viewMyAccount = () => {
   let userId = dataUserLogin();
   const dataPostUser = firebase.database().ref('/user-posts/' + userId.uid);
-  dataPostUser.once('value', data => {
+  dataPostUser.on('value', data => {
+    console.log('perfil'+new Date());
     let dataPosts = data.val();
     for (const post in dataPosts) {
       const infoPost = firebase.database().ref('/posts/'+post);
-      infoPost.once('value', post => {
-        let dataPost = post.val();
+      infoPost.once('value', posts => {
+        let dataPost = posts.val();
         const likePos = dataPost.like;
         const count = (Object.keys(likePos).length) - 1;        
          document.getElementById('items-post').innerHTML += sectionAllPost(userId.displayName, userId.photoURL, dataPost.content, dataPost.image, count, dataPost.time, post);
-      
+         
       })
     }
-  });
-  eventsPost();
-
+    eventsPost();
+  }); 
+  
 }
 const viewPost = () => {
   let userId = dataUserLogin();
   postRef.on('value', data => {
-    console.log(postRef);
+    console.log('recarga todos los spost '+new Date());
     document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();
     for (const post in dataPosts) {
@@ -93,13 +94,19 @@ const viewPost = () => {
         let dataUser = User.val();
         document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, dataPosts[post].time, post);
         
-
       });
-
-    };
+    };    
+     eventsPost();
   });
-  eventsPost();
-}
+     
+ }
+ const searchUsers=(name)=>{
+   const listUsers=dataUser;
+   Console.log(listUsers);
+   listUsers.on('value',data=>{
+    console.log(data.val());
+   });
+ }
 /*
   let userId = dataUserLogin();
   let postLikes = firebase.database().ref().child('posts/' + idPost + '/like');

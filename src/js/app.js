@@ -23,7 +23,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#section-register-user').remove();
         $('#section-login').remove();      
         viewPost (); 
-        //eventsPost();
+        eventsPost();
 
     } else {// si no mostramos un mensaje de no regstrado 
         $('#header-main').hide();
@@ -32,8 +32,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#contentLoginRegister').show();
         $('#post-main').hide();
         registerElement();
-        document.getElementById('post-main').innerHTML = '';
-        document.getElementById('header-main').innerHTML = '';
+/*         document.getElementById('post-main').innerHTML = '';
+ */        document.getElementById('header-main').innerHTML = '';
         console.log('No Autentificado');
         eventsLogin();// todos los eventos con login
     }
