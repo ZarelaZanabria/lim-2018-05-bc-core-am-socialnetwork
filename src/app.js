@@ -1,5 +1,6 @@
 // ..........................................................................estado de autentificacion en tiempo real
 firebase.auth().onAuthStateChanged(firebaseUser => {
+    alert("cambio!");
     if (firebaseUser) {
         console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
@@ -32,7 +33,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#contentLoginRegister').show();
         $('#post-main').hide();
         registerElement();
-        document.getElementById('post-main').innerHTML = '';
+       /*   document.getElementById('post-main').innerHTML = '';  */
         document.getElementById('header-main').innerHTML = '';
         console.log('No Autentificado');
         eventsLogin();// todos los eventos con login

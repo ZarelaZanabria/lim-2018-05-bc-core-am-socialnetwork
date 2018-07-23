@@ -3,7 +3,6 @@ global.window = global;
 global.firebase = require('firebase');
 require("../src/js/data/dataRedSocial");
   // Initialize Firebase
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBwy0way-XvpLQTkY2EoKz5uSHhb23S3fo",
     authDomain: "pruebasalud-8632b.firebaseapp.com",

@@ -4,7 +4,8 @@
   "description": "Testing Red Social",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"   
+    "test-node": "nyc mocha && nyc report --reporter=html",
+    "test": "npm run test-node"
   },
   "author": "Elizabeth Zarela",
   "license": "ISC",
