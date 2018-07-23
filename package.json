@@ -1,7 +1,7 @@
 {
   "name": "2018-1-testing",
   "version": "1.0.0",
-  "description": "Ayudantía de testing",
+  "description": "Testing Red Social",
   "main": "index.js",
   "scripts": {
     "test": "mocha"   
