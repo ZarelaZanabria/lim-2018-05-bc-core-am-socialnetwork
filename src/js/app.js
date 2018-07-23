@@ -11,8 +11,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             componente = headerElement(userLogin, photoUser,email);
         }else{
             componente = headerElement(userLogin,'http://svgur.com/i/65U.svg');
-        }
-        
+        }        
         $('#header-main').show();
         $('#header-main').append(componente);
         $('#post-main').show();
@@ -24,7 +23,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#section-register-user').remove();
         $('#section-login').remove();      
         viewPost (); 
-        eventsPost();
+        //eventsPost();
 
     } else {// si no mostramos un mensaje de no regstrado 
         $('#header-main').hide();

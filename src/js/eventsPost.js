@@ -4,6 +4,7 @@ let elementoDelete = document.getElementsByClassName('delete');
 let elementoLike = document.getElementsByClassName('icon-heart');
 //.............................................................................CERRAR SESION
 eventsPost = () => {
+  console.log('event_p'+new Date());
   let userId = dataUserLogin();
   for (let index = 0; index < elementoDelete.length; index++) {
     elementoDelete[index].addEventListener('click', () => {
@@ -69,6 +70,13 @@ elementoDelete.addEventListener('click',function(){
     $('#div_new_post').append(newInsertPost(null,''));
     $("#input-post").disabled = true;
     eventsGetPost();
+  });  
+  $('#header_my_account').click(() => {//ver perfil
+    document.getElementById('items-post').innerHTML = '';
+    viewMyAccount();
+  });
+  $('.icon-home2').click(()=>{
+    viewPost (); 
   });
 }
 

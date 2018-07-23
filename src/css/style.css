@@ -70,6 +70,17 @@ none
     width: 100% !important;
 }
 /* header */
+.icon-home2{
+    font-size: 1.35em;
+    padding: .48em 1em .48em .48em;;
+    color: #777; 
+    border-radius: 100%;
+    cursor: pointer;
+    float: right;
+}
+.icon-home2 label{
+    font-size: 14px;
+}
 .header-main{
     width: 100%;
     height: 46px;
@@ -86,7 +97,7 @@ none
 .header-section-user{
     float: right;
     overflow: hidden;
-    padding: 0em  8em;
+    padding: 0em  8em 0em .3em;
     align-content: flex-start;
 }
 .name-view-data {

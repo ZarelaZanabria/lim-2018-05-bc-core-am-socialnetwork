@@ -2,6 +2,7 @@ headerElement = (userLogin, photo, email) => {
     //    <a href="/src/muro.html" target="_blank" onClick="window.open(this.href, this.target, 'width=300,height=400'); return false;">lanza correctamente</a>
 
     return $('#header-main').append(`
+    
     <div class='header-main-content'>
         <div class='header-section-user'>         
                     <div class='content-photo-view-profile' >
@@ -12,6 +13,11 @@ headerElement = (userLogin, photo, email) => {
                     </div> 
           
         </div>
+    </div>
+    <div>
+        <span class='icon-home2'> 
+            <label>Inicio</label>
+        </span>
     </div>
     <div class="hint-menu-account" id="hint_menu_account" style="display:none;">
         <div class="name-hint-account">
@@ -27,25 +33,25 @@ headerElement = (userLogin, photo, email) => {
             </div>
             <div class="item-hint">
                 <ul>
-                    <li>
+                    <li id="header_my_account">
                         <a href="#">
-                            <span class="icon-user"></span>My account</a>
+                            <span class="icon-user"></span>Mi perfil</a>
                     </li>
                     <li>
                         <a href="#">
-                            <span class="icon-lock"></span>Change password</a>
+                            <span class="icon-lock"></span>Cambiar contraseña</a>
                     </li>
                     <li>
                         <a href="#">
-                            <span class="icon-cog"></span>Settings</a>
+                            <span class="icon-cog"></span>Configuración</a>
                     </li>
                     <li>
                         <a href="#">
-                        <span class="icon-question"></span>Settings</a>
+                        <span class="icon-question"></span>Ayuda</a>
                     </li>
                     <li id="li_logout">
                         <a href="#">
-                            <span class="icon-switch" ></span>Logout</a>
+                            <span class="icon-switch" ></span>Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>
