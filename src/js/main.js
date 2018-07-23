@@ -93,10 +93,10 @@ const viewPost = () => {
       info.once('value', User => {
         let dataUser = User.val();
         document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, dataPosts[post].time, post);
-        
+         eventsPost();
       });
     };    
-     eventsPost();
+     
   });
      
  }
