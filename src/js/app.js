@@ -5,13 +5,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
+        let email = firebaseUser.email;
         let componente;
         if(photoUser != null){
-            componente = headerElement(userLogin, photoUser);
+            componente = headerElement(userLogin, photoUser,email);
         }else{
             componente = headerElement(userLogin,'http://svgur.com/i/65U.svg');
-        }
-        
+        }        
         $('#header-main').show();
         $('#header-main').append(componente);
         $('#post-main').show();
@@ -23,13 +23,12 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#section-register-user').remove();
         $('#section-login').remove();      
         viewPost (); 
-        eventsPost();
+        //eventsPost();
 
     } else {// si no mostramos un mensaje de no regstrado 
         $('#header-main').hide();
         $('#header-main-content').remove();
         loginElement();
-        $('#portada').show();
         $('#contentLoginRegister').show();
         $('#post-main').hide();
         registerElement();
