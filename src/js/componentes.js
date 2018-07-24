@@ -63,9 +63,16 @@ headerElement = (userLogin, photo, email) => {
             <span class='icon-search'></span>
         </div>
     </div>
+   
+        <div class='content-search'>
+            <ul class='content-search-user' id='content-search-user'>          
+            </ul>
+        </div>
+   
     `);
 }
 sectionElement = () => {
+    console.log(new Date());
     return `
     <div>
         <input type='textare' autocomplete='off' id='view-input-post' class='input-post' placeholder='Que estas pensando?'>
@@ -163,11 +170,9 @@ deletePostElement = (coment, uidPost) => {
     </div>
 `;
 }
-searchElement = (name) => {
-    return `
-    <div class='content-search'>
-        <ul class='content-search-user'></ul>
-    </div>`;
+searchElement = (name,uidUser) => {
+    return `<li id='${uidUser}'>${name}</li>`;
+    
 }
 registerElement = () => {
     return $('#contentLoginRegister').append(`<div id="section-register-user" class="content-login">

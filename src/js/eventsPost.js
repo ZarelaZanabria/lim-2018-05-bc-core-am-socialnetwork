@@ -4,7 +4,7 @@ let elementoDelete = document.getElementsByClassName('delete');
 let elementoLike = document.getElementsByClassName('icon-heart');
 //.............................................................................CERRAR SESION
 eventsPost = () => {
-  console.log('llamando al event post '+new Date());
+  console.log('llamando al event post ' + new Date());
   let userId = dataUserLogin();
   for (let index = 0; index < elementoDelete.length; index++) {
     elementoDelete[index].addEventListener('click', () => {
@@ -36,7 +36,7 @@ elementoDelete.addEventListener('click',function(){
       refUsersUpdate.once('value', function (snap) {
         var datos = snap.val();
         if (datos.uidUser == userId.uid) {
-          $('#div_new_post').append(newInsertPost(dataUserUpdate,datos.content));
+          $('#div_new_post').append(newInsertPost(dataUserUpdate, datos.content));
           document.getElementById('input-post').value = datos.content;
           $("#input-post").disabled = true;
           $('#send-post').hide();
@@ -52,8 +52,8 @@ elementoDelete.addEventListener('click',function(){
       Like(dataLikePost);
     }, false);
 
-  } 
-    
+  }
+
   $('#btnLogOut').click(() => {//imagen profile
     $('#hint_menu_account').show();
   });
@@ -62,30 +62,37 @@ elementoDelete.addEventListener('click',function(){
   });
   $('#view-input-post').click(() => {
     console.log(new Date());
-    document.getElementById('div_new_post').innerHTML='';
-    $('#div_new_post').append(newInsertPost(null,''));
+    document.getElementById('div_new_post').innerHTML = '';
+    $('#div_new_post').append(newInsertPost(null, ''));
     $("#input-post").disabled = true;
     eventsGetPost();
-  });  
+  });
   $('#header_my_account').click(() => {//ver perfil
     document.getElementById('items-post').innerHTML = '';
     viewMyAccount();
   });
-  $('.icon-home2').click(()=>{// ir al home2
+  $('.icon-home2').click(() => {// ir al home2
     document.getElementById('items-post').innerHTML = '';
-    viewPost (); 
+    viewPost();
   });
-  $('.search-input').keyup(function(e) {
-    let value=event.target.value;
-    let data=searchUsers(value);// envio los datos
-    //console.log(data);
-   // listarUsuarios(data);// enviar a imprimir
+  $('.search-input').keyup(function (e) {
+    $('.content-search-user').show();
+    let value = event.target.value;
+    let objetouser;
+    objetouser = searchUsers(value);// envio los datos
+    listarUsuarios(objetouser);// enviar a imprimir
   });
-
-  const listarUsuarios=data=>{
-    document.getElementsByClassName('content-search-user').innerHTML+=`<li id='${data.uidUser}'>${data.nameUser}<li>`
+  const listarUsuarios = data => {     
+    data.on('value', datos=>{
+      document.getElementById('content-search-user').innerHTML = ''; 
+      let dataUser=datos.val();
+      for (const key in dataUser) {  
+        //document.getElementById('content-search-user').innerHTML += searchElement(data[key].usersName, key);
+        document.getElementById('content-search-user').innerHTML += searchElement(dataUser[key].usersName, key);
+      }
+    }); 
+  
   }
-
 }
 
 

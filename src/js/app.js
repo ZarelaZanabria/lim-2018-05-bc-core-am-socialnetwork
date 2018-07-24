@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         if(photoUser != null){
             componente = headerElement(userLogin, photoUser,email);
         }else{
-            componente = headerElement(userLogin,'http://svgur.com/i/65U.svg');
+            componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email);
         }        
         $('#header-main').show();
         $('#header-main').append(componente);
