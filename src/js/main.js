@@ -1,5 +1,5 @@
 //window.onload = inicializar;
-const dataUser=firebase.database().ref('/Usuarios/');
+
 let postRef = firebase.database().ref().child('posts');
 window.dataUserLogin = () => {
   let userId = firebase.auth().currentUser;
@@ -101,12 +101,22 @@ const viewPost = () => {
      
  }
  const searchUsers=(name)=>{
-   const listUsers=dataUser;
-   Console.log(listUsers);
+  const dataUser=firebase.database().ref('/Usuarios/');
+  dataUser.orderByChild("usersName").startAt(name).on("child_added", 
+    function(snapshot) {
+      console.log(snapshot.usersEmail);
+  /*  const listUsers=dataUser;   
    listUsers.on('value',data=>{
-    console.log(data.val());
+    let user=data.val();
+    console.log(user );
+    
+    }); */
+   //name=data.val().usersName;
+   //photo=data.val().photoURL;
    });
+   //return {nameUser:name, photoUser:photo};
  }
+ 
 /*
   let userId = dataUserLogin();
   let postLikes = firebase.database().ref().child('posts/' + idPost + '/like');

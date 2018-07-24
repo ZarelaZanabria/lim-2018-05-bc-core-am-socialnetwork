@@ -77,9 +77,14 @@ elementoDelete.addEventListener('click',function(){
   });
   $('.search-input').keyup(function(e) {
     let value=event.target.value;
-    const data=searchUsers(value);// envio los datos
-    listarUsuarios(data);// enviar a imprimir
-  })
+    let data=searchUsers(value);// envio los datos
+    //console.log(data);
+   // listarUsuarios(data);// enviar a imprimir
+  });
+
+  const listarUsuarios=data=>{
+    document.getElementsByClassName('content-search-user').innerHTML+=`<li id='${data.uidUser}'>${data.nameUser}<li>`
+  }
 
 }
 

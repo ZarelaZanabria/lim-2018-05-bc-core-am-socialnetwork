@@ -163,8 +163,11 @@ deletePostElement = (coment, uidPost) => {
     </div>
 `;
 }
-EditPostElement = (img, title) => {
-    return `<div></div>`;
+searchElement = (name) => {
+    return `
+    <div class='content-search'>
+        <ul class='content-search-user'></ul>
+    </div>`;
 }
 registerElement = () => {
     return $('#contentLoginRegister').append(`<div id="section-register-user" class="content-login">
