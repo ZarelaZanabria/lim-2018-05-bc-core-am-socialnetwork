@@ -1,6 +1,5 @@
-// ..........................................................................estado de autentificacion en tiempo real
+// ..........................................................................estado de autentificacion en tiempo rea
 firebase.auth().onAuthStateChanged(firebaseUser => {
-    alert("cambio!");
     if (firebaseUser) {
         console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
@@ -10,9 +9,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         if(photoUser != null){
             componente = headerElement(userLogin, photoUser,email);
         }else{
-            componente = headerElement(userLogin,'http://svgur.com/i/65U.svg');
-        }
-        
+            componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email);
+        }        
         $('#header-main').show();
         $('#header-main').append(componente);
         $('#post-main').show();
@@ -33,9 +31,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#contentLoginRegister').show();
         $('#post-main').hide();
         registerElement();
-       /*   document.getElementById('post-main').innerHTML = '';  */
-        document.getElementById('header-main').innerHTML = '';
+/*         document.getElementById('post-main').innerHTML = '';
+ */        document.getElementById('header-main').innerHTML = '';
         console.log('No Autentificado');
         eventsLogin();// todos los eventos con login
     }
 });
+
