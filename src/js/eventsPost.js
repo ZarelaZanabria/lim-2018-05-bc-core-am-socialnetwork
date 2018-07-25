@@ -5,7 +5,7 @@ let elementoLike = document.getElementsByClassName('icon-heart');
 //.............................................................................CERRAR SESION
 eventsPost = () => {
   console.log('llamando al event post ' + new Date());
-  let userId = dataUserLogin();
+  let userId = firebase.auth().currentUser;;
   for (let index = 0; index < elementoDelete.length; index++) {
     elementoDelete[index].addEventListener('click', () => {
       let dataDeletePost = elementoDelete[index].getAttribute("data-posts");
