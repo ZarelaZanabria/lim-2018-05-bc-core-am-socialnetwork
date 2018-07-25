@@ -72,7 +72,7 @@ headerElement = (userLogin, photo, email) => {
     `);
 }
 sectionElement = () => {
-    console.log(new Date());
+    
     return `
     <div>
         <input type='textare' autocomplete='off' id='view-input-post' class='input-post' placeholder='Que estas pensando?'>

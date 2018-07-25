@@ -1,15 +1,15 @@
-// ..........................................................................estado de autentificacion en tiempo rea
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
         console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
         let email = firebaseUser.email;
+        let uid = firebaseUser.uid;
         let componente;
         if(photoUser != null){
-            componente = headerElement(userLogin, photoUser,email);
+            componente = headerElement(userLogin, photoUser,email,uid);
         }else{
-            componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email);
+            componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email,uid);
         }        
         $('#header-main').show();
         $('#header-main').append(componente);
