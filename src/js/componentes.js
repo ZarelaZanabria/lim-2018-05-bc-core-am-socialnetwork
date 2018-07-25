@@ -1,8 +1,7 @@
-headerElement = (userLogin, photo, email) => {
+headerElement = (userLogin, photo, email,uid) => {
     //    <a href="/src/muro.html" target="_blank" onClick="window.open(this.href, this.target, 'width=300,height=400'); return false;">lanza correctamente</a>
 
-    return $('#header-main').append(`
-    
+    return $('#header-main').append(`    
     <div class='header-main-content'>
         <div class='header-section-user'>         
                     <div class='content-photo-view-profile' >
@@ -33,7 +32,7 @@ headerElement = (userLogin, photo, email) => {
             </div>
             <div class="item-hint">
                 <ul>
-                    <li id="header_my_account">
+                    <li id="header_my_account" data-posts='${uid}'>
                         <a href="#">
                             <span class="icon-user"></span>Mi perfil</a>
                     </li>
@@ -62,13 +61,10 @@ headerElement = (userLogin, photo, email) => {
             <input type='text' class='search-input'>
             <span class='icon-search'></span>
         </div>
-    </div>
-   
-        <div class='content-search'>
-            <ul class='content-search-user' id='content-search-user'>          
-            </ul>
-        </div>
-   
+    </div>   
+    <div class='content-search'>
+        <ul class='content-search-user' id='content-search-user'></ul>
+    </div>   
     `);
 }
 sectionElement = () => {
@@ -171,8 +167,7 @@ deletePostElement = (coment, uidPost) => {
 `;
 }
 searchElement = (name,uidUser) => {
-    return `<li id='${uidUser}'>${name}</li>`;
-    
+    return `<li id='${uidUser}'>${name}</li>`;    
 }
 registerElement = () => {
     return $('#contentLoginRegister').append(`<div id="section-register-user" class="content-login">

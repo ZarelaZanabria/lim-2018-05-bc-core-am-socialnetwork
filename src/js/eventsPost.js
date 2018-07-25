@@ -19,16 +19,19 @@ eventsPost = () => {
         }
       })
     }, false);
-  }  /*
-   secction.addeventListener('click',(e)=>{
-    console.log(event.target.type);
-    if(element && element.nodeName==='  INPUT' ){
-        // si es el elememto especifico entonces ejecuta una accion
-    }
-}) 
-elementoDelete.addEventListener('click',function(){
-   
-  },false);*/
+  }  
+  /*
+      secction.addeventListener('click',(e)=>{
+        console.log(event.target.type);
+        if(element && element.nodeName==='  INPUT' ){
+            // si es el elememto especifico entonces ejecuta una accion
+        }
+    }) 
+    elementoDelete.addEventListener('click',function(){
+      
+      },false);
+  */
+
   for (let index = 0; index < elementoUpdate.length; index++) {
     elementoUpdate[index].addEventListener('click', () => {
       let dataUserUpdate = elementoUpdate[index].getAttribute("data-posts");
@@ -69,8 +72,16 @@ elementoDelete.addEventListener('click',function(){
   });
   $('#header_my_account').click(() => {//ver perfil
     document.getElementById('items-post').innerHTML = '';
-    viewMyAccount();
+    let uidUser=$('#header_my_account').attr('data-posts');
+    viewMyAccount(uidUser);
   });
+  $('.content-search-user').click(e=>{
+    let element = event.target;
+    document.getElementById('items-post').innerHTML = '';
+    console.log(element.id);
+    viewMyAccount(element.id);
+  });
+  //
   $('.icon-home2').click(() => {// ir al home2
     document.getElementById('items-post').innerHTML = '';
     viewPost();
@@ -90,9 +101,9 @@ elementoDelete.addEventListener('click',function(){
         //document.getElementById('content-search-user').innerHTML += searchElement(data[key].usersName, key);
         document.getElementById('content-search-user').innerHTML += searchElement(dataUser[key].usersName, key);
       }
-    }); 
-  
+    });   
   }
+
 }
 
 

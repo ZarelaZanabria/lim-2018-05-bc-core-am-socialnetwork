@@ -14,7 +14,6 @@ const updateNewPost = (posts, privacy, uidPost) => {
   let userId = dataUserLogin();
   let fecha = new Date();
   let dateNew = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear() + "  " + fecha.getHours() + ": " + fecha.getMinutes();
-
   let postData = {
     content: posts,
     privacy: privacy,
@@ -65,9 +64,9 @@ const Like = (idPost) => {
     }
   });
 }
-const viewMyAccount = (nhuy) => {
+const viewMyAccount = (uidUser) => {
   let userId = dataUserLogin();
-  const dataPostUser = firebase.database().ref('/user-posts/' + userId.uid);
+  const dataPostUser = firebase.database().ref('/user-posts/' + uidUser);
   dataPostUser.on('value', data => {
     let dataPosts = data.val();
     for (const post in dataPosts) {
@@ -77,7 +76,6 @@ const viewMyAccount = (nhuy) => {
         const likePos = dataPost.like;
         const count = (Object.keys(likePos).length) - 1; 
          document.getElementById('items-post').innerHTML += sectionAllPost(userId.displayName, userId.photoURL, dataPost.content, dataPost.image, count, dataPost.time, post);
-       
       })
     }
     eventsPost();
