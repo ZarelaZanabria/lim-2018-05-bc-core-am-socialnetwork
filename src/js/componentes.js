@@ -1,8 +1,7 @@
 headerElement = (userLogin, photo, email) => {
     //    <a href="/src/muro.html" target="_blank" onClick="window.open(this.href, this.target, 'width=300,height=400'); return false;">lanza correctamente</a>
 
-    return $('#header-main').append(`
-    
+    return $('#header-main').append(`    
     <div class='header-main-content'>
         <div class='header-section-user'>         
                     <div class='content-photo-view-profile' >
