@@ -9,6 +9,4 @@ const eventsDeletePost = () => {
   document.getElementById("hide_form_search").addEventListener('click', function () {
     document.getElementById('div_delete_post').innerHTML = '';
   }, false);
-
- 
 }

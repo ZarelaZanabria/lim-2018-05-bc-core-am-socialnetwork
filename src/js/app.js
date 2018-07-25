@@ -25,6 +25,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#section-login').remove();      
         viewPost (); 
         eventsPost();
+        dataUserLogin(uid);
 
     } else {// si no mostramos un mensaje de no regstrado 
         $('#header-main').hide();

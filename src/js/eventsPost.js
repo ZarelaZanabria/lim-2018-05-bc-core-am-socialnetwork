@@ -4,7 +4,6 @@ let elementoDelete = document.getElementsByClassName('delete');
 let elementoLike = document.getElementsByClassName('icon-heart');
 //.............................................................................CERRAR SESION
 eventsPost = () => {
-  console.log('llamando al event post ' + new Date());
   let userId = firebase.auth().currentUser;;
   for (let index = 0; index < elementoDelete.length; index++) {
     elementoDelete[index].addEventListener('click', () => {
@@ -74,12 +73,13 @@ eventsPost = () => {
     document.getElementById('items-post').innerHTML = '';
     let uidUser=$('#header_my_account').attr('data-posts');
     viewMyAccount(uidUser);
+    $('#hint_menu_account').hide();
   });
   $('.content-search-user').click(e=>{
     let element = event.target;
     document.getElementById('items-post').innerHTML = '';
-    console.log(element.id);
     viewMyAccount(element.id);
+    $('.content-search-user').hide();
   });
   //
   $('.icon-home2').click(() => {// ir al home2
