@@ -64,7 +64,7 @@ const updateLike = (idPost) => {
   });  
 }*/
 const Like = (idPost) => {
-  let count=0;
+  let count = 0;
   let userId = firebase.auth().currentUser;
   let ObjectLikes = firebase.database().ref('/posts/' + idPost + '/like/');
   ObjectLikes.once('value', (data) => {// recupera todos los datos
@@ -73,25 +73,33 @@ const Like = (idPost) => {
       if (dataLike[like].create === userId.uid) {
         count++;
       }
-    } 
+    }
   });
-  if(count!==1){
-    updateLike(idPost);  
+  if (count !== 1) {
+    updateLike(idPost);
   }
 }
 const viewMyAccount = (uidUser) => {
-  dataUserLogin(uidUser);
+  let userId = firebase.auth().currentUser;
+  dataUserLogin(uidUser);// envio nuevos datos para obtener nuevos usuarios
   const dataPostUser = firebase.database().ref('/user-posts/' + uidUser);
   dataPostUser.once('value', data => {
     document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();
     for (const post in dataPosts) {
-      const infoPost = firebase.database().ref('/posts/' + post);
+      const infoPost = firebase.database().ref('/posts/' + post).orderByChild('time');
       infoPost.once('value', posts => {
         const dataPost = posts.val();
+        const typePublic = dataPost.privacy;
         const count = (Object.keys(dataPost.like).length) - 1;
         let myDate = new Date(Math.round((dataPost.time) / 1000.0) * 1000);
-        document.getElementById('items-post').innerHTML += sectionAllPost(user.displayName, user.photoURL, dataPost.content, dataPost.image, count, myDate.toLocaleString(), post);
+        if (uidUser === userId.uid) {// si yo misma quiero ver mi verfil
+          document.getElementById('items-post').innerHTML += sectionAllPost(user.displayName, user.photoURL, dataPost.content, dataPost.image, count, myDate.toLocaleString(), post);
+        } else {
+          if (typePublic === 'Público') {
+            document.getElementById('items-post').innerHTML += sectionAllPost(user.displayName, user.photoURL, dataPost.content, dataPost.image, count, myDate.toLocaleString(), post);
+          }
+        }
       })
     }
     eventsPost();
@@ -100,15 +108,18 @@ const viewMyAccount = (uidUser) => {
 const viewPost = () => {
   postRef.on('value', data => {
     document.getElementById('items-post').innerHTML = '';
-    let dataPosts = data.val();
+    let dataPosts = data.val();   
     for (const post in dataPosts) {
+      const typePublic = dataPosts[post].privacy;
       const likePos = dataPosts[post].like;
       const count = (Object.keys(likePos).length) - 1;
       const info = firebase.database().ref('/Usuarios/' + dataPosts[post].uidUser);
       info.once('value', User => {
         let dataUser = User.val();
         let myDate = new Date(Math.round((dataPosts[post].time) / 1000.0) * 1000);
-        document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, myDate.toLocaleString(), post);
+        if (typePublic === 'Público') {
+          document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, myDate.toLocaleString(), post);
+        }
         eventsPost();
       });
     };

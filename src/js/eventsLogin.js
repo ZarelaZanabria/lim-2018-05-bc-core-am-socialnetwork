@@ -106,7 +106,15 @@ eventsLogin = () => {
                 console.log(error.code, error.message, error.email, error.credential);
             });
     });
-
+    //............................................................................  AUTHENTIFICACION ANOMINA
+        $('#visitorPost').click(() => {
+            firebase.auth().signInAnonymously().catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+              });
+        });
     //...........................................................................INICIAR SESION
     $('#btnLogin').click(() => {
         const auth = firebase.auth();
@@ -120,6 +128,7 @@ eventsLogin = () => {
 
         });
     });
+
     // ...........................................................................VALIDACION ESTRUCTURA EMAIL    
     $('#txtEmail').bind('input', () => {
         validateEmail($('#icon-check'));
@@ -137,6 +146,8 @@ eventsLogin = () => {
         $('#section-login').show();//.fadeOut( 1000 )
         $('#section-register-user').hide();
     });
+
+    
     //........................................................................FUNCION REGISTRO A LA BASE DE DATOS
     const guardarDataCorreo = (user, name, password, photoURL) => {
         firebase.database().ref('Usuarios/' + user.uid).set({
