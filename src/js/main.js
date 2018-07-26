@@ -7,14 +7,14 @@ dataUserLogin = (uid) => {
   let displayName;
   let email;
   let datos;
-  let userDatabase = firebase.database().ref('/Usuarios/'+uid);
-    userDatabase.on('value', data=>{
-      datos=data.val();
-      displayName=datos.usersName;
-      email=datos.usersEmail;
-      photoOfDatabase=datos.photoURL;
-      user = { displayName: displayName, email: email, photoURL: photoOfDatabase };
-    });  
+  let userDatabase = firebase.database().ref('/Usuarios/' + uid);
+  userDatabase.on('value', data => {
+    datos = data.val();
+    displayName = datos.usersName;
+    email = datos.usersEmail;
+    photoOfDatabase = datos.photoURL;
+    user = { displayName: displayName, email: email, photoURL: photoOfDatabase };
+  });
   // console.log(displayName,email,photoOfDatabase);
   // return { displayName: displayName, email: email, photoURL: photoOfDatabase }
 
@@ -51,35 +51,45 @@ const updateLike = (idPost) => {
     create: userId.uid,
   })
 }
+/* const deleteLike=(idPost,uid)=>{
+  let refDeleteLike = firebase.database().ref('posts/'+idPost+'/like/');
+  refDeleteLike.once('value',data=>{    
+    const likes=data.val();
+    for (const like in likes) {
+      if(likes[like].create===uid){
+        let likePost=firebase.database().ref('posts/'+idPost+'/like/'+like);
+        likePost.remove();
+       }
+    }
+  });  
+}*/
 const Like = (idPost) => {
+  let count=0;
   let userId = firebase.auth().currentUser;
   let ObjectLikes = firebase.database().ref('/posts/' + idPost + '/like/');
   ObjectLikes.once('value', (data) => {// recupera todos los datos
     let dataLike = data.val();
     for (const like in dataLike) {
       if (dataLike[like].create === userId.uid) {
-        let refDelete = firebase.database().ref('posts/' + idPost + '/like');
-        //refDelete.remove();
-        alert('YA DISTE UN !!');
+        count++;
       }
-      else {
-        updateLike(idPost);
-      }
-    }
+    } 
   });
+  if(count!==1){
+    updateLike(idPost);  
+  }
 }
 const viewMyAccount = (uidUser) => {
   dataUserLogin(uidUser);
   const dataPostUser = firebase.database().ref('/user-posts/' + uidUser);
   dataPostUser.once('value', data => {
-    document.getElementById('items-post').innerHTML='';
+    document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();
     for (const post in dataPosts) {
       const infoPost = firebase.database().ref('/posts/' + post);
       infoPost.once('value', posts => {
-        let dataPost = posts.val();
-        const likePos = dataPost.like;
-        const count = (Object.keys(likePos).length) - 1;        
+        const dataPost = posts.val();
+        const count = (Object.keys(dataPost.like).length) - 1;
         let myDate = new Date(Math.round((dataPost.time) / 1000.0) * 1000);
         document.getElementById('items-post').innerHTML += sectionAllPost(user.displayName, user.photoURL, dataPost.content, dataPost.image, count, myDate.toLocaleString(), post);
       })
@@ -95,13 +105,13 @@ const viewPost = () => {
       const likePos = dataPosts[post].like;
       const count = (Object.keys(likePos).length) - 1;
       const info = firebase.database().ref('/Usuarios/' + dataPosts[post].uidUser);
-      info.once('value', User => {        
+      info.once('value', User => {
         let dataUser = User.val();
         let myDate = new Date(Math.round((dataPosts[post].time) / 1000.0) * 1000);
         document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, myDate.toLocaleString(), post);
         eventsPost();
       });
-    };    
+    };
   });
 }
 window.searchUsers = (name) => {

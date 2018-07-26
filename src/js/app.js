@@ -12,7 +12,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             componente = headerElement(userLogin, photoUser,email,uid);
         }else{
             componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email,uid);
-        }        
+        }   
+        document.getElementById('newPost').innerHTML='';     
         $('#header-main').show();
         $('#header-main').append(componente);
         $('#post-main').show();
