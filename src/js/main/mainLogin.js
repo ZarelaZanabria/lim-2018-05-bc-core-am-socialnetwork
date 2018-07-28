@@ -17,7 +17,16 @@ eventsLogin = () => {
             $('#icon-validate-password').attr('class', 'icon-cross');
         }
     });
-
+    const validateFormateEmail = (data) => {
+        console.log(data.indexOf('@'),typeof (data.substr(0, 1)),data.length - data.lastIndexOf("."));
+        if (data.indexOf('@') >= 5) {
+            if (parseInt(data.charAt(0)) == NaN) {
+                if (data.length - data.lastIndexOf(".") <= 5) {
+                    return true;
+                } else { return 'dominio inexistente' }
+            } else { return 'Formato correo invalido ' }
+        } else { return 'email diminuto o invalido' }
+    }
     const mesaggeFirebase = (message) => {
         switch (message) {
             case 'Password should be at least 6 characters':
