@@ -1,5 +1,3 @@
-
-
 describe('data', () => {
 
   it('debería exponer función validateFormateEmail en objeto global', () => {

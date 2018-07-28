@@ -1,4 +1,3 @@
-//window.onload = inicializar;
 let user = null;
 
 let postRef = firebase.database().ref().child('posts');
@@ -15,8 +14,7 @@ dataUserLogin = (uid) => {
     photoOfDatabase = datos.photoURL;
     user = { displayName: displayName, email: email, photoURL: photoOfDatabase };
   });
-  // console.log(displayName,email,photoOfDatabase);
-  // return { displayName: displayName, email: email, photoURL: photoOfDatabase }
+  
 
 }
 const updateNewPost = (posts, privacy, uidPost) => {

@@ -1,6 +1,6 @@
 window.validateFormateEmail = (data) => {  
   if (data.indexOf('@') >= 5) {
-    if (typeof (data.substr(0, 1)) == 'string') {
+    if (parseInt(data.charAt(0)) == NaN) {
       if (data.length - data.lastIndexOf(".") <= 5) {
         return true;
       } else { return 'dominio inexistente' }
