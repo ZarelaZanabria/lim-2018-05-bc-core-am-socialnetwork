@@ -52,4 +52,3 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         eventsLogin();// todos los eventos con login
     }
 });
-

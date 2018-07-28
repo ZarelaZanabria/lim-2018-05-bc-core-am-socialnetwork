@@ -1,108 +1,136 @@
+//window.onload = inicializar;
+let user = null;
+
 let postRef = firebase.database().ref().child('posts');
-window.dataUserLogin = () => {
+dataUserLogin = (uid) => {
   let photoOfDatabase;
-  let userId = firebase.auth().currentUser;
-  let userDatabase = firebase.database().ref('/Usuarios/'+userId.uid+'/photoURL/');
-  userDatabase.on('value', data=>{
-    photoOfDatabase=data.val();
-  })
-  return { uid: userId.uid, displayName: userId.displayName, email: userId.email, photoURL: photoOfDatabase }
+  let displayName;
+  let email;
+  let datos;
+  let userDatabase = firebase.database().ref('/Usuarios/' + uid);
+  userDatabase.on('value', data => {
+    datos = data.val();
+    displayName = datos.usersName;
+    email = datos.usersEmail;
+    photoOfDatabase = datos.photoURL;
+    user = { displayName: displayName, email: email, photoURL: photoOfDatabase };
+  });
+  // console.log(displayName,email,photoOfDatabase);
+  // return { displayName: displayName, email: email, photoURL: photoOfDatabase }
+
 }
 const updateNewPost = (posts, privacy, uidPost) => {
-  let userId = dataUserLogin();
-  let fecha = new Date();
-  let dateNew = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear() + "  " + fecha.getHours() + ": " + fecha.getMinutes();
+  let userId = firebase.auth().currentUser;
   let postData = {
     content: posts,
     privacy: privacy,
-    time: dateNew,
+    time: firebase.database.ServerValue.TIMESTAMP,
   }
   firebase.database().ref('/posts/' + uidPost).update(postData);
   firebase.database().ref('user-posts/' + userId.uid + '/' + uidPost).update(postData);
 }
 const insertNewPost = (picture, posts, privacy) => {
-  console.log(new Date());
-  let userId = dataUserLogin();
-  let fecha = new Date();
-  let dateNew = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear() + "  " + fecha.getHours() + ": " + fecha.getMinutes();
+  let userId = firebase.auth().currentUser;
   let newPostKey = postRef.push().key;
   let postData = {
     uidUser: userId.uid,
     content: posts,
     image: picture,
     privacy: privacy,
-    time: dateNew,
+    like: {},
+    time: firebase.database.ServerValue.TIMESTAMP,
   }
   firebase.database().ref('posts/' + newPostKey).set(postData);
   firebase.database().ref('user-posts/' + userId.uid + '/' + newPostKey).set(postData);
-  updateLike(newPostKey);
 }
 const updateLike = (idPost) => {
-  let userId = dataUserLogin();
+  let userId = firebase.auth().currentUser;
   let postLikes = firebase.database().ref().child('posts/' + idPost + '/like');
   let starCountRef = firebase.database().ref('posts/' + idPost + '/like').push({
     creationTime: firebase.database.ServerValue.TIMESTAMP,// para mostrar dar formato actual
     create: userId.uid,
   })
 }
+const deleteLike=(idPost,uid)=>{
+  let refDeleteLike = firebase.database().ref('posts/'+idPost+'/like/');
+  refDeleteLike.once('value',data=>{    
+    const likes=data.val();
+    for (const like in likes) {
+      if(likes[like].create===uid){
+        let likePost=firebase.database().ref('posts/'+idPost+'/like/'+like);
+        likePost.remove();
+       }
+    }
+  });  
+}
 const Like = (idPost) => {
-  let userId = dataUserLogin();
+  let count = 0;
+  let userId = firebase.auth().currentUser;
   let ObjectLikes = firebase.database().ref('/posts/' + idPost + '/like/');
   ObjectLikes.once('value', (data) => {// recupera todos los datos
     let dataLike = data.val();
     for (const like in dataLike) {
       if (dataLike[like].create === userId.uid) {
-        let refDelete = firebase.database().ref('posts/' + idPost + '/like');
-        //refDelete.remove();
-        alert('YA DISTE UN !!');
-      }
-      else {
-        updateLike(idPost);
+        count++;
       }
     }
   });
+  if (count !== 1) {
+    updateLike(idPost);
+  }else{
+    deleteLike(idPost,userId.uid);
+  }
 }
 const viewMyAccount = (uidUser) => {
-  let userId = dataUserLogin();
+  let userId = firebase.auth().currentUser;
+  dataUserLogin(uidUser);// envio nuevos datos para obtener nuevos usuarios
   const dataPostUser = firebase.database().ref('/user-posts/' + uidUser);
-  dataPostUser.on('value', data => {
-    let dataPosts = data.val();
-    for (const post in dataPosts) {
-      const infoPost = firebase.database().ref('/posts/'+post);
-      infoPost.once('value', posts => {
-        let dataPost = posts.val();
-        const likePos = dataPost.like;
-        const count = (Object.keys(likePos).length) - 1; 
-         document.getElementById('items-post').innerHTML += sectionAllPost(userId.displayName, userId.photoURL, dataPost.content, dataPost.image, count, dataPost.time, post);
-      })
-    }
-    eventsPost();
-  }); 
-  
-}
-const viewPost = () => {
-  let userId = dataUserLogin();
-  postRef.on('value', data => {
-   // console.log('recarga todos los spost '+new Date());
+  dataPostUser.once('value', data => {
     document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();
     for (const post in dataPosts) {
+      const infoPost = firebase.database().ref('/posts/' + post).orderByChild('time');
+      infoPost.once('value', posts => {
+        const dataPost = posts.val();
+        const typePublic = dataPost.privacy;
+        const count = (Object.keys(dataPost.like ? dataPost.like : {}).length);
+        let myDate = new Date(Math.round((dataPost.time) / 1000.0) * 1000);
+        if (uidUser === userId.uid) {// si yo misma quiero ver mi verfil
+          document.getElementById('items-post').innerHTML += sectionAllPost(user.displayName, user.photoURL, dataPost.content, dataPost.image, count, myDate.toLocaleString(), post);
+        } else {
+          if (typePublic === 'Público') {
+            document.getElementById('items-post').innerHTML += sectionAllPost(user.displayName, user.photoURL, dataPost.content, dataPost.image, count, myDate.toLocaleString(), post);
+          }
+        }
+      })
+    }
+    eventsPost();
+  });
+}
+
+const viewPost = () => {
+  postRef.off('value')
+  postRef.on('value', data => {
+    document.getElementById('items-post').innerHTML = '';
+    let dataPosts = data.val();   
+    for (const post in dataPosts) {
+      const typePublic = dataPosts[post].privacy;
       const likePos = dataPosts[post].like;
-      const count = (Object.keys(likePos).length) - 1;
+      const count = (Object.keys(likePos?likePos:{}).length);
       const info = firebase.database().ref('/Usuarios/' + dataPosts[post].uidUser);
       info.once('value', User => {
         let dataUser = User.val();
-        document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, dataPosts[post].time, post);
-         eventsPost();
+        let myDate = new Date(Math.round((dataPosts[post].time) / 1000.0) * 1000);
+        if (typePublic === 'Público') {
+          document.getElementById('items-post').innerHTML += sectionAllPost(dataUser.usersName, dataUser.photoURL, dataPosts[post].content, dataPosts[post].image, count, myDate.toLocaleString(), post);
+        }
+        eventsPost();
       });
-    };   
+    };
   });
- }
- window.searchUsers=(name)=>{
-   let info;
-  const dataUser=firebase.database().ref('/Usuarios/').orderByChild('usersName').startAt(name).limitToFirst(10); 
-  dataUser.on('value', snapshot=> {
-    //return snapshot.val();
-  });
+}
+window.searchUsers = (name) => {
+  let info;
+  const dataUser = firebase.database().ref('/Usuarios/').orderByChild('usersName').startAt(name).limitToFirst(10);
   return dataUser;
- }
+}
