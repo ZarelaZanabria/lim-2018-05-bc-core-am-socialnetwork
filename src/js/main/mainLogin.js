@@ -17,16 +17,7 @@ eventsLogin = () => {
             $('#icon-validate-password').attr('class', 'icon-cross');
         }
     });
-/*     const validateFormateEmail = (data) => {
-        console.log(data.indexOf('@'),typeof (data.substr(0, 1)),data.length - data.lastIndexOf("."));
-        if (data.indexOf('@') >= 5) {
-            if (typeof (data.substr(0, 1)) == 'string') {
-                if (data.length - data.lastIndexOf(".") <= 5) {
-                    return true;
-                } else { return 'dominio inexistente' }
-            } else { return 'Formato correo invalido ' }
-        } else { return 'email diminuto o invalido' }
-    } */
+
     const mesaggeFirebase = (message) => {
         switch (message) {
             case 'Password should be at least 6 characters':
@@ -88,7 +79,7 @@ eventsLogin = () => {
             .then(function (result) {// Autentica en Firebase usando un flujo de autenticación OAuth basado en ventanas emergentes.
                 guardarData(result.user);
             }).catch(error => {
-                
+                console.log(error.code, error.message, error.email, error.credential);
                 if (errorCode === 'auth/account-exists-with-different-credential') {
                     alert('Es el mismo usuario');
                 }
@@ -103,23 +94,21 @@ eventsLogin = () => {
             .then(function (result) {
                 guardarData(result.user);
             }).catch(error => {
-               
+                console.log(error.code, error.message, error.email, error.credential);
             });
     });
     //............................................................................  AUTHENTIFICACION ANOMINA
         $('#visitorPost').click(() => {
-            firebase.auth().signInAnonymously().catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-              });
+            firebase.auth().signInAnonymously().catch(function(error) {});
         });
+        $('#visitorMobile').click(()=>{
+            firebase.auth().signInAnonymously().catch(function(error) {});
+        })
     //...........................................................................INICIAR SESION
     $('#btnLogin').click(() => {
         const auth = firebase.auth();
         firebase.auth().languageCode = 'es';
-        
+        console.log(txtEmail.val(), txtPassword.val());
         const promise = auth.signInWithEmailAndPassword(txtEmail.val(), txtPassword.val());// devuelve una promesa que permita identificar al usuario o para detectar cualquien error y registrarlos en firebase
         promise.catch(e => {
             const errorEmail = e.message;

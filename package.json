@@ -7,11 +7,6 @@
     "test-node": "nyc mocha ./test/headless.js && nyc report --reporter=html",
   "test": "npm run test-node && npm run test-browser"
   },
-
-
-
-
-
   "author": "Elizabeth Zarela",
   "license": "ISC",
   "dependencies": {
