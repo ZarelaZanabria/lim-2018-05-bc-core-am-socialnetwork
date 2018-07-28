@@ -5,44 +5,53 @@ eventsLogin = () => {
     let refUsers;//referencia a la bd del usuario
     let passwordValidate;
     //....................................................................... VALIDACION DE PASSWORD REPETIDO
-    $('#users-passwordTwo').bind('input', () => {
+
+    const iconcheckmark = () => {
+        $('#icon-validate-password').attr('class', 'icon-checkmark');
+    }
+
+    const iconcross = () => {
+        $('#icon-validate-password').attr('class', 'icon-cross');
+    }
+    const valitationPassword = () => {
         passwordTwo = event.target.value;
         passwordOne = passwordUsers.val();
         //Se muestra un texto a modo de ejemplo, luego va a ser un icono
         if (passwordTwo === passwordOne) {
             passwordValidate = 'passwordValido';
-            $('#icon-validate-password').attr('class', 'icon-checkmark');
+            iconcheckmark();
+
         } else {
             passwordValidate = 'passwordInvalido';
-            $('#icon-validate-password').attr('class', 'icon-cross');
-        }
-    });
 
-    const mesaggeFirebase = (message) => {
-        switch (message) {
-            case 'Password should be at least 6 characters':
-                return 'Ingrese contraseña con min 6 caracteres';
-                break;
-            case 'The email address is badly formatted.':
-                return 'Ingrese un correo valido';
-                break;
-            case 'The email address is already in use by another account.':
-                return 'Este correo ya esta registrado';
-                break;
-            case 'The password is invalid or the user does not have a password.':
-                return 'Password Incorrecto';
-                break;
-            case 'There is no user record corresponding to this identifier. The user may have been deleted.':
-                return 'El usuario no existe';
-                break;
+            iconcross();
         }
     }
+    $('#users-passwordTwo').bind('input', () => {
+        valitationPassword();
+    });
+
+
     const viewMessage = (message) => {
         document.getElementById('mensaggeRegisterValide').innerHTML = '';
         $('#mensaggeRegisterValide').append(message);
     }
     //....................................................................... AUNTENTIFICACION CON CORREO Y CONTRASENIA
     /*Hace referente al hijo del modo raiz de la base de datos */
+
+    const autenticationCorreo = () => {
+        const promise = firebase.auth()
+            .createUserWithEmailAndPassword(usersEmail, usersPassword)
+            .then(function (user) {
+                const nameUsers = $('#users-name').val() + ' ' + $('#users-last-name').val();
+                guardarDataCorreo(user, nameUsers, usersPassword, 'http://svgur.com/i/65U.svg');
+                return user.updateProfile({ 'displayName': nameUsers });
+            }).catch(function (error) {
+                viewMessage(mesaggeFirebase(error.message));
+           });
+    }
+
+
     $('#register').click(() => {
         let usersPassword = $('#users-password').val();
         let usersEmail = $('#users-email').val();
@@ -50,15 +59,8 @@ eventsLogin = () => {
             let messageFormate = validateFormateEmail(usersEmail);
             if (messageFormate == true) {
                 if (passwordValidate === 'passwordValido') {
-                    const promise = firebase.auth()
-                        .createUserWithEmailAndPassword(usersEmail, usersPassword)
-                        .then(function (user) {
-                            const nameUsers = $('#users-name').val() + ' ' + $('#users-last-name').val();
-                            guardarDataCorreo(user, nameUsers, usersPassword, 'http://svgur.com/i/65U.svg');
-                            return user.updateProfile({ 'displayName': nameUsers });
-                        }).catch(function (error) {
-                            viewMessage(mesaggeFirebase(error.message));
-                        });
+                    autenticationCorreo();
+
                 } else {
                     viewMessage('Las contraseñas deben ser iguales');
                 }
@@ -98,12 +100,12 @@ eventsLogin = () => {
             });
     });
     //............................................................................  AUTHENTIFICACION ANOMINA
-        $('#visitorPost').click(() => {
-            firebase.auth().signInAnonymously().catch(function(error) {});
-        });
-        $('#visitorMobile').click(()=>{
-            firebase.auth().signInAnonymously().catch(function(error) {});
-        })
+    $('#visitorPost').click(() => {
+        firebase.auth().signInAnonymously().catch(function (error) { });
+    });
+    $('#visitorMobile').click(() => {
+        firebase.auth().signInAnonymously().catch(function (error) { });
+    })
     //...........................................................................INICIAR SESION
     $('#btnLogin').click(() => {
         const auth = firebase.auth();
@@ -126,6 +128,18 @@ eventsLogin = () => {
         validateEmail($('#icon-validate'));
     });
 
+    //.......................................................................VALIDACION DE CORREO ELECTRONICO
+    const validateEmail = (idSpan) => {
+        debugger
+        campo = event.target;
+        val = campo.value;
+        emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+        if (emailRegex.test(val)) {
+            idSpan.attr('class', 'icon-checkmark');
+        } else {
+            idSpan.attr('class', 'icon-cross');
+        }
+    }
     //.........................................................................EVENTOS DISPLAY
     $('#btnSignUp').click(() => {
         $('#section-login').hide();
@@ -136,7 +150,7 @@ eventsLogin = () => {
         $('#section-register-user').hide();
     });
 
-    
+
     //........................................................................FUNCION REGISTRO A LA BASE DE DATOS
     const guardarDataCorreo = (user, name, password, photoURL) => {
         firebase.database().ref('Usuarios/' + user.uid).set({
@@ -154,15 +168,5 @@ eventsLogin = () => {
         }
         firebase.database().ref('Usuarios/' + user.uid).set(usuario);
     }
-    //.......................................................................VALIDACION DE CORREO ELECTRONICO
-    const validateEmail = (idSpan) => {
-        campo = event.target;
-        val = campo.value;
-        emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-        if (emailRegex.test(val)) {
-            idSpan.attr('class', 'icon-checkmark');
-        } else {
-            idSpan.attr('class', 'icon-cross');
-        }
-    }
+
 }
