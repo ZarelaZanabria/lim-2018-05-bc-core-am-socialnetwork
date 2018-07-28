@@ -187,7 +187,7 @@ registerElement = () => {
                         <input type="text" placeholder="Last Name" id="users-last-name" class="input-user">
                     </div>
                     <div class="section-value">
-                        <input type="text" placeholder="Email" id="users-email" >
+                        <input type="email" placeholder="Email" id="users-email" >
                         <span id="icon-validate"></span>
                     </div>
                     <div class="section-value">
