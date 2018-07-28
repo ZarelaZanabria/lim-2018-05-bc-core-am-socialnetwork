@@ -37,11 +37,11 @@ const insertNewPost = (picture, posts, privacy) => {
     content: posts,
     image: picture,
     privacy: privacy,
+    like: {},
     time: firebase.database.ServerValue.TIMESTAMP,
   }
   firebase.database().ref('posts/' + newPostKey).set(postData);
   firebase.database().ref('user-posts/' + userId.uid + '/' + newPostKey).set(postData);
-  updateLike(newPostKey);
 }
 const updateLike = (idPost) => {
   let userId = firebase.auth().currentUser;
@@ -51,7 +51,7 @@ const updateLike = (idPost) => {
     create: userId.uid,
   })
 }
-/* const deleteLike=(idPost,uid)=>{
+const deleteLike=(idPost,uid)=>{
   let refDeleteLike = firebase.database().ref('posts/'+idPost+'/like/');
   refDeleteLike.once('value',data=>{    
     const likes=data.val();
@@ -62,7 +62,7 @@ const updateLike = (idPost) => {
        }
     }
   });  
-}*/
+}
 const Like = (idPost) => {
   let count = 0;
   let userId = firebase.auth().currentUser;
@@ -77,6 +77,8 @@ const Like = (idPost) => {
   });
   if (count !== 1) {
     updateLike(idPost);
+  }else{
+    deleteLike(idPost,userId.uid);
   }
 }
 const viewMyAccount = (uidUser) => {
@@ -91,7 +93,7 @@ const viewMyAccount = (uidUser) => {
       infoPost.once('value', posts => {
         const dataPost = posts.val();
         const typePublic = dataPost.privacy;
-        const count = (Object.keys(dataPost.like).length) - 1;
+        const count = (Object.keys(dataPost.like ? dataPost.like : {}).length);
         let myDate = new Date(Math.round((dataPost.time) / 1000.0) * 1000);
         if (uidUser === userId.uid) {// si yo misma quiero ver mi verfil
           document.getElementById('items-post').innerHTML += sectionAllPost(user.displayName, user.photoURL, dataPost.content, dataPost.image, count, myDate.toLocaleString(), post);
@@ -105,14 +107,16 @@ const viewMyAccount = (uidUser) => {
     eventsPost();
   });
 }
+
 const viewPost = () => {
+  postRef.off('value')
   postRef.on('value', data => {
     document.getElementById('items-post').innerHTML = '';
     let dataPosts = data.val();   
     for (const post in dataPosts) {
       const typePublic = dataPosts[post].privacy;
       const likePos = dataPosts[post].like;
-      const count = (Object.keys(likePos).length) - 1;
+      const count = (Object.keys(likePos?likePos:{}).length);
       const info = firebase.database().ref('/Usuarios/' + dataPosts[post].uidUser);
       info.once('value', User => {
         let dataUser = User.val();

@@ -108,13 +108,11 @@ eventsLogin = () => {
     });
     //............................................................................  AUTHENTIFICACION ANOMINA
         $('#visitorPost').click(() => {
-            firebase.auth().signInAnonymously().catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-              });
+            firebase.auth().signInAnonymously().catch(function(error) {});
         });
+        $('#visitorMobile').click(()=>{
+            firebase.auth().signInAnonymously().catch(function(error) {});
+        })
     //...........................................................................INICIAR SESION
     $('#btnLogin').click(() => {
         const auth = firebase.auth();

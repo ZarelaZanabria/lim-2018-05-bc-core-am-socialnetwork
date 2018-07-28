@@ -12,23 +12,34 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             componente = headerElement(userLogin, photoUser,email,uid);
         }else{
             componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email,uid);
-        }   
-        document.getElementById('newPost').innerHTML='';     
-        $('#header-main').show();
-        $('#header-main').append(componente);
-        $('#post-main').show();
-        $('#newPost').append(sectionElement());
-        $('#btnLogOut').show(); // aparece mi boton salir
-        // login y register oculto
+        }        
         $('#portada').hide();
         $('#contentLoginRegister').hide();
         $('#section-register-user').remove();
-        $('#section-login').remove();      
-        viewPost (); 
-        eventsPost();
-        dataUserLogin(uid);
+        $('#section-login').remove();
 
+        if(userLogin==null && photoUser===null&& email == null){
+            viewPost (); 
+            eventsPost();
+            $('.header-section-user').hide();
+            $('#new_posts').hide();            
+            $('.visitante-anonimus').show();
+        }else{            
+            document.getElementById('newPost').innerHTML='';     
+            $('#header-main').show();        
+            $('#post-main').show();
+            $('#btnLogOut').show(); 
+            $('#header-main').append(componente);
+            $('#newPost').append(sectionElement());
+            $('#new_posts').show();
+            $('.visitante-anonimus').hide();
+            viewPost (); 
+            eventsPost();
+            dataUserLogin(uid);
+        }  
     } else {// si no mostramos un mensaje de no regstrado 
+        $('.visitante-anonimus').hide();
+        $('#new_posts').hide();
         $('#header-main').hide();
         $('#header-main-content').remove();
         loginElement();

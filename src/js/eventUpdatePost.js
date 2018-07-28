@@ -3,12 +3,14 @@ eventsUpdatePost=()=>{
         let dataDeletePost = $('#edit-post').attr('data-posts');// data-post del boton modificar
         updateNewPost($('#input-post').val(), $('#typePost').val(), dataDeletePost);
         document.getElementById('div_new_post').innerHTML=''; 
+        $('#div_new_post').hide();
         $("#input-post").disabled = true;
          readFile();
       
     });
     $('#publicar-cancelar').click(() => {
       document.getElementById('div_new_post').innerHTML='';
+      $('#div_new_post').hide();
     });
     function readFile(input) {
       if (input.files && input.files[0]) {

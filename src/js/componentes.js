@@ -1,9 +1,8 @@
 headerElement = (userLogin, photo, email,uid) => {
-    //    <a href="/src/muro.html" target="_blank" onClick="window.open(this.href, this.target, 'width=300,height=400'); return false;">lanza correctamente</a>
+    return $('#header-main').append(`   
 
-    return $('#header-main').append(`    
     <div class='header-main-content'>
-        <div class='header-section-user'>         
+        <div class='header-section-user' id='header-section-user'>         
                     <div class='content-photo-view-profile' >
                         <img src='${photo}' alt='photo-profile' id="btnLogOut">                                                
                     </div>
@@ -71,7 +70,7 @@ sectionElement = () => {
   
     return `
     <div>
-        <input type='textare' autocomplete='off' id='view-input-post' class='input-post' placeholder='Que estas pensando?'>
+        <input type='textare' autocomplete='off' id='view-input-post' class='input-post' placeholder='¿Tienes algo que contar?'>
         <div id='div_new_post'></div>
     </div>
     <div id='div_delete_post'></div> 
@@ -81,28 +80,29 @@ sectionElement = () => {
 const newInsertPost =(uidPost)=>{
     return `
     <div class='form_delete_post'>
-        <select id='typePost'>
-            <option>Público</option>
-            <option>Mis amigos</option>
-            <option>Solo yo</option>
-        </select>
-        <input type='textare' autocomplete='off' id='input-post' class='input-post' placeholder='Que estas pensando?'>
+        <div class='headerPopup'>    
+            <span class='icon-cross' id='publicar-cancelar'></span>
+            <h4 id='titlePopup'></h4>                  
+        </div>        
+        <textarea type='textare' autocomplete='off' id='input-post' class='input-post' placeholder='¿Tienes algo que contar?'></textarea>
         <div id='file-preview-zone'></div>
         <div class='accion-public'>                    
             <div class='public-image'>
                 <input type="file" name="file" id="file" class="inputfile" />
-                <label for="file" class='icon-images'>Foto/video</label>
+                <label for="file" class='icon-images'>Foto</label>
             </div>                        
             <div id='button-post' >
+            <select id='typePost'>
+            <option>Público</option>
+            <option>Mis amigos</option>
+            <option>Solo yo</option>
+            </select>
                 <input type='button' value='Modificar' id='edit-post' data-posts='${uidPost}' class='publicar-cancelar'>
                 <input type='button' value='Publicar' id='send-post' class='publicar-cancelar'>
-                <input type='button' value='Cancelar' class='publicar-cancelar' id='publicar-cancelar'>
+                
             </div>
         </div> 
-    </div>
-              
-                
-  
+    </div>            
     `}
 const sectionAllPost = (user, photo, coment, image, like, time, idpost) => {
     return `
@@ -154,13 +154,15 @@ const sectionAllPost = (user, photo, coment, image, like, time, idpost) => {
 }
 deletePostElement = (coment, uidPost) => {
     return `
-    <div id='form_delete_post' class='form_delete_post'>
-    <h4>Se eliminará este post</h4>
+    <div id='form_delete_post' class='form_delete_post'>    
+        <div class='headerPopup'>    
+            <h4>Se eliminará este post</h4>
+        </div>
         <div class="box-input">  
             <p>${coment}</p>      
         </div>
         <div class="contain-button-search">                    
-            <button type="button" name="button" id="hide_form_search">Close</button>
+            <button type="button" name="button" class='publicar-cancelar'id="hide_form_search">Cancelar</button>
             <button type="button" name="button" data-posts='${uidPost}' class="delete-post">Eliminar</button>                        
         </div>
     </div>
@@ -173,9 +175,9 @@ registerElement = () => {
     return $('#contentLoginRegister').append(`<div id="section-register-user" class="content-login">
         <form>
             <div class="form-login">
-                <div>
+                <div cl>
                     <span class="icon-circle-left" id="back-login"></span>
-                    <h3>SIGN UP</h3>
+                    <h3>CREAR CUENTA</h3>
                 </div>                
                 <div class="section-Text">
                     <div class="section-value">
@@ -197,10 +199,12 @@ registerElement = () => {
                     </div>
                 </div>
                 <div class="section-Button">
-                    <input type="button" name="" id="register" value="Registrar">
+                    <input type="button" name="" id="register" value="REGISTRARME">
                     <p id="mensaggeRegisterValide"></p>
                 </div>
-
+                <div class="section-invitado" >
+                    <span id="visitorMobile" class="visitor">VISITAR</span>
+                </div>
             </div>
 
         </form>
@@ -210,7 +214,7 @@ loginElement = () => {
     return $('#contentLoginRegister').append(`<div id="section-login" class="content-login">
         <form>
             <div class="logo">
-                <img src="https://png.icons8.com/windows/1600/stork.png" alt="logo">
+                <img src="img/logo3.png" alt="logo">
             </div>
             <div class="form-login">
                 <div class="section-Text">
@@ -223,14 +227,13 @@ loginElement = () => {
                     </div>
                 </div>
                 <div class="section-Button">
-                    <input type="button" id="btnLogin" value="LOGIN">
+                    <input type="button" id="btnLogin" value="INICIAR SESION">
                     <p id="messageValide"></p>
                     <span class="or">--------------or--------------</span>
                 </div>
             </div>
             <div class="loginAditional">
                 <span>
-                    <a id="btnSignUp" class="icon-mail2"></a>
                 </span>
                 <span>
                     <a id="btnLoginFacebook" class="icon-facebook"></a>
@@ -238,9 +241,10 @@ loginElement = () => {
                 <span>
                     <a id="btnLoginGoogle" class="icon-google"></a>
                 </span>
-
-                <!-- <input type="button"  value="Facebook">
-            <input type="button"   value="Google"> -->
+               
+            </div>
+            <div class='section-register'>
+                <span>¿Aún no tienes cuenta?</span><a id="btnSignUp"> Registrate</a>
             </div>
 
         </form>

@@ -3,6 +3,7 @@ eventsGetPost=()=>{
         let post = $('#input-post').val();
         if (post != '') {
           insertNewPost($('#file').val(), post, $('#typePost').val());
+          $('#div_new_post').hide();
           document.getElementById('div_new_post').innerHTML=''; 
           $("#input-post").disabled = true;
           readFile();
@@ -10,6 +11,7 @@ eventsGetPost=()=>{
       });
       $('#publicar-cancelar').click(() => {
         document.getElementById('div_new_post').innerHTML='';
+        $('#div_new_post').hide();
       });
       function readFile(input) {
         if (input.files && input.files[0]) {

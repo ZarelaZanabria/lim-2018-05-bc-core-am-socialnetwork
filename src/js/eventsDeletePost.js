@@ -6,9 +6,12 @@ const eventsDeletePost = () => {
     let refDeletePostUser = firebase.database().ref('user-posts/'+userId.uid+'/'+ dataDeletePost);
     refDeletePost.remove();
     refDeletePostUser.remove();
-    document.getElementById('div_delete_post').innerHTML = '';
+    document.getElementById('div_new_post').innerHTML = '';
+    $("#div_new_post").hide();
+    
   });
   document.getElementById("hide_form_search").addEventListener('click', function () {
-    document.getElementById('div_delete_post').innerHTML = '';
+    document.getElementById('div_new_post').innerHTML = '';
+    $("#div_new_post").hide();
   }, false);
 }
