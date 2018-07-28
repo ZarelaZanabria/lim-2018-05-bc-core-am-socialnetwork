@@ -1,22 +1,43 @@
 ﻿# Red Social de Salud
+# UX
 
-## Introducción
+### Introducción
+
+En la actualidad estamos muy acostumbrados a las redes sociales porque nos conectan con las demás personas, y no me refiero a personas cercanas como familiares y amigos, sino que también nos da la oportunidad de conectar con muchas personas que quizá de otra manera no hubiéramos podido tener el placer de conocer. Además las redes sociales nos ayuda a sentir cerca a las personas que tenemos lejos y echaos de menos.
+
+Pero hoy no quiero hablarte de las personas que echas de menos en tu vida, sino de poder conocer a personas que te aporten mucho en tu día a día y en la educación de tus hijos , me refiero a ` ModoMama ` una red social para madres.
+
 
 La llegada del primer bebé supone una gran felicidad para la pareja primeriza, pero también trae consigo una serie de miedos, que la madre vive especialmente. Cuando una mujer se convierte en madre, empieza una etapa llena de cambios y trabajo, mucho trabajo. En ocasiones, la responsabilidad puede llegar a abrumar y a hacerle sentir que no puede con todo.
 
-Debido a este problema nace la idea de crear una red social especialmente para mujeres que pasan por esta etapa, un espacio donde puedan compartir sus temores, dudas, consultas, etc con otras mujeres de la misma situaciòn.
+Debido a este problema nace `ModoMama` una red social especialmente para mujeres que pasan por esta etapa, un espacio donde puedan compartir sus temores, dudas, consultas, etc con otras mujeres de la misma situaciòn.
+###  ENTREVISTAS
+![Sin titulo](src/img/Entrevista.JPG)
 
-## User Experience Design
+
+###  BENCHMARK
+
+Durante este análisis revisamos:
+
+* Nuestros productos y prototipos actuales y anteriores
+* Los productos de la competencia directa e indirecta
+
+Este análisis nos ayudará a saber cómo estamos en relación a la competencia. Al final de este análisis podremos realizar una tabla como el ej, que nos ayude a tener un mejor panorama.
+
+Para este proyecto usamos como referencia tres paginas, los cuales usamos como referencia y/o guia.
+
+![Sin titulo](src/img/benchmark.JPG)
+
+
+###  User Experience Design
+
 Para desarrollar el proyecto comenzamos diseñando el prototipo de baja y alta fidelidad. Asimismo realizanos entrevistas a mujeres en esta condiciòn.
 
 He aqui una muestra del prototipo de alta fidelidad ya con todas las pautas que recibimos en las entrevistas.
+
 ![Sin titulo](src/img/loginform.png)
 
 ![Sin titulo](src/img/paginaprinciapal.png)
-
-## BENCHMARK
-Para este proyecto usamos como referencia tres paginas, los cuales usamos como referencia y/o guia.
-![Sin titulo](src/img/benchmark.PNG)
 
 
 ## Objetivos
