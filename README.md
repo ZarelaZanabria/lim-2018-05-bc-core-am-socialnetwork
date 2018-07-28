@@ -1,485 +1,82 @@
-﻿# Red Social de Salud
-# UX
-
+﻿# Proyecto - Red Social
 ### Introducción
+![Sin titulo](src/img/logo2.png)
+Bienvenidos a `ModoMama` una red social creada especialmente para mamis. En este espacio podrás compartir tus dudas y temores con otras MUJERES como tú, tendrás a tu alcance muchos tips y orientación sobre el cuidado del recién nacido, comentar y dar tu apoyo con un me gusta a tus posts favoritos y como si fuera poco podrás estar en contacto con especialistas como médicos, nutricionistas y pediatras. A su vez encontraras productos de alta gama para el cuidado del recién nacido. 
 
-En la actualidad estamos muy acostumbrados a las redes sociales porque nos conectan con las demás personas, y no me refiero a personas cercanas como familiares y amigos, sino que también nos da la oportunidad de conectar con muchas personas que quizá de otra manera no hubiéramos podido tener el placer de conocer. Además las redes sociales nos ayuda a sentir cerca a las personas que tenemos lejos y echaos de menos.
+###  Definición del producto:
 
-Pero hoy no quiero hablarte de las personas que echas de menos en tu vida, sino de poder conocer a personas que te aporten mucho en tu día a día y en la educación de tus hijos , me refiero a ` ModoMama ` una red social para madres.
-
-
-La llegada del primer bebé supone una gran felicidad para la pareja primeriza, pero también trae consigo una serie de miedos, que la madre vive especialmente. Cuando una mujer se convierte en madre, empieza una etapa llena de cambios y trabajo, mucho trabajo. En ocasiones, la responsabilidad puede llegar a abrumar y a hacerle sentir que no puede con todo.
-
-Debido a este problema nace `ModoMama` una red social especialmente para mujeres que pasan por esta etapa, un espacio donde puedan compartir sus temores, dudas, consultas, etc con otras mujeres de la misma situaciòn.
-###  ENTREVISTAS
-![Sin titulo](src/img/Entrevista.JPG)
+Hoy en día la mayoría de las personas por no decir todas usan redes sociales, a su vez esto genera un gran mercado online donde hay mucha demanda de todo tipo y los beneficiarios vienen a ser un grupo de personas que forman una comunidad tras otra lo cual va cada vez más en aumento.
+Después de este análisis e investigación mi equipo y yo nos dimos cuenta que son más la cantidad de mujeres que usan redes sociales a la fecha  a comparación de los hombres según estudio en https://www.brandwatch.com/es/blog/redes-sociales-hombres-mujeres/  `(Brandwatch Analytics)` motivo por lo cual nuestra aplicación esta segmentada a ellas. 
+Sabemos que las mujeres tienen el don más bello y hablamos de concebir una nueva vida, toda mujer en algún momento de su vida pasa por esta etapa y es ahí donde surgen muchas dudas y preguntas respecto al embarazo, al cuidado del recién nacido, etc. Y es muy normal que queramos saberlo todo ya que queremos hacer bien las cosas desde un principio, pero esto no siempre es posible debido a varios factores como el horario del trabajo, los estudios, los que haceres del hogar entre otros; es ahí donde nace la idea de realizar una red social especialmente para mamis. 
 
 
-###  BENCHMARK
+###  Elementos básicos que tiene una red social
+Según las investigaciones realizadas se concluye que los elementos básicos por el cual un usuario usa una red social son los siguientes:  
 
-Durante este análisis revisamos:
+![Sin titulo](src/img/caractRedSocial.PNG)
 
-* Nuestros productos y prototipos actuales y anteriores
-* Los productos de la competencia directa e indirecta
+###  Características de ModoMama
 
-Este análisis nos ayudará a saber cómo estamos en relación a la competencia. Al final de este análisis podremos realizar una tabla como el ej, que nos ayude a tener un mejor panorama.
+En base a lo mencionado anteriormente se procedió a definir las características de nuestra aplicación web.
 
-Para este proyecto usamos como referencia tres paginas, los cuales usamos como referencia y/o guia.
-
-![Sin titulo](src/img/benchmark.JPG)
+![Sin titulo](src/img/CaractModoMama_01.PNG)
 
 
-###  User Experience Design
+###  Principales usuarios de producto
+**Usuarios Principales:** El producto está segmentada a mujeres en etapa de gestación (post y prenatal).
 
-Para desarrollar el proyecto comenzamos diseñando el prototipo de baja y alta fidelidad. Asimismo realizanos entrevistas a mujeres en esta condiciòn.
+**Usuarios Secundarios:** Nuestra aplicación tiene como enfoque secundario aplicar un modelo de negocio lo cual consiste en la publicidad de Marcas como Johnson baby, Haggis, etc. dedicados al cuidado del bebe, así como también a estar en contacto con especialistas como pedíatras, médicos y nutricionistas que brindan sus servicios y/o consejos en línea.
 
-He aqui una muestra del prototipo de alta fidelidad ya con todas las pautas que recibimos en las entrevistas.
+### ¿Como descubriste las necesidades de los usuarios?
+Al realizar la investigación nos dimos cuenta de que hay una gran demanda descubierta en el mundo de las mujeres y las redes sociales, pues resulta que hay pocas plataformas para madres que permitan interactuar, participar y compartir las dudas y/o miedos que puedan presentar durante la etapa de concepción o crianza de una nueva vida.
+
+### ¿Qué problema resuelve el producto para los usuarios?
+Nuestro producto brinda al usuario ahorrar tiempo, dinero y evitar malos ratos esperando largas colas para reservar una cita o consulta ya sea con el pediatra, nutricionista o médico.  Con ModoMama nuestros usuarios tendrán al alcance todos estos servicios en un solo lugar las 24 horas y 07 días a la semana.
+
+### Cuáles son los objetivos de estos usuarios en relación con el producto
+
+### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
+
+Nuestra aplicación tiene como prioridad facilitar la vida cotidiana de las madres y en cuanto a la funcionalidad se tomó en cuenta las 10 principales razones que tienen los usuarios para usar una red social y las necesidades y/o dificultades que pueda presentar una madre durante la etapa de gestación y/o nacimiento de un bebe. 
+
+### Cómo verificaste que el producto les está resolviendo sus problemas
+
+Para verificar si el producto está generando satisfacción y/o ayuda a nuestros usuarios se procedió a realizar entrevistas y pedir feedback con fines de mejora y retroalimentación.
+
+### Cómo te asegurarás de que estos usuarios usen este producto
+La forma de asegurar el uso de nuestro producto es haciendo que el producto sea lo más amigable y sencillo posible. Así como ofrecer descuentos en accesorios para bebes y citas con el pediatra, nutricionista, etc. Todo esto patrocinado por los mismos.
+
+
+###  Benchmark de las principales redes sociales
+Antes de definir las características y estructura de nuestro producto final, realizamos un análisis extensivo de nuestras competencias directas e indirectas.
+Es así que llegamos a realizar un Benchmark donde se visualiza las principales características con las que cuentan cada una de ellas, esto nos sirvió de gran ayuda para poder definir nuestra estructura y modelo de negocio de nuestro producto final. 
+En la imagen pueden visualizar los diferentes sitios web que tomamos como referencia para nuestro prototipo.
+
+![Sin titulo](src/img/benchmark.PNG)
+
+###  Resumen de entrevistas con usuarios
+Para un mayor acercamiento con nuestros usuarios realizamos una pequeña encuesta, el cual nos permitió conocer de forma directa las necesidades y problemas de nuestras futuras usuarias. 
+
+![Sin titulo](src/img/formularioEntrevista.PNG)
+
+###  Link/screenshots del prototipo de alta fidelidad
+He aqui una muestra del prototipo de baja fidelidad.
 
 ![Sin titulo](src/img/loginform.png)
 
 ![Sin titulo](src/img/paginaprinciapal.png)
 
-
-## Objetivos
-
-El objetivo principal de aprendizaje de este proyecto es construir un sitio web
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
-con más de una vista (página), y en el que podamos leer y escribir datos.
-
-Algunos objetivos específicos:
-
-* Entender las necesidades de los usuarios para los que crearás el producto y que ayudarás a resolver.
-* Poner en juego tu creatividad para generar ideas que lleven a una solución original y valiosa del problema.
-* Cuentas con el apoyo de tus compañeras, debes trabajar en equipo buscando _feedback_ constante.
-
-## Consideraciones generales
-
-Este proyecto se debe "resolver" en tríos.
-
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6), HTML y CSS. En este proyecto **SÍ está permitido** usar librerías o
-frameworks, pero **no es obligatorio** :smiley:.
-
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este
-repositorio.
-
-## Parte obligatoria
-
-### General
-
-En este proyecto, no hay un _boilerplate_, por lo que tú deberás definir
-la estructura de carpetas y archivos que consideres necesaria, puedes guiarte
-de los proyectos anteriores. Por lo tanto, los _tests_ y el _setup_ necesario
-para ejecutarlos serán hechos por ti misma :smiley:.
-
-### Responsive
-
-Debe verse bien en dispositivos de pantallas grandes (computadoras/es, laptops, etc.) y pequeñas (tablets, celulares, etc.). Te sugerimos seguir la técnica de `mobile first` (más detalles sobre esta técnica al final).
-
-### Tests unitarios
-
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-_lines_, y _branches_.
-
-### UI y comportamiento (User Interface / Interfaz de Usuario)
-
-La interfaz debe permitir lo siguiente:
-
-#### Creación de cuenta de usuario e inicio de sesión
-
-* Login con Firebase:
-  - Solamente para el login es obligatorio usar [Firebase](https://firebase.google.com/), no para las
-    publicaciones en el muro ni las demás funcionalidades, para eso puedes
-    usar [`localStorage`](https://developer.mozilla.org/es/docs/Web/API/API_de_almacenamiento_web/Usando_la_API_de_almacenamiento_web).
-  - Autenticación con Facebook o Google.
-* Validaciones:
-  - No pueden haber usuarios repetidos.
-  - La cuenta de usuario debe ser un correo electrónico válido.
-  - Lo que se escriba en el campo (_input_) de contraseña debe ser secreto.
-* Comportamiento:
-  - Al enviarse un formulario de registro o inicio de sesión, debe validarse.
-  - En caso haya errores, el sistema debe mostrar mensajes de error para
-    ayudar al usuario a corregirlos.
-  - La aplicación solo permitirá el acceso a usuarios con cuentas válidas.
-  - Al recargar la aplicación, se debe verificar si el usuario está
-    logueado antes de mostrarle el contenido privado.
-* Perspectiva de interfaz:
-
-  ![Login](https://user-images.githubusercontent.com/9284690/40994765-c3cf9602-68c2-11e8-89ac-8254859b5ebb.png)
-
-#### Muro/timeline de la red social
-
-* Validaciones:
-  - Al apretar el botón de publicar, debe validar que exista contenido en el input.
-* Comportamiento:
-  - Poder publicar un post.
-  - Poder poner _like_ a una publicación.
-  - Llevar un conteo de los _likes_.
-  - Poder eliminar un post específico.
-  - Poder publicar y mostrar los posts que son sólo para mi (o amigos - ver Hacker edition :wink:) y para todo público.
-  - Pedir confirmación antes de eliminar un post.
-  - Al darle click en el botón editar, debe cambiar el texto por un input que
-    permita editar el texto y cambiar el link por guardar.
-  - Al darle guardar debe cambiar de vuelta a un texto normal pero con la
-    información editada.
-  - Al recargar la página debo de poder ver los textos editados
-* Perspectiva de interfaz:
-
-  ![Muro](https://user-images.githubusercontent.com/9284690/40994768-c52c3442-68c2-11e8-99a5-9e127e700dee.png)
-
-#### Otras consideraciones
-
-* La aplicación no debe dejar hacer publicaciones vacías de ningún tipo.
-* El usuario debe poder agregar, editar y eliminar contenido de la red
-  social.
-* El usuario debe poder definir la privacidad de lo que publica.
-* Al editar contenido, el contenido editado se verá automáticamente e
-  inmediatamente después de guardar.
-* Al recargar la página se deben poder ver los contenidos editados.
-
-Para armar la interfaz visual, utiliza como base alguna de estas guías de
-componentes:
-
-* [Guía Desktop 1](https://www.figma.com/file/F3aUqpHWOfZsEQifTPIleXo6/material-kit-free)
-* [Guía Desktop 2](https://www.figma.com/file/S39H0B1LOnaVICIUiApFTfoP/_Style-Guide---Desktop---Style-Guide)
-* [Guía Mobile 1](https://www.figma.com/file/00VTwmTNvLVaBLkxrMFbT8/Google-Material-Design)
-* [Guía Mobile 2](https://www.figma.com/file/O2Xraz3mraQHvevNsicMl91V/ejemplos-2)
-
-Personaliza estas guías con los colores y/o tipografías que creas convenientes.
-Recuerda que al hacer estas adaptaciones deberás seguir los fundamentos de
-_visual design_ como contraste, alineación, jerarquía, entre otros.
-
-## Implementación
-
-### Front end
-
-El corazón de este proyecto incluye:
-
-* Separar la manipulación del DOM de la lógica (separación de responsabilidades).
-* Que el sitio sea responsive, ya dicho.
-* Alterar y persistir datos. Los datos que agregues o modifiques deberán
-  persistir a lo largo de la aplicación, te recomendamos que uses
-  [`localStorage`](https://developer.mozilla.org/es/docs/Web/API/API_de_almacenamiento_web/Usando_la_API_de_almacenamiento_web)
-  como primera opción para resolver este desafío, aun así, tú
-  puedes optar por la que se acomode más a tu equipo.
-
-Además, podrías agregar algunas tareas nuevas de acuerdo a tus decisiones:
-
-* Recuerda que puedes usar una librería o framework si así lo desea el equipo. Al navegar en internet te darás cuenta de que algunas de estas construyen un
-  **boilerplate** por ti, tenlo presente al iniciar tu proyecto.
-* Recuerda que no hay un setup de **tests** definido, dependerá de
-  la estructura de tu proyecto también, pero algo que no debes de olvidar es
-  pensar en estas pruebas, pues incluso te podrían ayudar a definir la estructura y
-  nomenclatura de tu lógica.
-
-### UX
-
-Desde el punto de vista de UX, deberás:  
-
-* Hacer un _benchmark_ de las principales redes sociales.
-* Hacer al menos 2 o 3 entrevistas con usuarios.
-* Hacer un prototipo de alta fidelidad.
-* Testear el prototipo con usuarios.
-* Asegurarte de que la implementación en código siga los lineamientos del
-  diseño.
-* Hacer sesiones de testing con el producto en HTML.
-
-### Ágil
-
-Vamos a dar un paso importante para seguir aprendiendo de Ágil. Te será de mucha
-ayuda para ir avanzando tu proyecto de forma incremental y no en cascada.
-
-Esta vez te pedimos que los ítems de tu Backlog de Producto estén escritos
-como [Historias de Usuario](http://jmbeas.es/guias/historias-de-usuario/).
-Esta es una técnica muy simple que te ayudará a:
-
-* Organizar el trabajo en función del valor que le aporta al usuario.
-* Poder publicar partes completas y utilizables del producto al final del
-  sprint.
-* Que el equipo trabaje de manera multidisciplinaria de manera natural.
-
-### Habilidades Blandas
-
-Trabajar en equipo es un gran desafío porque coordinarse no es una tarea fácil,
-y es más difícil entre tres que entre dos. Trata que tu equipo te entienda,
-facilitando siempre el diálogo dentro del squad.
-
-Planifica enumerando las tareas y distribuyéndolas, considerando los
-recursos, las habilidades, y el tiempo del que dispones. Planifica de manera
-que te permita avanzar en los distintos aspectos del proyecto de forma paralela,
-teniendo un tablero donde puedas ver en qué está trabajando cada compañera.
-
-Entrega tu trabajo a tu equipo a tiempo y colabora con el objetivo
-final del proyecto, lo que puede implicar ayudar a los demás miembros del equipo
-con sus pendientes, con el fin de entregar una red social de calidad.
-
-**La división del trabajo debe permitir que todo el equipo
-practique el aprendizaje de todas las habilidades esperadas. No se dividan el
-trabajo como en una fábrica**.
-
-Para que tu red social responda a las necesidades de tus usuarios, probablemente deberás adquirir nuevos conocimientos para implementar sus preferencias. Para conocer a los usuarios y sus preferencias, debes salir e investigar. Tienes que ejercitar tus habilidades de comunicación y toma de decisiones.
-Existen infinitas opciones, depende de ti el camino que escojas.
-
-
-Esta vez, haz _code review_ (feedback de tu código) con **otro squad**, para
-que puedas mejorar el producto. Mientras más feedback reciban, mejor.
-
-Esperamos que valores y escuches los comentarios y críticas de los demás,
-rescatando aquellos aspectos que sirven para tu crecimiento. Entrega siempre
-tu opinión de manera constructiva, fundamentada y coherente, con el propósito
-de ayudar a tus compañeras. Estos comentarios los debes hacer de manera honesta,
-empática e inmediata.
-
-Finalmente, deberás presentar el proyecto que creaste, al usuario que escogiste
-y las necesidades que lograste resolver en este proceso. Como siempre, sabemos
-que presentar puede ser una tarea difícil, y esperamos que tengas capacidad de
-síntesis y articules tus ideas con claridad para que logres mostrar tu trabajo
-y que los demás lo comprendan.
-
-## Hacker edition
-
-* Crear posts con imágenes.
-* Reemplazar `localStorage`: ¿le has compartido tu red social a tus amigxs? Si
-  lo has hecho, te darás cuenta de que ellxs no pueden ver tus posts ni tú el de
-  ellxs. Esto es debido a que `localStorage` almacena los datos localmente
-  (en tu navegador) por lo que esos datos no se comparten. Para resolver esto
-  podrías implementar una base de datos pero el tiempo podría jugar en contra,
-  para ello existen algunos servicios como [Firebase](https://firebase.google.com/products/database/)
-  que te proveen soluciones rápidas a este problema y solo usando su SDK :scream:.
-* Agregar la funcionalidad de amistad dentro de la red social, debo poder:
-  + Agregar amigos.
-  + Aceptar solicitudes de amigos.
-  + Eliminar amigos.
-  + Mostrar los posts que son sólo para mis amigos.
-
-## Entrega
-
-El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
-interfaz será desplegada usando GitHub pages u otro servicio de hosting que
-puedas haber encontrado en el camino.
-
-### Entregables
-
-#### 1) Definición del producto
-
-En el `README.md` debes colocar cómo conociste el mercado de las redes sociales, cómo descubriste las necesidades de los usuarios, y cómo llegaste a la definición final de tu producto. Si tienes fotos de entrevistas, cuestionarios y/o sketches
-(bocetos) compártelos. Es importante que detalles:
-
-* Cuáles son los elementos básicos que tiene una red social.
-* Quiénes son los principales usuarios de producto.
-* Cómo descubriste las necesidades de los usuarios.
-* Qué problema resuelve el producto para estos usuarios.
-* Cuáles son los objetivos de estos usuarios en relación con el producto.
-* Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-* Cómo verificaste que el producto les está resolviendo sus problemas.
-* Cómo te asegurarás que estos usuarios usen este producto.
-
-Para poder llegar a estas definiciones te recomendamos revisar: benchmarks, entrevistas con usuarios y tests de usabilidad.
-
-#### 2) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
-
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu producto y
-con eso deberás diseñar la Interfaz de Usuario (UI - por sus siglas en inglés) de
-esta red social que siga este flujo. Para esto debes utilizar la herramienta de
-diseño visual de tu preferencia. Nosotros te recomendamos [Figma](https://www.figma.com/) dado que es una
-herramienta que funciona en el navegador y puedes crear una cuenta gratis. Sin
-embargo, eres libre de utilizar otros editores gráficos como Adobe XD, Illustrator,
-Photoshop, PowerPoint, Keynote, etc.
-
-Este diseño debe representar la solución que se implementará finalmente en
-código. 
-
-Tu diseño debe seguir los fundamentos de visual design, como: contraste,
-alineación, jerarquía, entre otros. Tip: revisa el contenido de UX de la unidad
-de visual design.
-
-#### 3) Implementación de la Interfaz de Usuario
-
-La idea para este proyecto es que el producto a desarrollar siga los
-lineamientos propuestos en el diseño de la interfaz de usuario. Asegúrate a lo
-largo de la implementación que los elementos propuestos están siendo
-implementados correctamente. (Hint: testing)
-
-## Evaluación
-
-### Tech
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| **JavaScript** | |
-| Estilo | 3
-| Nomenclatura/semántica | 3
-| Funciones/modularidad | 2
-| Estructuras de datos | 2
-| Tests | 2
-| **HTML** | |
-| Validación | 3
-| Estilo | 3
-| Semántica | 3
-| SEO | n/a
-| **CSS** | |
-| DRY | 3
-| Responsive | 3
-| **SCM** | |
-| Git | 3
-| GitHub | 3
-| **CS** | |
-| Lógica | 2
-| Arquitectura | 2
-| Patrones/paradigmas | n/a
-
-### UX
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| User Centricity | 3
-| Entrevistas | 2 |
-| Testing | 2
-| User Flow | 2
-| Jerarquía | 3
-| Alineación | 3
-| Contraste | 3
-| Color | 3
-| Tipografía | 3
-
-### Habilidades Blandas
-
-Para este proyecto esperamos que ya hayas alcanzado el nivel 3 en todas tus
-habilidades blandas. Te aconsejamos revisar la rúbrica:
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| Planificación y organización | 3
-| Autoaprendizaje | 3
-| Solución de Problemas | 3
-| Dar y recibir feedback | 3
-| Adaptabilidad | 3
-| Trabajo en equipo (trabajo colaborativo y responsabilidad) | 3
-| Comunicación eficaz | 3
-| Presentaciones | 3
-
-***
-
-## Pistas / Tips / Lecturas complementarias
-
-### Mobile first
-
-El concepto de [_mobile first_](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-hace referencia a un proceso de diseño y desarrollo donde partimos de cómo se ve
-y cómo funciona la aplicación en un dispositivo móvil primero, y más adelante se
-ve cómo adaptar la aplicación a pantallas progresivamente grandes y
-características específicas del entorno desktop. Esto es en contraposición al
-modelo tradicional, donde primero se diseñaban los websites (o webapps) para
-desktop y después se trataba de _arrugar_ el diseño para que entre en pantallas
-más chicas. La clave acá es asegurarse de que desde el principio diseñan usando
-la vista _responsive_ de las herramientas de desarrollador (developer tools) del
-navegador. De esa forma, partimos de cómo se ve y comporta la aplicación en una
-pantalla y entorno móvil.
-
-### Múltiples vistas
-
-En proyectos anteriores nuestras aplicaciones habían estado compuestas de una
-sola _vista_ principal (una sóla _página_). En este proyecto se introduce la
-necesidad de tener que dividir nuestra interfaz en varias _vistas_ o _páginas_
-y ofrecer una manera de navegar entre estas vistas. Este problema se puede
-afrontar de muchas maneras: con archivos HTML independientes (cada uno con su
-URL) y links tradicionales, manteniendo estado en memoria y rederizando
-condicionalmente (sin refrescar la página), [manipulando el historial del
-navegador](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-con [`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/history),
-usando una librería (por ejemplo [`react-router`](https://github.com/ReactTraining/react-router)
-o [`vue-router`](https://router.vuejs.org/)). En este proyecto te invitamos a
-explorar opciones y decidir una opción de implementación.
-
-### Escritura de datos
-
-En los proyectos anteriores hemos consumido (leído) datos, pero todavía no
-habíamos escrito datos (guardar cambios, crear datos, borrar, ...). En este
-proyecto tendrás que crear (guardar) nuevos datos, así como leer, actualizar y
-modificar datos existentes. Estos datos se podrán guardar localmente usando
-[`localStorage`](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
-o de forma remota usando [Firebase](https://firebase.google.com/).
-
-### Historias de usuario
-
-En el proyecto "Data Dashboard", la primera historia "épica" podría haber sido:
-
-Yo, como **Training Manager** quiero poder **ver el progreso de solución de
-ejercicios de JS de las estudiantes de mi(s) cohort(s)** para **entender
-cuánto están practicando y qué tan bien les está yendo**.
-
-Esta la podríamos haber dividido en algunas más pequeñas, por ejemplo:
-
-1. Yo, como **Training Manager** quiero poder **seleccionar cada uno de los
-   cohorts de mi ciudad** para **ver un listado de todas las estudiantes de ese
-   cohort, y que incluya el % de progreso de solución de ejercicios de cada una
-   de ellas**
-2. Yo, como **Training Manager** quiero poder **seleccionar a una estudiante en
-   particular** para **ver el % de progreso de solución de todos los ejercicios
-   y el resultado decada uno de ellos**
-
-Como ves, dividirla en 1 y 2, hace que sea mucho más fácil imaginar y entender
-lo que el equipo tiene que conseguir para completarla.
-
-Otras:
-
-* [Diseño web, responsive design y la importancia del mobile first - Media Click](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-* [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
-* [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
-* [Mobile First - ZURB](https://zurb.com/word/mobile-first)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
-* [Offline first manifesto](http://offlinefirst.org/)
-
-***
-
-## Checklist
-
-### General
-
-* [ ] Producto final sigue los lineamientos del diseño.
-
-### `README.md`
-
-* [ ] Definición del producto:
-  * [ ] Cuáles son los elementos básicos que tiene una red social.
-  * [ ] Quiénes son los principales usuarios de producto.
-  * [ ] Cómo descubriste las necesidades de los usuarios.
-  * [ ] Qué problema resuelve el producto para estos usuarios.
-  * [ ] Cuáles son los objetivos de estos usuarios en relación con el producto.
-  * [ ] Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-  * [ ] Cómo verificaste que el producto les está resolviendo sus problemas.
-  * [ ] Cómo te asegurarás que estos usuarios usen este producto.
-* [ ] Benchmark de las principales redes sociales.
-* [ ] Resumen de entrevistas con usuarios.
-* [ ] Link/screenshots del prototipo de alta fidelidad.
-* [ ] Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
-* [ ] Conclusiones de testing con el producto en HTML.
-
-### Pruebas / tests
-
-* [ ] Tests unitarios cubren un mínimo del 70% de statements, functions, lines y branches.
-* [ ] Pasa tests (y linters) (`npm test`).
-
-### Creación de cuenta (sign up)
-
-* [ ] Permite crear cuenta.
-* [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
-
-### Inicio de sesión (sign in)
-
-* [ ] Permite iniciar sesión.
-* [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
-
-### Muro (wall/feed)
-
-* [ ] Muestra _muro_.
-* [ ] Permite publicar nuevos posts.
-* [ ] Permite eliminar posts.
-* [ ] Pide confirmación antes de borrar posts.
-* [ ] Permite editar posts (in place).
-* [ ] Permite publicar y filtrar posts por público/yo.
-* [ ] Permite dar _like_ a los posts y llevar un conteo de ellos.
+A continuación se adjunta los links donde se pueden visualizar el prototipo de alta fidelidad (Login - pagina principal), hecho en Figma.
+
+#### Login
+[View - Desktop](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A880 "View - Desktop")
+[View - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1258 "View - Tablet")
+[View - Mobile](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1472 "View - Mobile")
+
+#### Pagina Principal
+[View - Desktop](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1030 "View - Desktop")
+[View - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1095 "View - Tablet")
+[View - Mobile](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
+
+### Conclusiones de testing con el prototipo de alta fidelidad con usuarios
+### Conclusiones de testing con el producto en HTML
