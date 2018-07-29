@@ -1,5 +1,4 @@
 let user = null;
-
 let postRef = firebase.database().ref().child('posts');
 dataUserLogin = (uid) => {
   let photoOfDatabase;
@@ -14,18 +13,7 @@ dataUserLogin = (uid) => {
     photoOfDatabase = datos.photoURL;
     user = { displayName: displayName, email: email, photoURL: photoOfDatabase };
   });
-  
 
-}
-const updateNewPost = (posts, privacy, uidPost) => {
-  let userId = firebase.auth().currentUser;
-  let postData = {
-    content: posts,
-    privacy: privacy,
-    time: firebase.database.ServerValue.TIMESTAMP,
-  }
-  firebase.database().ref('/posts/' + uidPost).update(postData);
-  firebase.database().ref('user-posts/' + userId.uid + '/' + uidPost).update(postData);
 }
 const insertNewPost = (picture, posts, privacy) => {
   let userId = firebase.auth().currentUser;
@@ -40,6 +28,42 @@ const insertNewPost = (picture, posts, privacy) => {
   }
   firebase.database().ref('posts/' + newPostKey).set(postData);
   firebase.database().ref('user-posts/' + userId.uid + '/' + newPostKey).set(postData);
+}
+const updateNewPost = (posts, privacy, uidPost) => {
+  let userId = firebase.auth().currentUser;
+  let postData = {
+    content: posts,
+    privacy: privacy,
+    time: firebase.database.ServerValue.TIMESTAMP,
+  }
+  firebase.database().ref('/posts/' + uidPost).update(postData);
+  firebase.database().ref('user-posts/' + userId.uid + '/' + uidPost).update(postData);
+}
+
+const deletePost =(dataDelete)=>{
+  let userId = firebase.auth().currentUser;
+  let refDeletePost = firebase.database().ref('posts/' + dataDelete);
+  let refDeletePostUser = firebase.database().ref('user-posts/'+userId.uid+'/'+ dataDelete);
+  refDeletePost.remove();
+  refDeletePostUser.remove();
+}
+const Like = (idPost) => {
+  let count = 0;
+  let userId = firebase.auth().currentUser;
+  let ObjectLikes = firebase.database().ref('/posts/' + idPost + '/like/');
+  ObjectLikes.once('value', (data) => {// recupera todos los datos
+    let dataLike = data.val();
+    for (const like in dataLike) {
+      if (dataLike[like].create === userId.uid) {
+        count++;
+      }
+    }
+  });
+  if (count !== 1) {
+    updateLike(idPost);
+  }else{
+    deleteLike(idPost,userId.uid);
+  }
 }
 const updateLike = (idPost) => {
   let userId = firebase.auth().currentUser;
@@ -61,24 +85,7 @@ const deleteLike=(idPost,uid)=>{
     }
   });  
 }
-const Like = (idPost) => {
-  let count = 0;
-  let userId = firebase.auth().currentUser;
-  let ObjectLikes = firebase.database().ref('/posts/' + idPost + '/like/');
-  ObjectLikes.once('value', (data) => {// recupera todos los datos
-    let dataLike = data.val();
-    for (const like in dataLike) {
-      if (dataLike[like].create === userId.uid) {
-        count++;
-      }
-    }
-  });
-  if (count !== 1) {
-    updateLike(idPost);
-  }else{
-    deleteLike(idPost,userId.uid);
-  }
-}
+
 const viewMyAccount = (uidUser) => {
   let userId = firebase.auth().currentUser;
   dataUserLogin(uidUser);// envio nuevos datos para obtener nuevos usuarios
@@ -105,7 +112,6 @@ const viewMyAccount = (uidUser) => {
     eventsPost();
   });
 }
-
 const viewPost = () => {
   postRef.off('value')
   postRef.on('value', data => {

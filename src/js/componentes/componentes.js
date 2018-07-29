@@ -94,7 +94,6 @@ const newInsertPost =(uidPost)=>{
             <div id='button-post' >
             <select id='typePost'>
             <option>Público</option>
-            <option>Mis amigos</option>
             <option>Solo yo</option>
             </select>
                 <input type='button' value='Modificar' id='edit-post' data-posts='${uidPost}' class='publicar-cancelar'>
