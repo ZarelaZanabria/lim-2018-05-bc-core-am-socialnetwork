@@ -13,6 +13,7 @@ eventsPost = () => {
         let dataPost = data.val();
         if (dataPost.uidUser == userId.uid) {
           $('#div_new_post').show();
+          document.getElementById('div_new_post').innerHTML='';
           $('#div_new_post').append(deletePostElement(dataPost.content, dataDeletePost));
           eventsDeletePost();
         }
@@ -27,6 +28,7 @@ eventsPost = () => {
         var datos = snap.val();
         if (datos.uidUser == userId.uid) {
           $("#div_new_post").show();
+          document.getElementById('div_new_post').innerHTML='';
           $('#div_new_post').append(newInsertPost(dataUserUpdate, datos.content));
           document.getElementById('titlePopup').innerHTML = '';
           document.getElementById('titlePopup').innerHTML = 'Se modificará';
