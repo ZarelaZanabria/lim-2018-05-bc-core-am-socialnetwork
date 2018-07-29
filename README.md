@@ -7,9 +7,13 @@ Bienvenidos a `ModoMama` una red social creada especialmente para mamis. En este
 ###  Definición del producto:
 
 Hoy en día la mayoría de las personas por no decir todas usan redes sociales, a su vez esto genera un gran mercado online donde hay mucha demanda de todo tipo y los beneficiarios vienen a ser un grupo de personas que forman una comunidad tras otra lo cual va cada vez más en aumento.
-Después de este análisis e investigación mi equipo y yo nos dimos cuenta que son más la cantidad de mujeres que usan redes sociales a la fecha  a comparación de los hombres según estudio en https://www.brandwatch.com/es/blog/redes-sociales-hombres-mujeres/  `(Brandwatch Analytics)` motivo por lo cual nuestra aplicación esta segmentada a ellas. 
-Sabemos que las mujeres tienen el don más bello y hablamos de concebir una nueva vida, toda mujer en algún momento de su vida pasa por esta etapa y es ahí donde surgen muchas dudas y preguntas respecto al embarazo, al cuidado del recién nacido, etc. Y es muy normal que queramos saberlo todo ya que queremos hacer bien las cosas desde un principio, pero esto no siempre es posible debido a varios factores como el horario del trabajo, los estudios, los que haceres del hogar entre otros; es ahí donde nace la idea de realizar una red social especialmente para mamis. 
+Después de este análisis e investigación mi equipo y yo nos dimos cuenta que son más la cantidad de mujeres que usan redes sociales a la fecha  a comparación de los hombres según estudio en https://www.brandwatch.com/es/blog/redes-sociales-hombres-mujeres/  `(Brandwatch Analytics)` motivo por lo cual nuestra aplicación esta segmentada a ellas. A continuación se visualiza un cuadro comparativo entre hombres y mujeres que usan las redes sociales.
 
+** Fuente:`(Brandwatch Analytics)` **
+
+![Sin titulo](src/img/graficoEstudio.PNG)
+
+Sabemos que las mujeres tienen el don más bello y hablamos de concebir una nueva vida, toda mujer en algún momento de su vida pasa por esta etapa y es ahí donde surgen muchas dudas y preguntas respecto al embarazo, al cuidado del recién nacido, etc. Y es muy normal que queramos saberlo todo ya que queremos hacer bien las cosas desde un principio, pero esto no siempre es posible debido a varios factores como el horario del trabajo, los estudios, los que haceres del hogar entre otros; es ahí donde nace la idea de realizar una red social especialmente para mamis. 
 
 ###  Elementos básicos que tiene una red social
 Según las investigaciones realizadas se concluye que los elementos básicos por el cual un usuario usa una red social son los siguientes:  
@@ -30,6 +34,7 @@ En base a lo mencionado anteriormente se procedió a definir las característica
 
 ### ¿Como descubriste las necesidades de los usuarios?
 Al realizar la investigación nos dimos cuenta de que hay una gran demanda descubierta en el mundo de las mujeres y las redes sociales, pues resulta que hay pocas plataformas para madres que permitan interactuar, participar y compartir las dudas y/o miedos que puedan presentar durante la etapa de concepción o crianza de una nueva vida.
+
 
 ### ¿Qué problema resuelve el producto para los usuarios?
 Nuestro producto brinda al usuario ahorrar tiempo, dinero y evitar malos ratos esperando largas colas para reservar una cita o consulta ya sea con el pediatra, nutricionista o médico.  Con ModoMama nuestros usuarios tendrán al alcance todos estos servicios en un solo lugar las 24 horas y 07 días a la semana.
