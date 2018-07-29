@@ -84,6 +84,7 @@ Al finalizar las entrevistas e investigaciones realizamos la planificacion de la
 ###  Prototipos
 
 **Prototipo de Baja Fidelidad**
+
  En base a las entrevistas e investigacion realizamos nuestro primer prototipo de baja fidelidad hecho en `en Axure RP 8`
 
 ![Sin titulo](src/img/bajaFidelidad.PNG)
