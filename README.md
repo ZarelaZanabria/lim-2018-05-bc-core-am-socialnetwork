@@ -40,7 +40,7 @@ Nuestro producto brinda al usuario ahorrar tiempo, dinero y evitar malos ratos e
 
 ### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
 
-Nuestra aplicación tiene como prioridad facilitar la vida cotidiana de las madres y en cuanto a la funcionalidad se tomó en cuenta las 10 principales razones que tienen los usuarios para usar una red social y las necesidades y/o dificultades que pueda presentar una madre durante la etapa de gestación y/o nacimiento de un bebe. 
+Nuestra aplicación tiene como prioridad facilitar la vida cotidiana de las madres y en cuanto a la funcionalidad se tomó en cuenta las 10 principales razones que tienen los usuarios para usar una red social y las necesidades y/o dificultades que pueda presentar una madre durante la etapa de gestación y/o nacimiento de un bebe. He aqui un `Demo` de la funcionalidad de nuestra aplicación.
 
 ![demoModoMama](src/img/Mi-película.gif)
 
