@@ -37,6 +37,7 @@ Nuestro producto brinda al usuario ahorrar tiempo, dinero y evitar malos ratos e
 ![Sin titulo](src/img/timeMoney.png)
 
 ### Cuáles son los objetivos de estos usuarios en relación con el producto
+Al finalizar el análisis e investigación llegamos a la conclusión de que nuestros usuarios desean una aplicación que les permita compartir sus dudas, realizar consultas y sobre todo que esté disponible las 24 horas y 07 días de la semana.
 
 ### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
 
@@ -64,11 +65,19 @@ Para un mayor acercamiento con nuestros usuarios realizamos una pequeña encuest
 
 ![Sin titulo](src/img/formularioEntrevista.PNG)
 
+### Planificación de actividades
+Al finalizar las entrevistas e investigaciones realizamos la planificacion de las tareas, para ello utilizamos como herramienta el `Backlog .`
+
+![Sin titulo](src/img/sprint-01.jpg)
+
+![Sin titulo](src/img/sprint-02.jpg)
+
 ###  Link/screenshots del prototipo de alta fidelidad
 He aqui una muestra del prototipo de baja fidelidad.
-
+**Sprint 01**
 ![Sin titulo](src/img/loginform.png)
 
+**Sprint 02**
 ![Sin titulo](src/img/paginaprinciapal.png)
 
 A continuación se adjunta los links donde se pueden visualizar el prototipo de alta fidelidad (Login - pagina principal), hecho en Figma.
