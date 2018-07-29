@@ -89,15 +89,7 @@ eventsLogin = () => {
     });
     // .................................................................... ........AUTENTIFICACION CON FACEBOOK
     $('#btnLoginFacebook').click(() => {
-        var provider = new firebase.auth.FacebookAuthProvider();
-        provider.addScope('public_profile');//https://developers.facebook.com/docs/facebook-login/permissions/?translation
-        firebase.auth()
-            .signInWithPopup(provider)
-            .then(function (result) {
-                guardarData(result.user);
-            }).catch(error => {
-                console.log(error.code, error.message, error.email, error.credential);
-            });
+        loginFacebook();
     });
     //............................................................................  AUTHENTIFICACION ANOMINA
     $('#visitorPost').click(() => {

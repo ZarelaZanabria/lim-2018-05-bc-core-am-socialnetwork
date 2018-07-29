@@ -1,3 +1,15 @@
+window.loginFacebook=()=>{
+  const provider = new firebase.auth.FacebookAuthProvider();
+ /*  provider.addScope('public_profile');//https://developers.facebook.com/docs/facebook-login/permissions/?translation */
+  firebase.auth().signInWithPopup(provider)
+      .then( (result)=> {
+          guardarData(result.user);
+      }).catch(error => {
+          
+      }); 
+}
+
+
 window.validateFormateEmail = (data) => {
   if (data.indexOf('@') >= 5) {
     if (Number.isNaN(parseInt(data.charAt(0))) == true) {
@@ -27,6 +39,7 @@ window.mesaggeFirebase = (message) => {
       break;
   }
 }
+
 
 
 
