@@ -36,15 +36,13 @@ Nuestro producto brinda al usuario ahorrar tiempo, dinero y evitar malos ratos e
 
 ![Sin titulo](src/img/timeMoney.png)
 
-\begin{center}
-\includegraphics{src/img/timeMoney.png}
-\end{center}
-
 ### Cuáles son los objetivos de estos usuarios en relación con el producto
 
 ### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
 
 Nuestra aplicación tiene como prioridad facilitar la vida cotidiana de las madres y en cuanto a la funcionalidad se tomó en cuenta las 10 principales razones que tienen los usuarios para usar una red social y las necesidades y/o dificultades que pueda presentar una madre durante la etapa de gestación y/o nacimiento de un bebe. 
+
+![demoModoMama](src/img/Mi-película.gif)
 
 ### Cómo verificaste que el producto les está resolviendo sus problemas
 
