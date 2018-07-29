@@ -9,7 +9,7 @@ Bienvenidos a `ModoMama` una red social creada especialmente para mamis. En este
 Hoy en día la mayoría de las personas por no decir todas usan redes sociales, a su vez esto genera un gran mercado online donde hay mucha demanda de todo tipo y los beneficiarios vienen a ser un grupo de personas que forman una comunidad tras otra lo cual va cada vez más en aumento.
 Después de este análisis e investigación mi equipo y yo nos dimos cuenta que son más la cantidad de mujeres que usan redes sociales a la fecha  a comparación de los hombres según estudio en https://www.brandwatch.com/es/blog/redes-sociales-hombres-mujeres/  `(Brandwatch Analytics)` motivo por lo cual nuestra aplicación esta segmentada a ellas. A continuación se visualiza un cuadro comparativo entre hombres y mujeres que usan las redes sociales.
 
-** Fuente:`(Brandwatch Analytics)` **
+**Fuente:`Brandwatch Analytics`**
 
 ![Sin titulo](src/img/graficoEstudio.PNG)
 
@@ -81,7 +81,7 @@ Al finalizar las entrevistas e investigaciones realizamos la planificacion de la
 
 ![Sin titulo](src/img/sprint-02.jpg)
 
-###  Prototipos de Baja - alta fidelidad
+###  Prototipos
 
 **Prototipo de Baja Fidelidad**
  En base a las entrevistas e investigacion realizamos nuestro primer prototipo de baja fidelidad hecho en `en Axure RP 8`
@@ -90,17 +90,21 @@ Al finalizar las entrevistas e investigaciones realizamos la planificacion de la
 
 **Prototipo de Alta Fidelidad**
 
-A continuación se adjunta los links donde se pueden visualizar el prototipo de alta fidelidad (Login - pagina principal), hecho en Figma para los diferentes dispositivos.
+A continuación se adjunta los links donde se pueden visualizar los prototipos de alta fidelidad hechos en Figma para los diferentes dispositivos ya sea Computadora, tablet o celuar.
 
 #### Login
-[View - Desktop](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A880 "View - Desktop")
-[View - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1258 "View - Tablet")
-[View - Mobile](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1472 "View - Mobile")
+[Vista - Computadora](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A880 "View - Desktop")
+
+[Vista - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1258 "View - Tablet")
+
+[Vista - Celular](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1472 "View - Mobile")
 
 #### Pagina Principal
-[View - Desktop](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1030 "View - Desktop")
-[View - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1095 "View - Tablet")
-[View - Mobile](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
+[Vista - Computadora](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1030 "View - Desktop")
+
+[Vista - Tablet](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1095 "View - Tablet")
+
+[Vista - celular](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
 
 ### Conclusiones de testing con el prototipo de alta fidelidad con usuarios
 ### Conclusiones de testing con el producto en HTML
