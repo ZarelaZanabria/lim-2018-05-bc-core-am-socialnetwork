@@ -16,14 +16,14 @@ Según las investigaciones realizadas se concluye que los elementos básicos por
 
 ![Sin titulo](src/img/caractRedSocial.PNG)
 
-###  Características de ModoMama
+###  Características de `ModoMama`
 
 En base a lo mencionado anteriormente se procedió a definir las características de nuestra aplicación web.
 
 ![Sin titulo](src/img/CaractModoMama_01.PNG)
 
 
-###  Principales usuarios de producto
+###  Principales usuarios del producto
 **Usuarios Principales:** El producto está segmentada a mujeres en etapa de gestación (post y prenatal).
 
 **Usuarios Secundarios:** Nuestra aplicación tiene como enfoque secundario aplicar un modelo de negocio lo cual consiste en la publicidad de Marcas como Johnson baby, Haggis, etc. dedicados al cuidado del bebe, así como también a estar en contacto con especialistas como pedíatras, médicos y nutricionistas que brindan sus servicios y/o consejos en línea.
@@ -33,6 +33,8 @@ Al realizar la investigación nos dimos cuenta de que hay una gran demanda descu
 
 ### ¿Qué problema resuelve el producto para los usuarios?
 Nuestro producto brinda al usuario ahorrar tiempo, dinero y evitar malos ratos esperando largas colas para reservar una cita o consulta ya sea con el pediatra, nutricionista o médico.  Con ModoMama nuestros usuarios tendrán al alcance todos estos servicios en un solo lugar las 24 horas y 07 días a la semana.
+
+<center>![Sin titulo](src/img/timeMoney.png)</center>
 
 ### Cuáles son los objetivos de estos usuarios en relación con el producto
 
