@@ -34,7 +34,7 @@ Al realizar la investigación nos dimos cuenta de que hay una gran demanda descu
 ### ¿Qué problema resuelve el producto para los usuarios?
 Nuestro producto brinda al usuario ahorrar tiempo, dinero y evitar malos ratos esperando largas colas para reservar una cita o consulta ya sea con el pediatra, nutricionista o médico.  Con ModoMama nuestros usuarios tendrán al alcance todos estos servicios en un solo lugar las 24 horas y 07 días a la semana.
 
-<center>![Sin titulo](src/img/timeMoney.png)</center>
+![Sin titulo]<center>(src/img/timeMoney.png)</center>
 
 ### Cuáles son los objetivos de estos usuarios en relación con el producto
 
