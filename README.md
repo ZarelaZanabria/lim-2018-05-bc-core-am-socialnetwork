@@ -76,14 +76,16 @@ Al finalizar las entrevistas e investigaciones realizamos la planificacion de la
 
 ![Sin titulo](src/img/sprint-02.jpg)
 
-###  Link/screenshots del prototipo de alta fidelidad
-He aqui una muestra del prototipo de baja fidelidad.
+###  Prototipos de Baja - alta fidelidad
 
-![Sin titulo](src/img/loginform.png)
+**Prototipo de Baja Fidelidad**
+ En base a las entrevistas e investigacion realizamos nuestro primer prototipo de baja fidelidad hecho en `en Axure RP 8`
 
-![Sin titulo](src/img/paginaprinciapal.png)
+![Sin titulo](src/img/bajaFidelidad.PNG)
 
-A continuación se adjunta los links donde se pueden visualizar el prototipo de alta fidelidad (Login - pagina principal), hecho en Figma.
+**Prototipo de Alta Fidelidad**
+
+A continuación se adjunta los links donde se pueden visualizar el prototipo de alta fidelidad (Login - pagina principal), hecho en Figma para los diferentes dispositivos.
 
 #### Login
 [View - Desktop](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A880 "View - Desktop")
