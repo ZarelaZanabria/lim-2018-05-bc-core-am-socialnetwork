@@ -68,16 +68,19 @@ Para un mayor acercamiento con nuestros usuarios realizamos una pequeña encuest
 ### Planificación de actividades
 Al finalizar las entrevistas e investigaciones realizamos la planificacion de las tareas, para ello utilizamos como herramienta el `Backlog .`
 
+**Sprint 01**
+
 ![Sin titulo](src/img/sprint-01.jpg)
+
+**Sprint 02**
 
 ![Sin titulo](src/img/sprint-02.jpg)
 
 ###  Link/screenshots del prototipo de alta fidelidad
 He aqui una muestra del prototipo de baja fidelidad.
-**Sprint 01**
+
 ![Sin titulo](src/img/loginform.png)
 
-**Sprint 02**
 ![Sin titulo](src/img/paginaprinciapal.png)
 
 A continuación se adjunta los links donde se pueden visualizar el prototipo de alta fidelidad (Login - pagina principal), hecho en Figma.
