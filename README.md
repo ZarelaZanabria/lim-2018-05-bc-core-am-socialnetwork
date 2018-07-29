@@ -1,6 +1,6 @@
 ﻿# Proyecto - Red Social
 ### Introducción
-![Sin titulo](src/img/logo2.png)
+![Sin titulo](src/img/logoReadme.png)
 Bienvenidos a `ModoMama` una red social creada especialmente para mamis. En este espacio podrás compartir tus dudas y temores con otras MUJERES como tú, tendrás a tu alcance muchos tips y orientación sobre el cuidado del recién nacido, comentar y dar tu apoyo con un me gusta a tus posts favoritos y como si fuera poco podrás estar en contacto con especialistas como médicos, nutricionistas y pediatras. A su vez encontraras productos de alta gama para el cuidado del recién nacido. 
 
 ###  Definición del producto:
