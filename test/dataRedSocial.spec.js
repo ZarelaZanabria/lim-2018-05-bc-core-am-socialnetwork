@@ -31,7 +31,7 @@ describe('data', () => {
     let pausa = 'break';
 
     it('Si la contraseña es menor que seis muestra INGRESE CONTRASEÑA CON MIN 6 CARACTERES', () => {
-      assert.equal(mesaggeFirebase('Password should be at least 6 characters'), ('Ingrese contraseña con min 6 caracteres'), 'break');
+      assert.equal(mesaggeFirebase('Password should be at least 6 characters'), ('Ingrese contraseña con 6 caracteres minimo'), 'break');
 
     });
 
