@@ -25,7 +25,7 @@ headerElement = (userLogin, photo, email,uid) => {
         <div class="wrap-hint-menu-account">
             <div class="photo-box">
                 <div class="contain-photo">
-                    <img src="${photo}" alt="">
+                    <img src="${photo}" alt="profile">
                     <label for="">Change</label>
                 </div>
             </div>
@@ -54,13 +54,17 @@ headerElement = (userLogin, photo, email,uid) => {
                 </ul>
             </div>
         </div>
-    </div>    
+    </div>
+    <div class='header-view-logo'>
+    <img src='img/logo1.png' alt='logo'>
+</div>    
     <div class='header-section'>
         <div class=search>
-            <input type='text' class='search-input'>
+            <input type='text' class='search-input' placeholder='Buscar'>
             <span class='icon-search'></span>
         </div>
     </div>   
+
     <div class='content-search'>
         <ul class='content-search-user' id='content-search-user'></ul>
     </div>   
@@ -110,7 +114,7 @@ const sectionAllPost = (user, photo, coment, image, like, time, idpost) => {
             <img class='photo-profile-user-post' src='${photo}' alt='photo'>    
             <div class='profile-user-post'>               
                 <span class='full-name-user'>
-                    <strong> ${user}</strong>
+                    <strong> ${user}</strong><br>
                 </span>            
                 <small class='time' id='time'>
                     <span class='time-post-regresivo'>${time}</span>
