@@ -38,6 +38,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             dataUserLogin(uid);
         }  
     } else {// si no mostramos un mensaje de no regstrado 
+        $('#portada').show();
         $('.visitante-anonimus').hide();
         $('#new_posts').hide();
         $('#header-main').hide();

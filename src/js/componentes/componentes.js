@@ -110,7 +110,7 @@ const sectionAllPost = (user, photo, coment, image, like, time, idpost) => {
             <img class='photo-profile-user-post' src='${photo}' alt='photo'>    
             <div class='profile-user-post'>               
                 <span class='full-name-user'>
-                    <strong> ${user}</strong>
+                    <strong> ${user}</strong><br>
                 </span>            
                 <small class='time' id='time'>
                     <span class='time-post-regresivo'>${time}</span>

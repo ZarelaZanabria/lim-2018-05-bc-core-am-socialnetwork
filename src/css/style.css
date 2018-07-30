@@ -71,7 +71,7 @@
 .section-value input{
     width: 90%;
     border: none;
-    color: #777;
+    color: #313434;
     font-size: 16px;
     outline: none;
     padding: .5em 0em .0em 0em;
@@ -401,9 +401,11 @@
 }
 .icon-checkmark{
     color: #33b8bf;
+    padding-left: 10px;
 }
 .icon-cross{
     color: #8559a4;
+    padding-left: 10px;
 }
 .icon-circle-left{
     color: #475586;
@@ -515,7 +517,9 @@
     text-align: center;
     outline: none;
     font-size: 16px;
-
+}
+#input-post{
+    min-height: 120px;
 }
 .accion-public{
     margin: 10px 0px;
@@ -614,9 +618,11 @@
     border-radius: 100%;
     float: left;
 }
+.full-name-user{
+    width: 100px;
+}
 .full-name-user strong{
     padding: .5em .5em;
-    float: left;
     color: inherit;
     font-weight: normal;
 }
@@ -624,7 +630,7 @@
 .time-post-regresivo{
     padding: .9em .5em;
     color: #868d95;
-    float: left;
+    
     font-size: 12px;
 }
 .icon-circle-down{    
@@ -659,6 +665,7 @@
 }
 .button-editar-eliminar{
     margin-left: 95%;
+    margin-top: -35px;
 }
 .icon-pencil{
     color: #777;
@@ -681,7 +688,7 @@
     visibility: visible;
     position: fixed;
     left: 0%;
-    margin: -111px 0 0 0;
+    margin: -115px 0 0 0;
     background: #0d0d0d80;
     width: 100%;
     height: 100%;
@@ -872,7 +879,7 @@ display: none;
        margin:0% 10%;
    }
     .portada{
-        display: none;
+        display: none !important;
     }
     .devsite-post{
         width: 70%;

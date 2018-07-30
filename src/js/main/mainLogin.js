@@ -40,6 +40,8 @@ eventsLogin = () => {
     /*Hace referente al hijo del modo raiz de la base de datos */
 
     const autenticationCorreo = () => {
+        let usersPassword = $('#users-password').val();
+        let usersEmail = $('#users-email').val();
         const promise = firebase.auth()
             .createUserWithEmailAndPassword(usersEmail, usersPassword)
             .then(function (user) {
@@ -89,15 +91,7 @@ eventsLogin = () => {
     });
     // .................................................................... ........AUTENTIFICACION CON FACEBOOK
     $('#btnLoginFacebook').click(() => {
-        var provider = new firebase.auth.FacebookAuthProvider();
-        provider.addScope('public_profile');//https://developers.facebook.com/docs/facebook-login/permissions/?translation
-        firebase.auth()
-            .signInWithPopup(provider)
-            .then(function (result) {
-                guardarData(result.user);
-            }).catch(error => {
-                console.log(error.code, error.message, error.email, error.credential);
-            });
+        loginFacebook();
     });
     //............................................................................  AUTHENTIFICACION ANOMINA
     $('#visitorPost').click(() => {
@@ -130,7 +124,7 @@ eventsLogin = () => {
 
     //.......................................................................VALIDACION DE CORREO ELECTRONICO
     const validateEmail = (idSpan) => {
-        debugger
+        
         campo = event.target;
         val = campo.value;
         emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;

@@ -1,3 +1,14 @@
+window.loginFacebook=()=>{
+  const provider = new firebase.auth.FacebookAuthProvider();
+ /*  provider.addScope('public_profile');//https://developers.facebook.com/docs/facebook-login/permissions/?translation */
+  firebase.auth().signInWithPopup(provider)
+      .then( (result)=> {
+          guardarData(result.user);
+      }).catch(error => {
+          
+      }); 
+}
+
 window.validateFormateEmail = (data) => {
   if (data.indexOf('@') >= 5) {
     if (Number.isNaN(parseInt(data.charAt(0))) == true) {
@@ -11,7 +22,7 @@ window.validateFormateEmail = (data) => {
 window.mesaggeFirebase = (message) => {
   switch (message) {
     case 'Password should be at least 6 characters':
-      return 'Ingrese contraseña con min 6 caracteres';
+      return 'Ingrese contraseña con 6 caracteres minimo';
       break;
     case 'The email address is badly formatted.':
       return 'Ingrese un correo valido';
@@ -27,6 +38,7 @@ window.mesaggeFirebase = (message) => {
       break;
   }
 }
+
 
 
 

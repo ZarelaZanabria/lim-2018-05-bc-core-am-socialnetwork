@@ -51,6 +51,7 @@ const Like = (idPost) => {
   let count = 0;
   let userId = firebase.auth().currentUser;
   let ObjectLikes = firebase.database().ref('/posts/' + idPost + '/like/');
+  
   ObjectLikes.once('value', (data) => {// recupera todos los datos
     let dataLike = data.val();
     for (const like in dataLike) {
@@ -121,8 +122,8 @@ const viewPost = () => {
       const typePublic = dataPosts[post].privacy;
       const likePos = dataPosts[post].like;
       const count = (Object.keys(likePos?likePos:{}).length);
-      const info = firebase.database().ref('/Usuarios/' + dataPosts[post].uidUser);
-      info.once('value', User => {
+      const info = firebase.database().ref('/Usuarios/' + dataPosts[post].uidUser);    
+      info.on('value', User => {
         let dataUser = User.val();
         let myDate = new Date(Math.round((dataPosts[post].time) / 1000.0) * 1000);
         if (typePublic === 'Público') {
@@ -130,7 +131,9 @@ const viewPost = () => {
         }
         eventsPost();
       });
+       
     };
+   
   });
 }
 window.searchUsers = (name) => {

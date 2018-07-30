@@ -44,6 +44,7 @@ eventsPost = () => {
   for (let index = 0; index < elementoLike.length; index++) {
     elementoLike[index].addEventListener('click', () => {
       let dataLikePost = elementoLike[index].getAttribute("data-posts");
+      
       Like(dataLikePost);
     }, false);
 
@@ -141,9 +142,6 @@ eventsPost = () => {
     }
   }
 }
-
-
-
 
 
 
