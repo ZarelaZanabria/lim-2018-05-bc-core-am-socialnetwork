@@ -104,7 +104,7 @@
 .icon-home2{
     font-size: 1.35em;
     padding: .48em 1em .48em .48em;;
-    color: #777; 
+    color: #7e8384;
     border-radius: 100%;
     cursor: pointer;
     float: right;
@@ -122,14 +122,23 @@
 .header-section{
     float: left;
     padding: .35em .2em;
-    width: 35%;
-    margin: 0 0 0 20%;
+    width: 25%;
+    margin: 0 0 0 0%;
 }
 .header-section-user{
     float: right;
     overflow: hidden;
     padding: 0em  8em 0em .3em;
     align-content: flex-start;
+}
+.header-view-logo{
+    float: left;
+
+}
+.header-view-logo img{
+    width: 50px;
+    height: 40px;
+    padding: 3px 5px;
 }
 .name-view-data {
     float: left;
@@ -312,7 +321,7 @@
     position: fixed;
     border-radius: 2px;
     padding: 1em 2em;
-    left: 20%;
+    left: 7%;
     top: 0%;
     margin: 40px 0 0 0;
     background: #fff;
@@ -932,14 +941,17 @@ display: none;
         display: none;
     }
     .header-section {
-        width: 60%;
-        margin: 0 0 0 5%;       
+        width: 50%;
+        margin: 0 0 0 0%;      
+    }
+    .search input {
+        width: 85%;
     }
     .header-section-user {
         padding: 0em 1em;
     }
     .icon-home2 {
-        padding: .48em .3em .48em .48em;
+        padding: .48em 0em .48em .48em;
     }
     .form_delete_post{
         margin: 50% 1%;
