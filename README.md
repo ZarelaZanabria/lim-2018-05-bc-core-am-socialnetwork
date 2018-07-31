@@ -108,4 +108,9 @@ A continuación se adjunta los links donde se pueden visualizar los prototipos d
 [Vista - celular](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
 
 ### Conclusiones de testing con el prototipo de alta fidelidad con usuarios
+La red Social ModoMamá permite la comunicacion de madres primerizas, madres con expericia, y especialistas donde la madres primerizas pueden encontrar consejos y asesoramientos  sobre el cuidado de sus bebes. ModoMamá fue creado por la necesidad de las madres primerizas siempre buscan tener toda la informacion posible sobre el cuidado y proteccion de sus bebes. 
+
+Para el desarrollo del producto se analizo los requetimientos de 
+
+
 ### Conclusiones de testing con el producto en HTML
