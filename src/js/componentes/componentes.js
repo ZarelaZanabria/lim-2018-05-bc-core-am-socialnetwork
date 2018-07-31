@@ -1,4 +1,5 @@
 headerElement = (userLogin, photo, email,uid) => {
+    
     return $('#header-main').append(`   
 
     <div class='header-main-content'>
