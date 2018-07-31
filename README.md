@@ -122,7 +122,8 @@ Las observaciones siguientes son gracias al testing con nuestra Jedi Mariana y u
 
 * Algunos mensajes de error se visualizaban de color negro que te empedian la legibilidad del mensaje
 
-### Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
+### Conclusiones de testing con el prototipo de alta fidelidad con usuarios
+
 ![Testing](src/img/version02.PNG)
 
 Luego de recibir los feeback de la penúltima versión de la red Social, seleccionamos nuevos colores, el logo y modificaciones en el muro de acuerdo a la orientación del producto. 
