@@ -45,6 +45,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             dataUserLogin(uid);
         }  
     } else {// si no mostramos un mensaje de no regstrado 
+        popup=false;//controlo a document.onclick
         $('#portada').show();
         $('.visitante-anonimus').hide();
         $('#new_posts').hide();
