@@ -131,11 +131,11 @@ Gracias a los usuarios se pudo determinar los colores principales de modoMama, t
 * #### Logo 
 También se hizo cambios en el logo de la red Social con dos círculos que hacen referencia al hijo y la madre unidos con unas manos al medio que representa el lazo maternal.
 * #### Muro
-La página principal (muro) se semejanza a las redes sociales más usadas de la actualidad como Facebook, Twitter e Instagram en la facilidad de uso, la utilización de Pop Up para postear, eliminar y editar un Post, buscar un usuario y la forma de configurar cuanta (ir a perfil y cerrar sesión). Tiene bordes grises para hacer la diferencia entre las distintos formularios y un icono al extremo inferior de la página para el fácil acceso a la publicación de un post, los iconos ayudan a percibir la acción que se desea realizar. Estas características se consideraron porque nuestras usuarias están más relacionadas a las redes sociales mencionadas anteriormente.
+La página principal (muro) se asemeja a las redes sociales más usadas en la actualidad como Facebook, Twitter e Instagram en la facilidad de uso, la utilización de Pop Up para postear, eliminar y editar un Post, buscar un usuario y la forma de configurar una cuenta (como ir a perfil y cerrar sesión). Tiene bordes grises para hacer la diferencia entre las distintos formularios y un icono al extremo inferior de la página para el fácil acceso a la publicación de un post, los iconos ayudan a percibir la acción que se desea realizar. Estas características se consideraron porque nuestras usuarias están más relacionadas a las redes sociales mencionadas anteriormente.
 * #### Sección Modificar
  
 ![Testing](src/img/PostVersion02.PNG)
 
-La primera percepción de una persona que utilizará una nueva red social es que se asemeje a una que ya utilizo o al que se sienta más familiarizado. Nuestras madres primerizas tienen una edad aproximada entre 18 a 33 años eso indica que un gran porcentaje conoce o utiliza Facebook, Twitter, etc. 
-De acuerdo al requerimiento del Readme de Laboratoria en el proyecto actual se especifica modificar post in place, este ítem no se consideró en el proyecto porque en el tests anterior los usuarios no ubicaban con facilidad la caja input para editar y por recomendación utilizamos Pop Up semejante al de Facebook
+La primera percepción de una persona que utilizará una nueva red social es que se asemeje a una que ya utiliza o al que se sienta más familiarizado. Nuestras madres primerizas tienen una edad aproximada entre 18 a 33 años eso indica que un gran porcentaje conoce o utiliza Facebook, Twitter, etc. 
+De acuerdo al requerimiento del Readme de Laboratoria en el proyecto actual se especifica modificar post in place, este ítem  se consideró en el proyecto utilizando un  Pop Up semejante al de Facebook por los requerimientos de nuestros usuarios ya que comprendemos que estan familiarizados con este tipo de interactividad. 
 
