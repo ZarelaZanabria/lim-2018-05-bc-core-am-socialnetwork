@@ -112,7 +112,7 @@ La red Social ModoMamá permite la comunicacion de madres primerizas con especia
 
 ![Testing](src/img/primerversion.PNG)
 
-Las observaciones siguientes son gracias al testing con nuestra Jedi María GG, una mamá con un hijo de 4 meses.
+Las observaciones siguientes son gracias al testing con nuestra Jedi Mariana y una mamá con un hijo de 4 meses.
 
 * En la imagen se puede visualizar que los colores de la RedSocial no tiene relación alguna sobre maternidad, el placeholder para escribir el correo electronicó y la contraseña no es visible para el usuario.  Asi mismo el logo de la RedSocial hace referencia a otros temas como aves. 
 
