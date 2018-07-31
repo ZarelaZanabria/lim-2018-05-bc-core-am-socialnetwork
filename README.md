@@ -107,7 +107,7 @@ A continuación se adjunta los links donde se pueden visualizar los prototipos d
 
 [Vista - celular](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
 
-### Primer testing  de alta fidelidad con usuarios en HTML
+### Primer testing  de alta fidelidad con usuarios en HTML  
 La red Social ModoMamá permite la comunicacion de madres primerizas con especialistas. Donde de postean dudas y consejos sobre el cuidado del bebe.
 
 ![Testing](src/img/primerversion.PNG)
@@ -122,7 +122,7 @@ Las observaciones siguientes son gracias al testing con nuestra Jedi Mariana y u
 
 * Algunos mensajes de error se visualizaban de color negro que te empedian la legibilidad del mensaje
 
-### Conclusiones de testing con el producto en HTML
+### Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
 ![Testing](src/img/version02.PNG)
 
 Luego de recibir los feeback de la penúltima versión de la red Social, seleccionamos nuevos colores, el logo y modificaciones en el muro de acuerdo a la orientación del producto. 
