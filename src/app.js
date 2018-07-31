@@ -2,16 +2,21 @@
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-        console.log(firebaseUser);
         let userLogin = firebaseUser.displayName;
         let photoUser = firebaseUser.photoURL;
         let email = firebaseUser.email;
         let uid = firebaseUser.uid;
         let componente;
-        if(photoUser != null){
+        if(photoUser != null){//sesion con google y facebook
             componente = headerElement(userLogin, photoUser,email,uid);
         }else{
-            componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email,uid);
+            if(userLogin !=null){// sesion con correo autentificacion no tiene foto
+                componente = headerElement(userLogin,'http://svgur.com/i/65U.svg',email,uid);
+            }else{// registrarme, cuando entro la primera vez name aun no retorna y autentificacion no tiene foto
+                 const nameUsers = $('#users-name').val() + ' ' + $('#users-last-name').val();
+                 componente = headerElement(nameUsers,'http://svgur.com/i/65U.svg',email,uid);
+            }
+           
         }        
         $('#portada').hide();
         $('#contentLoginRegister').hide();
@@ -21,6 +26,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         if(userLogin==null && photoUser===null&& email == null){
             viewPost (); 
             eventsPost();
+            $('#header-main').show();        
+            $('#post-main').show();
             $('.header-section-user').hide();
             $('#new_posts').hide();            
             $('.visitante-anonimus').show();
@@ -43,13 +50,11 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#new_posts').hide();
         $('#header-main').hide();
         $('#header-main-content').remove();
-        loginElement();
+        loginElement();//componente login
         $('#contentLoginRegister').show();
         $('#post-main').hide();
-        registerElement();
-/*         document.getElementById('post-main').innerHTML = '';
- */        document.getElementById('header-main').innerHTML = '';
-        console.log('No Autentificado');
+        registerElement();//componentes register
+        document.getElementById('header-main').innerHTML = '';
         eventsLogin();// todos los eventos con login
     }
 });
