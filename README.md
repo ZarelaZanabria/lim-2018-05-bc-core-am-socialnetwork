@@ -2,7 +2,7 @@
 ### Introducción
 ![Sin titulo](src/img/logoReadme.png)
 
-Bienvenidos a `ModoMama` una red social creada especialmente para mamis. En este espacio podrás compartir tus dudas y temores con otras MUJERES como tú, tendrás a tu alcance muchos tips y orientación sobre el cuidado del recién nacido, comentar y dar tu apoyo con un me gusta a tus posts favoritos y como si fuera poco podrás estar en contacto con especialistas como médicos, nutricionistas y pediatras. A su vez encontraras productos de alta gama para el cuidado del recién nacido. 
+Bienvenidos a `ModoMama¡¡` una red social creada especialmente para madres primerizas. En este espacio podrás compartir tus dudas y temores con otras MUJERES como tú, tendrás a tu alcance  tips y orientación sobre el cuidado del recién nacido, comentar, dar like a  posts favoritos,asi mismo podrás estar en contacto con especialistas como médicos, nutricionistas y pediatras. A la vez encontraras productos de alta gama para el cuidado de tu bebe.
 
 ###  Definición del producto:
 
@@ -13,12 +13,12 @@ Después de este análisis e investigación mi equipo y yo nos dimos cuenta que 
 
 ![Sin titulo](src/img/graficoEstudio.PNG)
 
-Sabemos que las mujeres tienen el don más bello y hablamos de concebir una nueva vida, toda mujer en algún momento de su vida pasa por esta etapa y es ahí donde surgen muchas dudas y preguntas respecto al embarazo, al cuidado del recién nacido, etc. Y es muy normal que queramos saberlo todo ya que queremos hacer bien las cosas desde un principio, pero esto no siempre es posible debido a varios factores como el horario del trabajo, los estudios, los que haceres del hogar entre otros; es ahí donde nace la idea de realizar una red social especialmente para mamis. 
+Sabemos que las mujeres tienen el don más bello y hablamos de concebir una nueva vida, toda mujer en algún momento de su vida pasa por esta etapa y es ahí donde surgen muchas dudas y preguntas respecto al embarazo, al cuidado del recién nacido, etc.Es muy normal que queramos saberlo todo ya que queremos hacer bien las cosas desde un principio, pero esto no siempre es posible debido a varios factores como el horario del trabajo, los estudios, los que haceres del hogar entre otros; es ahí donde nace la idea de realizar una red social especialmente para mamis. 
 
 ###  Elementos básicos que tiene una red social
 Según las investigaciones realizadas se concluye que los elementos básicos por el cual un usuario usa una red social son los siguientes:  
 
-![Sin titulo](src/img/caractRedSocial.PNG)
+![Sin titulo](src/img/elementos.PNG)
 
 ###  Características de `ModoMama`
 
@@ -28,9 +28,9 @@ En base a lo mencionado anteriormente se procedió a definir las característica
 
 
 ###  Principales usuarios del producto
-**Usuarios Principales:** El producto está segmentada a mujeres en etapa de gestación (post y prenatal).
+**Usuarios Principales:** El producto está orientado a mujeres en etapa de gestación (post y prenatal) que tienen la necesidad de informarse sobre el cuidado de su bebe.
 
-**Usuarios Secundarios:** Nuestra aplicación tiene como enfoque secundario aplicar un modelo de negocio lo cual consiste en la publicidad de Marcas como Johnson baby, Haggis, etc. dedicados al cuidado del bebe, así como también a estar en contacto con especialistas como pedíatras, médicos y nutricionistas que brindan sus servicios y/o consejos en línea.
+**Usuarios Secundarios:** Nuestra aplicación tiene como enfoque secundario aplicar un modelo de negocio lo cual consiste en la publicidad de Marcas como Johnson baby, Haggis, etc. Dedicados al cuidado del bebe, así mismo conectar a madres con especialistas como pedíatras, médicos y nutricionistas que brindan sus servicios y/o consejos en línea.
 
 ### ¿Como descubriste las necesidades de los usuarios?
 Al realizar la investigación nos dimos cuenta de que hay una gran demanda descubierta en el mundo de las mujeres y las redes sociales, pues resulta que hay pocas plataformas para madres que permitan interactuar, participar y compartir las dudas y/o miedos que puedan presentar durante la etapa de concepción o crianza de una nueva vida.
@@ -66,9 +66,9 @@ En la imagen pueden visualizar los diferentes sitios web que tomamos como refere
 ![Sin titulo](src/img/benchmark.PNG)
 
 ###  Resumen de entrevistas con usuarios
-Para un mayor acercamiento con nuestros usuarios realizamos una pequeña encuesta, el cual nos permitió conocer de forma directa las necesidades y problemas de nuestras futuras usuarias. 
+Para un mayor acercamiento con nuestros usuarios realizamos una pequeña entrevista, el cual nos permitió conocer de forma detallada las necesidades y problemas de nuestras futuras usuarias. 
 
-![Sin titulo](src/img/formularioEntrevista.PNG)
+![Sin titulo](src/img/entrevista.PNG)
 
 ### Planificación de actividades
 Al finalizar las entrevistas e investigaciones realizamos la planificacion de las tareas, para ello utilizamos como herramienta el `Backlog .`
@@ -107,10 +107,35 @@ A continuación se adjunta los links donde se pueden visualizar los prototipos d
 
 [Vista - celular](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
 
-### Conclusiones de testing con el prototipo de alta fidelidad con usuarios
-La red Social ModoMamá permite la comunicacion de madres primerizas, madres con expericia, y especialistas donde la madres primerizas pueden encontrar consejos y asesoramientos  sobre el cuidado de sus bebes. ModoMamá fue creado por la necesidad de las madres primerizas siempre buscan tener toda la informacion posible sobre el cuidado y proteccion de sus bebes. 
+### Primer testing  de alta fidelidad con usuarios en HTML
+La red Social ModoMamá permite la comunicacion de madres primerizas con especialistas. Donde de postean dudas y consejos sobre el cuidado del bebe.
 
-Para el desarrollo del producto se analizo los requetimientos de 
+![Testing](src/img/primerversion.PNG)
 
+Las observaciones siguientes son gracias al testing con nuestra Jedi María GG, una mamá con un hijo de 4 meses.
+
+* En la imagen se puede visualizar que los colores de la RedSocial no tiene relación alguna sobre maternidad, el placeholder para escribir el correo electronicó y la contraseña no es visible para el usuario.  Asi mismo el logo de la RedSocial hace referencia a otros temas como aves. 
+
+* Cuando el usuario desea registrarse a la redSocial no hay ningún texto o botón que indique donde debe seleccionar generando confución. 
+
+* El usuario no tiene ninguna opción para poder ver post públicos de los usuarios de la redSocial.
+
+* Algunos mensajes de error se visualizaban de color negro que te empedian la legibilidad del mensaje
 
 ### Conclusiones de testing con el producto en HTML
+![Testing](src/img/version02.PNG)
+
+Luego de recibir los feeback de la penúltima versión de la red Social, seleccionamos nuevos colores, el logo y modificaciones en el muro de acuerdo a la orientación del producto. 
+* #### Colores 
+Gracias a los usuarios se pudo determinar los colores principales de modoMama, tomando en cuenta la paleta de colores recomendados por UX. El color morado por la elegancia, lo cual hace referencia al sexo femenino, así mismo el color celeste pálido que representa la pureza y el sexo masculino de un bebe. 
+* #### Logo 
+También se hizo cambios en el logo de la red Social con dos círculos que hacen referencia al hijo y la madre unidos con unas manos al medio que representa el lazo maternal.
+* #### Muro
+La página principal (muro) se semejanza a las redes sociales más usadas de la actualidad como Facebook, Twitter e Instagram en la facilidad de uso, la utilización de Pop Up para postear, eliminar y editar un Post, buscar un usuario y la forma de configurar cuanta (ir a perfil y cerrar sesión). Tiene bordes grises para hacer la diferencia entre las distintos formularios y un icono al extremo inferior de la página para el fácil acceso a la publicación de un post, los iconos ayudan a percibir la acción que se desea realizar. Estas características se consideraron porque nuestras usuarias están más relacionadas a las redes sociales mencionadas anteriormente.
+* #### Sección Modificar
+ 
+![Testing](src/img/Postversion02.PNG)
+
+La primera percepción de una persona que utilizará una nueva red social es que se asemeje a una que ya utilizo o al que se sienta más familiarizado. Nuestras madres primerizas tienen una edad aproximada entre 18 a 33 años eso indica que un gran porcentaje conoce o utiliza Facebook, Twitter, etc. 
+De acuerdo al requerimiento del Readme de Laboratoria en el proyecto actual se especifica modificar post in place, este ítem no se consideró en el proyecto porque en el tests anterior los usuarios no ubicaban con facilidad la caja input para editar y por recomendación utilizamos Pop Up semejante al de Facebook
+
