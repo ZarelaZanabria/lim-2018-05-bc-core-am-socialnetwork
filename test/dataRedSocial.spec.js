@@ -44,7 +44,7 @@ describe('data', () => {
     });
 
     it('Si la contraseña no es válida o el usuario no tiene una contraseña muestra PASSWORD INCORRECTO', () => {
-      assert.equal(mesaggeFirebase('The password0 is invalid or the user does not have a password.'), 'Password Incorrecto', 'break');
+      assert.equal(mesaggeFirebase('The password is invalid or the user does not have a password.'), 'Password Incorrecto', 'break');
     });
 
     it('Si no hay registro del usuario muestra EL USUARIO NO EXISTE', () => {

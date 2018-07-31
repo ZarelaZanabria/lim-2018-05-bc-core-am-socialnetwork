@@ -16,7 +16,6 @@ eventsGetPost=()=>{
       function readFile(input) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
-          console.log(input.files);
           reader.onload = function (e) {
             var filePreview = document.createElement('img');
             filePreview.id = 'file-preview';

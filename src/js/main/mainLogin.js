@@ -104,7 +104,6 @@ eventsLogin = () => {
     $('#btnLogin').click(() => {
         const auth = firebase.auth();
         firebase.auth().languageCode = 'es';
-        console.log(txtEmail.val(), txtPassword.val());
         const promise = auth.signInWithEmailAndPassword(txtEmail.val(), txtPassword.val());// devuelve una promesa que permita identificar al usuario o para detectar cualquien error y registrarlos en firebase
         promise.catch(e => {
             const errorEmail = e.message;
@@ -154,7 +153,7 @@ eventsLogin = () => {
             photoURL: photoURL,
         });
     }
-    const guardarData = (user) => {
+    window.guardarData = (user) => {
         var usuario = {
             usersEmail: user.email,
             usersName: user.displayName,

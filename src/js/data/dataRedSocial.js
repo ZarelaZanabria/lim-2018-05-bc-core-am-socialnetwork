@@ -30,7 +30,7 @@ window.mesaggeFirebase = (message) => {
     case 'The email address is already in use by another account.':
       return 'Este correo ya esta registrado';
       break;
-    case 'The password0 is invalid or the user does not have a password.':
+    case 'The password is invalid or the user does not have a password.':    
       return 'Password Incorrecto';
       break;
     case 'There is no user record corresponding to this identifier. The user may have been deleted.':
