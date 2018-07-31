@@ -5,14 +5,14 @@ eventsUpdatePost=()=>{
         document.getElementById('div_new_post').innerHTML=''; 
         $('#div_new_post').hide();
         $("#input-post").disabled = true;
-         readFile();
+         /* readFile(); */
       
     });
     $('#publicar-cancelar').click(() => {
       document.getElementById('div_new_post').innerHTML='';
       $('#div_new_post').hide();
     });
-    function readFile(input) {
+    /* function readFile(input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
         console.log(input.files);
@@ -31,7 +31,7 @@ eventsUpdatePost=()=>{
     var fileUpload = document.getElementById('file');
     fileUpload.onchange = function (e) {
       readFile(e.srcElement);
-    }
+    } */
   
   
 }

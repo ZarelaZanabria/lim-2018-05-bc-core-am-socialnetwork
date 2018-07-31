@@ -108,4 +108,5 @@ A continuación se adjunta los links donde se pueden visualizar los prototipos d
 [Vista - celular](https://www.figma.com/file/gyFN3dm2XIxMLAHPC1qtKY/material-kit-free-(Copy)?node-id=0%3A1313 "View - Mobile")
 
 ### Conclusiones de testing con el prototipo de alta fidelidad con usuarios
+
 ### Conclusiones de testing con el producto en HTML

@@ -766,6 +766,8 @@
     font-size: 14px;
     line-height: 20px;
     width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /*footer post*/
 .stream-item-footer{

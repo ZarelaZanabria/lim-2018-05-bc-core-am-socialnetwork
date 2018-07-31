@@ -6,14 +6,14 @@ eventsGetPost=()=>{
           $('#div_new_post').hide();
           document.getElementById('div_new_post').innerHTML=''; 
           $("#input-post").disabled = true;
-          readFile();
+          /* readFile(); */
         }
       });
       $('#publicar-cancelar').click(() => {
         document.getElementById('div_new_post').innerHTML='';
         $('#div_new_post').hide();
       });
-      function readFile(input) {
+      /* function readFile(input) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
           reader.onload = function (e) {
@@ -31,6 +31,6 @@ eventsGetPost=()=>{
       var fileUpload = document.getElementById('file');
       fileUpload.onchange = function (e) {
         readFile(e.srcElement);
-      }  
+      }   */
     
 }
